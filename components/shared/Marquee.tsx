@@ -54,7 +54,7 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
           </div>
         </div>
       ) : (
-        <div className="overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+        <div className="overflow-hidden pb  -14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
           <RevealWrapper as="p" className="container mb-10 text-wrap text-center lg:mb-20">
             Trusted by over 100+ fast-growing companies all around the world
           </RevealWrapper>

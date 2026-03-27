@@ -18,13 +18,13 @@ const data = [
     title: 'Corporate & brand films',
     description:
       'It implies a combination of capabilities and specialized skills, which could be technical or procedural.',
-    image: '/images/services-2/service-item-2.png',
+    image: '/images/services-2/service-item-3.png',
   },
   {
     id: 3,
     title: 'Live streaming',
     description: 'It emphasizes professionalism and the depth of experience across various services or specialties.',
-    image: '/images/services-2/service-item-3.png',
+    image: '/images/services-2/service-item-4.png',
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const data = [
     id: 6,
     title: 'Event coverage',
     description: 'Providing comprehensive coverage of your events with a professional touch.',
-    image: '/images/services-2/service-item-3.png',
+    image: '/images/services-2/service-item-4.png',
   },
   {
     id: 7,
