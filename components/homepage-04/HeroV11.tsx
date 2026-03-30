@@ -166,7 +166,7 @@ const HeroV11 = () => {
           </li>
         </ul>
       </div>
-      <figure className="absolute left-[8%] top-[12%] hidden md:block lg:left-[24%] lg:top-[15%]">
+      <figure className="absolute left-[8%] top-[7%] hidden md:block lg:left-[24%] lg:top-[11%]">
         <img src="/images/home-4/random-1.png" alt="" className="decorative-image" ref={setImageRef(0)} />
       </figure>
       <figure className="absolute right-[15%] top-[7%] hidden md:block lg:right-[29%] lg:top-[11%]">
