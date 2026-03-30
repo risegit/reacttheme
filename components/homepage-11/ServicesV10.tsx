@@ -24,19 +24,19 @@ const data = [
     id: 3,
     title: 'Email Marketing',
     description: 'Engage your subscribers with personalized, automated, and effective email campaigns that convert.',
-    image: '/images/services-2/service-item-3.png',
+    image: '/images/services-2/service-item-2.png',
   },
   {
     id: 4,
     title: 'Brand Strategy',
     description: 'Develop a cohesive and compelling brand identity that resonates and builds long-term loyalty.',
-    image: '/images/services-2/service-item-2.png',
+    image: '/images/services-2/service-item-3.png',
   },
   {
     id: 5,
     title: 'Paid Advertising (PPC)',
     description: 'Maximize ROI through data-driven campaigns on Google, Meta, and other digital ad platforms.',
-    image: '/images/services-2/service-item-3.png',
+    image: '/images/services-2/service-item-4.png',
   },
   {
     id: 6,
@@ -48,7 +48,7 @@ const data = [
     id: 7,
     title: 'Promotional videos',
     description: 'Creating compelling promotional videos to showcase your brand and products.',
-    image: '/images/services-2/service-item-1.png',
+    image: '/images/services-2/service-item-4.png',
   },
 ]
 
