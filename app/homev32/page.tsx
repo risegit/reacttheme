@@ -22,7 +22,7 @@ import HeroV18 from '@/components/homepage-18/HeroV18'
 import PortfolioV5 from '@/components/homepage-18/PortfolioV5'
 
 export const metadata = {
-  title: 'Photography Studio - Rivor',
+  title: 'Photography Studio - Rivorr',
 }
 
 const homepage4 = () => {
