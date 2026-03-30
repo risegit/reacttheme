@@ -8,41 +8,41 @@ import TextAppearAnimation from '../animation/TextAppearAnimation'
 const data = [
   {
     id: 1,
-    title: 'Advertising videos',
+    title: 'SEO Optimization ',
     description:
-      "Could you clarify what you'd like to know or discuss regarding? It can refer to various concepts like representation.",
+      "Improve your visibility and organic reach with advanced SEO strategies.",
     image: '/images/services-2/service-item-1.png',
   },
   {
     id: 2,
-    title: 'Corporate & brand films',
+    title: 'Social Media Marketing',
     description:
-      'It implies a combination of capabilities and specialized skills, which could be technical or procedural.',
-    image: '/images/services-2/service-item-3.png',
+      'Build authentic engagement and community across all major platforms with targeted social campaigns.',
+    image: '/images/services-2/service-item-4.png',
   },
   {
     id: 3,
-    title: 'Live streaming',
-    description: 'It emphasizes professionalism and the depth of experience across various services or specialties.',
-    image: '/images/services-2/service-item-4.png',
+    title: 'Email Marketing',
+    description: 'Engage your subscribers with personalized, automated, and effective email campaigns that convert.',
+    image: '/images/services-2/service-item-3.png',
   },
   {
     id: 4,
-    title: 'Music videos',
-    description: 'Music videos that capture the essence of your sound and vision.',
-    image: '/images/services-2/service-item-1.png',
-  },
-  {
-    id: 5,
-    title: 'Documentary films',
-    description: 'Capturing real stories and experiences through the art of filmmaking.',
+    title: 'Brand Strategy',
+    description: 'Develop a cohesive and compelling brand identity that resonates and builds long-term loyalty.',
     image: '/images/services-2/service-item-2.png',
   },
   {
+    id: 5,
+    title: 'Paid Advertising (PPC)',
+    description: 'Maximize ROI through data-driven campaigns on Google, Meta, and other digital ad platforms.',
+    image: '/images/services-2/service-item-3.png',
+  },
+  {
     id: 6,
-    title: 'Event coverage',
-    description: 'Providing comprehensive coverage of your events with a professional touch.',
-    image: '/images/services-2/service-item-4.png',
+    title: 'Content Marketing',
+    description: 'Craft stories that connect with your audience and drive measurable growth through creativity and strategy..',
+    image: '/images/services-2/service-item-3.png',
   },
   {
     id: 7,

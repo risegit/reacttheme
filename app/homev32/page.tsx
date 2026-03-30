@@ -37,7 +37,7 @@ const homepage4 = () => {
       {/* Marquee Section */}
       {/* _____UPAR KE SAB MERE HAI */}
       {/* <ClientsV3 /> */}
-      <ServicesV5 />
+      {/* <ServicesV5 /> */}
         <Marquee withBorder={true} />   
            
 {/*   
