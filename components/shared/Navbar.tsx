@@ -10,7 +10,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 
 import { SocialIcons } from '@/components/navbarCompo/social-icons'
 import { MenuList } from '../navbarCompo/menu-list'
-
+  
 export default function Navbar() {
   const pathname = usePathname()
   const [isVisible, setIsVisible] = useState(true)

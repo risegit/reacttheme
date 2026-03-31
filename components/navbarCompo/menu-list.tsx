@@ -2,7 +2,7 @@
 
 import { gsap } from 'gsap'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { forwardRef, useEffect, useRef, useState } from 'react'
 
 interface MenuItemProps {
@@ -61,13 +61,21 @@ const menuItems: MenuItemProps[] = [
     ],
   },
   {
-    title: 'Blog',
-    url: '#',
-    items: [
-      { title: 'AI Blog', url: '/ai-blog' },
-      { title: 'SEO Blog', url: '/seo-blog' },
-      { title: 'Blog Details', url: '/seo-blog/the-evolution-of-minimalist-design' },
-    ],
+    title: 'Work',
+    url: '/contact',
+  },
+  // {
+  //   title: 'Blog',
+  //   url: '#',
+  //   items: [
+  //     { title: 'AI Blog', url: '/ai-blog' },
+  //     { title: 'SEO Blog', url: '/seo-blog' },
+  //     { title: 'Blog Details', url: '/seo-blog/the-evolution-of-minimalist-design' },
+  //   ],
+  // },
+  {
+    title: 'Careers',
+    url: '/career',
   },
   {
     title: 'Projects',
@@ -80,6 +88,10 @@ const menuItems: MenuItemProps[] = [
       { title: 'Project Details 02', url: '/digital-agency/project/project-nexus' },
     ],
   },
+  {
+    title: 'Contact',
+    url: '/contact',
+  },
 ]
 
 interface MenuListProps {
@@ -89,11 +101,12 @@ interface MenuListProps {
 export const MenuList = forwardRef<HTMLUListElement, MenuListProps>((props, ref) => {
   const { onItemClick } = props
   const pathname = usePathname()
+  const router = useRouter()
   const [activeItems, setActiveItems] = useState<string[]>([])
   const [initialLoad, setInitialLoad] = useState(true)
   const dropdownRefsMap = useRef(new Map<string, HTMLUListElement | null>())
 
-  //  initial active item current path
+  // initial active item current path
   useEffect(() => {
     let foundParent = false
 
@@ -175,11 +188,21 @@ export const MenuList = forwardRef<HTMLUListElement, MenuListProps>((props, ref)
     })
   }, [activeItems])
 
-  const handleDropdownClick = (title: string) => {
-    if (window.innerWidth > 368) {
-      setActiveItems((prev) => (prev.includes(title) ? [] : [title]))
-    } else {
-      setActiveItems((prev) => (prev.includes(title) ? prev.filter((item) => item !== title) : [...prev, title]))
+  const handleDropdownClick = (title: string, url: string, hasItems?: boolean) => {
+    // If the item has dropdown items, handle dropdown toggle
+    if (hasItems) {
+      if (window.innerWidth > 368) {
+        setActiveItems((prev) => (prev.includes(title) ? [] : [title]))
+      } else {
+        setActiveItems((prev) => (prev.includes(title) ? prev.filter((item) => item !== title) : [...prev, title]))
+      }
+    } 
+    // If it's a direct link (like Careers), navigate to the URL
+    else if (url && url !== '#') {
+      router.push(url)
+      if (onItemClick) {
+        onItemClick()
+      }
     }
   }
 
@@ -208,7 +231,7 @@ export const MenuList = forwardRef<HTMLUListElement, MenuListProps>((props, ref)
             href={item.url}
             onClick={(e) => {
               e.preventDefault()
-              handleDropdownClick(item.title)
+              handleDropdownClick(item.title, item.url, !!item.items)
             }}
             className="menu-list-item-text text-[28px] leading-[70px] text-white md:text-[42px] xl:text-[56px] xl:leading-[90px]">
             {item.title}
