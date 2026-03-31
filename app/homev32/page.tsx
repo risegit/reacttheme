@@ -20,6 +20,7 @@ import TestimonialV2 from '@/components/shared/TestimonialV2'
 import FaqV2 from '@/components/shared/FaqV2'
 import HeroV18 from '@/components/homepage-18/HeroV18'
 import PortfolioV5 from '@/components/homepage-18/PortfolioV5'
+import TestimonialV7 from '@/components/homepage-11/TestimonialV7'
 
 export const metadata = {
   title: 'Photography Studio - Rivorr',
@@ -30,7 +31,6 @@ const homepage4 = () => {
     <LayoutOne>
       <HeroV11 />
       <HeroV18 />
-
       <Homeabout />
       <AnimatedHeroImage />
       <ServicesV10 />
@@ -38,11 +38,19 @@ const homepage4 = () => {
       {/* _____UPAR KE SAB MERE HAI */}
       {/* <ClientsV3 /> */}
       {/* <ServicesV5 /> */}
-        <Marquee withBorder={true} />   
+      <Marquee withBorder={true} />   
            
 {/*   
       <ImageMarque /> */}
-      {/* <CTA>
+      
+     
+      <TestimonialV2 />
+      <BlogPostsV5 />
+      <FaqV2 />
+      {/* CASE STUDIES section BElow */}
+      <PortfolioV5 />
+
+      <CTA>
         Let's chat!
         <CtaImageSlider
           slides={[
@@ -53,13 +61,7 @@ const homepage4 = () => {
         />
         with us.
         <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
-      </CTA> */}
-     
-      <TestimonialV2 />
-      <BlogPostsV5 />
-      <FaqV2 />
-      {/* CASE STUDIES section BElow */}
-      <PortfolioV5 />
+      </CTA>
     </LayoutOne>
   )
 }

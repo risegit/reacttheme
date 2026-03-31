@@ -50,6 +50,19 @@ const data = [
     description: 'Creating compelling promotional videos to showcase your brand and products.',
     image: '/images/services-2/service-item-4.png',
   },
+  {
+    id: 8,
+    title: 'Promotional videos2',
+    description: 'Creating compelling promotional videos to showcase your brand and products.',
+    image: '/images/services-2/service-item-4.png',
+  },
+  {
+    id: 9,
+    title: 'Promotional videos3',
+    description: 'Creating compelling promotional videos to showcase your brand and products.',
+    image: '/images/services-2/service-item-4.png',
+  },
+
 ]
 
 const ServicesV10 = () => {
@@ -77,7 +90,13 @@ const ServicesV10 = () => {
             ref={contentRef}
             className="video-section service-wrapper flex w-fit flex-col gap-6 overflow-x-hidden pl-[5%] pr-[30px] max-md:gap-y-10 md:flex-row md:flex-nowrap">
             {data.map((item) => (
-              <div key={item.id} className="group w-[370px] cursor-fancy">
+              <div
+                key={item.id}
+                className="group cursor-fancy"
+                style={{
+                  width: window.innerWidth <= 1366 && window.innerWidth >= 1280 ? "250px" : "370px"
+                }}
+              >
                 <figure className="hero-video-container overflow-hidden">
                   <Link
                     target="_blank"

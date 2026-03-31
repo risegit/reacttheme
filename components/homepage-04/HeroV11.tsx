@@ -144,7 +144,7 @@ const HeroV11 = () => {
             <span className="rv-badge-text">Studio</span>
           </div>
         </div>
-        <h1 className="text-center">
+        <h1 className="text-center mt-20">
           Experience the Art of <br />
           <i className="font-instrument"> Photography</i>
         </h1>
@@ -157,7 +157,7 @@ const HeroV11 = () => {
           <li className="inline cursor-pointer text-center" ref={heroButtonRef}>
             <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
               <div className="rv-button-top">
-                <span>Let's Get Started</span>
+                <span>Let's Get Started</span>  
               </div>
               <div className="rv-button-bottom">
                 <span className="text-nowrap">Let's Get Started</span>

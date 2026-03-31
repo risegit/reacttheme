@@ -10,6 +10,7 @@ import FAQ from '@/components/shared/FAQ'
 import LayoutOne from '@/components/shared/LayoutOne'
 import ServicesV8 from '@/components/shared/ServicesV8'
 import Video from '@/components/shared/Video'
+import Homev32 from '@/app/homev32/page'
 
 export const metadata = {
   title: 'Rivor | Design Agency',
@@ -18,27 +19,7 @@ export const metadata = {
 const Home = () => {
   return (
     <LayoutOne>
-      <Hero />
-      <Video />
-      <About />
-      <Portfolio />
-      <ClientsV3 />
-      <ServicesV8 />
-      <Community />
-      <FAQ />
-      <Testimonial />
-      <CTA>
-        Let's chat!
-        <CtaImageSlider
-          slides={[
-            { id: '1', img: '/images/agent/01.jpg' },
-            { id: '2', img: '/images/agent/02.jpg' },
-            { id: '3', img: '/images/agent/03.jpg' },
-          ]}
-        />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
-      </CTA>
+      <Homev32 />
     </LayoutOne>
   )
 }
