@@ -38,12 +38,8 @@ const homepage4 = () => {
       {/* _____UPAR KE SAB MERE HAI */}
       {/* <ClientsV3 /> */}
       {/* <ServicesV5 /> */}
-      <Marquee withBorder={true} />   
-           
-{/*   
-      <ImageMarque /> */}
-      
-     
+      <Marquee withBorder={true} />
+      {/* <ImageMarque /> */}
       <TestimonialV2 />
       <BlogPostsV5 />
       <FaqV2 />
