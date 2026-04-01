@@ -30,7 +30,7 @@ const home = () => {
   return (
     <LayoutOne>
       <HeroV11 />
-      <HeroV18 />
+      {/* <HeroV18 /> */}
       <Homeabout />
       <AnimatedHeroImage />
       <ServicesV10 />
