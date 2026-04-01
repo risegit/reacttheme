@@ -1,24 +1,22 @@
-import ContactForm from '@/components/contactpage/ContactForm'
+import Benefits from '@/components/careerpage/Benefits'
+import CareerHero from '@/components/careerpage/CareerHero'
+import CompanyGallery from '@/components/careerpage/CompanyGallery'
+import Jobs from '@/components/careerpage/Jobs'
 import CTA from '@/components/shared/CTA'
 import CtaImageSlider from '@/components/shared/CtaImageSlider'
 import LayoutOne from '@/components/shared/LayoutOne'
-import PageHero from '@/components/shared/PageHero'
 
 export const metadata = {
-  title: 'Contact',
+  title: 'CareerPage',
 }
 
-const ContactPage = () => {
+const CareerPage = () => {
   return (
     <LayoutOne>
-      <PageHero
-        title="Join Our Team"
-        badgeTitle="Career"
-        description="Discover our innovative, cutting-edge no-code websites, crafted to effortlessly captivate and engage your visitors."
-        scale
-        spacing="pt-[130px] md:pt-[180px] pb-20 sm:pb-32 md:pb-36 lg:pb-36 xl:pb-[100px] relative overflow-hidden"
-      />
-      <ContactForm />
+      <CareerHero />
+      <CompanyGallery />
+      <Benefits />
+      <Jobs />
       <CTA>
         Let's chat!
         <CtaImageSlider
@@ -35,4 +33,4 @@ const ContactPage = () => {
   )
 }
 
-export default ContactPage
+export default CareerPage
