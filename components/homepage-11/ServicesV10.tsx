@@ -92,7 +92,7 @@ const ServicesV10 = () => {
             {data.map((item) => (
               <div
                 key={item.id}
-                className="group cursor-fancy"
+                // className="group cursor-fancy"
                 style={{
                   width: window.innerWidth <= 1366 && window.innerWidth >= 1280 ? "250px" : "370px"
                 }}
@@ -101,7 +101,7 @@ const ServicesV10 = () => {
                   <Link
                     target="_blank"
                     href="https://www.youtube.com/watch?v=HszQAizu-So"
-                    className="hero-video block cursor-fancy">
+                    className="hero-video block ">
                     <img
                       src={item.image}
                       alt={item.title}

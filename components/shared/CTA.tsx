@@ -11,7 +11,7 @@ interface CTAProps {
   buttonText?: string
 }
 
-const CTA: FC<CTAProps> = ({ children, showContactForm = false, headingClass = '', buttonText = 'Contact Us' }) => {
+const CTA: FC<CTAProps> = ({ children, showContactForm = false,  headingClass = '', buttonText = 'Contact Us' }) => {
   return (
     <section className="relative pb-[70px] pt-14 md:pt-16 lg:pb-[140px] lg:pt-[88px] xl:pt-[100px]">
       <div className="container">

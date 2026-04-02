@@ -20,7 +20,7 @@ export default {
         instrument: ["'Instrument Serif', system-ui"],
       },
       colors: {
-        primary: '#12D8CC',
+        primary: '#00a3e2',
         secondary: '#181818',
         backgroundBody: '#EDF0F5',
         black: '#181818',
@@ -54,6 +54,7 @@ export default {
         box: ' 0px 5px 50px 0px rgba(0, 0, 0, 0.07)',
       },
     },
+
   },
   safelist: [
     {

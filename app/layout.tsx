@@ -6,6 +6,7 @@ import { ThemeModeProvider } from '@/utils/Providers'
 import type { Metadata } from 'next'
 import { ReactNode, Suspense } from 'react'
 import '../scss/main.scss'
+import './global.css'
 
 export const metadata: Metadata = {
   title: 'Rivor Template',

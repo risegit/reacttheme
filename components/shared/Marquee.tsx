@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
+import TextAppearAnimation from '../animation/TextAppearAnimation'
 
 interface LoopConfig {
   repeat?: number
@@ -31,7 +32,14 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
   }
 
   return (
-    <section className="relative mx-auto w-full max-w-[1920px] max-md:pt-0.5">
+    <section className="relative mx-auto w-full pt-14 max-w-[1920px] max-md:pt-0.5">
+      <div className="container">
+        <div className="mb-8 text-center">
+          <TextAppearAnimation>
+            <h2 className="text-appear mx-auto max-w-[770px]">TRUSTED BY BUSINESSES ACROSS INDUSTRIES</h2>
+          </TextAppearAnimation>
+        </div>
+      </div>
       {withBorder ? (
         <div
           onMouseEnter={handleMouseEnter}
@@ -58,7 +66,6 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
           <RevealWrapper as="p" className="container mb-10 text-wrap text-center lg:mb-20">
             Trusted by over 100+ fast-growing companies all around the world
           </RevealWrapper>
-
           <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="relative">
             <div ref={marqueeRef} className="z-50 flex w-fit flex-nowrap gap-2.5 whitespace-nowrap">
               {data.map((item) => (
