@@ -3,14 +3,14 @@ import useReveal from '@/hooks/useReveal'
 import CounterAnimation from '@/utils/CounterAnimation'
 import RevealWrapper from '../animation/RevealWrapper'
 import CircleTextAnimation from '../shared/CircleTextAnimation'
+import TextAppearAnimation from '../animation/TextAppearAnimation'
 
 const achievementStats = [
-  { value: 14, label: 'Years of Experience' },
-  { value: 80, label: 'Projects Completed', suffix: '+' },
-  { value: 280, label: 'Happy Clients', suffix: '+' },
-  { value: 9, label: 'Trusted Partners' },
-  { value: 19, label: 'Industry Awards' },
-  { value: 39, label: 'Team Members' },
+  { value: 14, label: ' Digital Marketing Experience', suffix: '+' },
+  { value: 80, label: ' Growth & Marketing Engagements', suffix: '+' },
+  { value: 280, label: ' Businesses Served', suffix: '+' },
+  { value: 20, label: ' Healthcare, B2B, Ecommerce & More', suffix: '+' },
+
 ]
 
 const AboutV8 = () => {
@@ -19,21 +19,26 @@ const AboutV8 = () => {
     <section className="about relative pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px] ">
       <div className="container">
         <RevealWrapper>
-          <CircleTextAnimation />
+       
         </RevealWrapper>
         <RevealWrapper>
-          <h4 className="mx-auto mb-6 mt-8 md:mb-10 md:mt-[60px]" ref={revealRef}>
-            With years of industry expertise, our team of visionaries, storytellers, and design virtuosos come together
-            to weave magic that captivates hearts and minds.
-          </h4>
-        </RevealWrapper>
-        {/* <RevealWrapper as="p" className="mx-auto max-w-3xl overflow-hidden text-center">
-          With years of experience and a diverse portfolio, we have established ourselves as a leading force in the
-          world of video production. At our core, we believe in the transformative power of visual storytelling. Our
-          mission is to bring your ideas to life, creating content that not only meets but exceeds your expectations.
-        </RevealWrapper> */}
+         <div className="mb-8 text-center md:mb-14">
+          <RevealWrapper className="rv-badge reveal-me">
+            <span className="rv-badge-text">Services</span>
+          </RevealWrapper>
+          <TextAppearAnimation>
+            <RevealWrapper>    <h2 className="text-appear my-3">
+           PROVEN DIGITAL MARKETING <i className="font-instrument">experience</i>
+            </h2></RevealWrapper>
+        
+          </TextAppearAnimation>
 
-        <div className="mt-20 grid grid-cols-1 justify-items-center gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <RevealWrapper as="p">
+            Each project reflects our dedication to excellence, creativity, and innovation.
+          </RevealWrapper>
+        </div>
+        </RevealWrapper>
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-16">
           {achievementStats.map((achievement, index) => (
             <RevealWrapper
               key={achievement.label}
@@ -42,7 +47,7 @@ const AboutV8 = () => {
                 <CounterAnimation number={achievement.value} />
                 {achievement.suffix}
               </h2>
-              <p className="text-lg">{achievement.label}</p>
+              <p className="text-lg self-center">{achievement.label}</p>
             </RevealWrapper>
           ))}
         </div>

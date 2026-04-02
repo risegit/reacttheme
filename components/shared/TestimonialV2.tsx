@@ -15,7 +15,7 @@ const TestimonialV2 = () => {
             <span className="rv-badge-text">User Review</span>
           </RevealWrapper>
           <TextAppearAnimation>
-            <h2 className="text-appear mx-auto max-w-[770px]">What Our Clients Say</h2>
+            <h2 className="text-appear mx-auto max-w-[770px]">MARKETING PROBLEMS WE SOLVE</h2>
           </TextAppearAnimation>
         </div>
       </div>

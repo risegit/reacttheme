@@ -144,25 +144,30 @@ const HeroV11 = () => {
             <span className="rv-badge-text">Studio</span>
           </div>
         </div>
-        <h1 className="text-center mt-20">
-          Experience the Art of <br />
-          <i className="font-instrument"> Photography</i>
-        </h1>
+        <h2 className="text-center mt-20">
+          Building visibility, generating demand, and scaling growth through<br />
+          <i className="font-instrument"> Digital marketing systems</i>
+        </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center">
-          We transform your special moments into unforgettable visual stories with expert craftsmanship and a creative
-          touch
+          Rise IT is a growth marketing partner helping businesses strengthen their digital presence through<strong> SEO, performance marketing, social media marketing, digital PR, and integrated digital marketing strategy.
+          </strong>
         </p>
 
         <ul className="mt-14 flex list-none justify-center">
           <li className="inline cursor-pointer text-center" ref={heroButtonRef}>
             <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
               <div className="rv-button-top">
-                <span>Let's Get Started</span>  
+                <span className='text-white'>Start a Conversation</span>
               </div>
               <div className="rv-button-bottom">
-                <span className="text-nowrap">Let's Get Started</span>
+                <span className="text-nowrap">Start a Conversation</span>
               </div>
             </Link>
+            <p className="mx-auto mt-3 max-w-3xl text-center mt-5">
+
+              
+              14+ years helping businesses grow through <br />digital marketing.
+            </p>
           </li>
         </ul>
       </div>

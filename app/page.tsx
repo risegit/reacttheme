@@ -21,6 +21,8 @@ import FaqV2 from '@/components/shared/FaqV2'
 import HeroV18 from '@/components/homepage-18/HeroV18'
 import PortfolioV5 from '@/components/homepage-18/PortfolioV5'
 import TestimonialV7 from '@/components/homepage-11/TestimonialV7'
+import WhatWeHelpBusinessesDo from '@/components/what-we-help-businesses-do/page'
+import FaqV3 from '@/components/homepage-21/FaqV3'
 
 export const metadata = {
   title: 'Photography Studio - Rivorr',
@@ -32,6 +34,7 @@ const home = () => {
       <HeroV11 />
       {/* <HeroV18 /> */}
       <Homeabout />
+      <WhatWeHelpBusinessesDo />
       <AnimatedHeroImage />
       <ServicesV10 />
       {/* Marquee Section */}
