@@ -1,6 +1,6 @@
 ---
-title: 'Location Shoots'
-description: 'Ensuring premium quality and satisfaction for all our users.'
+title: 'Strategy Before Campaigns'
+description: ' premium quality and satisfaction for all our users.'
 thumbnail: '/images/services/photography-services-02.png'
 coverImage: '/images/services/photography-services-02.png'
 ---

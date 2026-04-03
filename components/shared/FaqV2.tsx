@@ -20,7 +20,7 @@ const FaqV2: FC<PropsType> = ({ titleChange = false }) => {
       <div className="container">
         <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:mb-20 md:flex-row md:items-end lg:justify-between">
           <SectionHeader
-            headingTitle="FAQ"
+            headingTitle=" "
             titleChange={titleChange}
             italicTitle="FAQ"
             description="When detailing testimonials it's important to include key elements that provide context and authenticity"

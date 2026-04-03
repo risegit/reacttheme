@@ -8,40 +8,40 @@ import TextAppearAnimation from '../animation/TextAppearAnimation'
 const data = [
   {
     id: 1,
-    title: 'SEO Optimization ',
+    title: 'Search Visibility ',
     description:
-      "Improve your visibility and organic reach with advanced SEO strategies.",
+      "We improve discoverability through SEO strategy, technical SEO, content marketing, digital PR, authority building, and search optimisation, helping businesses rank higher and attract consistent organic traffic.",
     image: '/images/services-2/service-item-1.png',
   },
   {
     id: 2,
-    title: 'Social Media Marketing',
+    title: 'Demand Generation',
     description:
-      'Build authentic engagement and community across all major platforms with targeted social campaigns.',
+      'We build demand generation systems using performance marketing, Meta Ads, Google Ads, LinkedIn advertising, social media marketing, email marketing, and lead generation strategies that attract and convert qualified audiences.',
     image: '/images/services-2/service-item-4.png',
   },
   {
     id: 3,
-    title: 'Email Marketing',
-    description: 'Engage your subscribers with personalized, automated, and effective email campaigns that convert.',
+    title: 'Conversion Optimisation',
+    description: 'Through conversion rate optimisation, landing page optimisation, marketing funnel strategy, user journey optimisation, analytics tracking, and performance measurement systems, we improve conversion performance.',
     image: '/images/services-2/service-item-2.png',
   },
   {
     id: 4,
-    title: 'Brand Strategy',
-    description: 'Develop a cohesive and compelling brand identity that resonates and builds long-term loyalty.',
+    title: 'Brand Authority',
+    description: 'We strengthen brand presence through content strategy, social media marketing, digital PR campaigns, corporate video production, brand storytelling, and authority-driven content marketing.',
     image: '/images/services-2/service-item-3.png',
   },
   {
     id: 5,
-    title: 'Paid Advertising (PPC)',
-    description: 'Maximize ROI through data-driven campaigns on Google, Meta, and other digital ad platforms.',
+    title: 'Digital Infrastructure',
+    description: 'We build scalable digital foundations through website design and development, marketing automation systems, CRM integrations, analytics setup, tracking infrastructure, and digital performance optimisation',
     image: '/images/services-2/service-item-4.png',
   },
   {
     id: 6,
-    title: 'Content Marketing',
-    description: 'Craft stories that connect with your audience and drive measurable growth through creativity and strategy..',
+    title: 'Marketing Intelligence',
+    description: 'We implement analytics dashboards, conversion tracking systems, reporting frameworks, campaign measurement, and marketing intelligence tools to guide data-driven growth decisions.',
     image: '/images/services-2/service-item-3.png',
   },
   {
@@ -77,7 +77,7 @@ const ServicesV10 = () => {
           </RevealWrapper>
           <TextAppearAnimation>
             <h2 className="text-appear my-3">
-              Bringing your <i className="font-instrument">vision to life</i>
+           MARKETING PROBLEMS <i className="font-instrument">we solve</i>
             </h2>
           </TextAppearAnimation>
 

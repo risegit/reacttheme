@@ -6,27 +6,27 @@ import Link from 'next/link'
 const features = [
   {
     id: 1,
-    title: 'Results driven PR strategies',
+    title: 'Stronger search visibility',
     description: 'We measure impact, not just impressions.',
   },
   {
     id: 2,
-    title: 'Direct access to top media outlets',
+    title: ' Consistent lead generation',
     description: 'We have strong relationships with influential journalists.',
   },
   {
     id: 3,
-    title: 'Proactive crisis management',
+    title: ' Improved marketing ROI',
     description: 'Assistance whenever and wherever you need it.',
   },
   {
     id: 4,
-    title: 'Tailored strategies for maximum ROI',
+    title: 'Higher website conversion rates',
     description: 'Authentic experiences with trusted professionals.',
   },
   {
     id: 5,
-    title: 'Industry leading PR experts',
+    title: 'Clear marketing performance insights',
     description: "We take care of everything, so you don't have to.",
   },
 ]
@@ -38,8 +38,8 @@ const WhyChooseUsV8 = () => {
           <div className="flex-1 md:self-start">
             <TextAppearAnimation>
               <h2 className="text-appear">
-                Why choose
-                <i className="font-instrument"> Rivor? </i>
+             WHAT BUSINESSES ACHIEVE WITH 
+                <i className="font-instrument"> Rise IT? </i>
               </h2>
             </TextAppearAnimation>
           </div>
@@ -47,7 +47,7 @@ const WhyChooseUsV8 = () => {
           <div className="w-full md:max-w-80 md:self-end lg:max-w-[470px]">
             <TextAppearAnimation>
               <p className="text-appear max-w-lg md:place-self-end md:text-right">
-                What travel details do you need? Flight info, itinerary, expenses, or something else?
+            Businesses work with Rise IT to solve some of the most common digital growth challenges.
               </p>
             </TextAppearAnimation>
             <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
