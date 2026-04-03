@@ -1,6 +1,6 @@
 ---
 title: 'Product Shoots'
-description: 'Dedicated to delivering excellence with every interaction'
+description: ' to delivering excellence with every interaction'
 thumbnail: 'images/services/photography-services-03.png'
 coverImage: '/images/services/photography-services-03.png'
 photography: true
