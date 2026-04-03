@@ -9,8 +9,8 @@ const WhyChooseUsV8 = () => {
         <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
           <TextAppearAnimation>
             <h2 className="text-appear lg:leading-[1.1]">
-              Why choose
-              <span className="font-instrument italic"> rivor? </span>
+             WHAT BUSINESSES ACHIEVE WITH 
+              <span className="font-instrument italic"> RISE IT? </span>
             </h2>
           </TextAppearAnimation>
           <TextAppearAnimation>

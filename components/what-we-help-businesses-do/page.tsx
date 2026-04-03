@@ -63,7 +63,7 @@ const homepage16 = () => {
             <TextAppearAnimation>
               <h2 className="text-appear">
                WHAT WE HELP
-                <i className="font-instrument">  businesses do
+                <i className="font-instrument">  businesses do?
  </i>
               </h2>
             </TextAppearAnimation>
