@@ -12,7 +12,7 @@ const ServicesV9 = () => {
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:flex-row lg:mb-24 lg:justify-between">
           <div className="flex-1 md:self-start">
             <h2 className="text-appear">
-        WHAT MAKES RISE IT 
+          WHAT MAKES RISE IT 
 
               <span className="font-instrument font-medium italic">different?</span>
             </h2>
@@ -23,11 +23,11 @@ const ServicesV9 = () => {
             </p>
             <RevealWrapper as="ul" className="mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/services" className="rv-button rv-button-white block md:inline-block">
+                <Link href="/services" className="rv-button rv-button-primary block md:inline-block">
                   <div className="rv-button-top">
-                    <span>See More Case Studies</span>
+                    <span  className="text-nowrap">See More Case Studies</span>
                   </div>
-                  <div className="rv-button-bottom">
+                  <div className="text-nowrap">
                     <span>See More Case Studies</span>
                   </div>
                 </Link>
@@ -53,6 +53,7 @@ const ServicesV9 = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path
                       d="M5 16H27"
+
                       className="stroke-black dark:stroke-white"
                       strokeWidth="1.5"
                       strokeLinecap="round"

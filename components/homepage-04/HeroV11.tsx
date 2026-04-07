@@ -145,8 +145,8 @@ const HeroV11 = () => {
           </div>
         </div>
         <h2 className="text-center mt-20">
-          Building visibility, generating demand, and scaling growth through<br />
-          <i className="font-instrument"> Digital marketing systems</i>
+          Building <i className="font-instrument"> visibility</i>, generating <i className="font-instrument"> demand</i>, and scaling<i className="font-instrument">  growth</i> through<br />
+         Digital marketing systems
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center">
           Rise IT is a growth marketing partner helping businesses strengthen their digital presence through<strong> SEO, performance marketing, social media marketing, digital PR, and integrated digital marketing strategy.
@@ -166,7 +166,7 @@ const HeroV11 = () => {
             <p className="mx-auto mt-3 max-w-3xl text-center mt-5">
 
               
-              14+ years helping businesses grow through <br />digital marketing.
+              14+ years helping businesses grow through digital marketing.
             </p>
           </li>
         </ul>

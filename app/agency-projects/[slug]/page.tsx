@@ -4,6 +4,7 @@ import ProjectDetailsHero from '@/components/projectpage/ProjectDetailsHero'
 import CTA from '@/components/shared/CTA'
 import CtaImageSlider from '@/components/shared/CtaImageSlider'
 import LayoutOne from '@/components/shared/LayoutOne'
+import LayoutTwo from '@/components/shared/LayoutTwo'
 import getMarkDownContent from '@/utils/GetMarkDownContent'
 import getMarkDownData from '@/utils/GetMarkDownData'
 
@@ -20,7 +21,7 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
   const postprojects = project.data
 
   return (
-    <LayoutOne>
+    <LayoutTwo>
       <ProjectDetailsHero
         badgeTitle="Project Case Study"
         title={postprojects?.title}
@@ -40,7 +41,7 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
         with us.
         <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
       </CTA>
-    </LayoutOne>
+    </LayoutTwo>
   )
 }
 

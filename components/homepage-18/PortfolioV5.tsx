@@ -36,12 +36,12 @@ const PortfolioV5 = () => {
             </TextAppearAnimation>
             <RevealWrapper as="ul" className="mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/project" className="rv-button rv-button-white block md:inline-block">
+                <Link href="/project" className="rv-button rv-button-primary block md:inline-block">
                   <div className="rv-button-top">
-                    <span>More Case Studies</span>
+                    <span className='text-white'>More Case Studies</span>
                   </div>
                   <div className="rv-button-bottom">
-                    <span>More Case Studies</span>
+                    <span className='text-nowrap'>More Case Studies</span>
                   </div>
                 </Link>
               </li>

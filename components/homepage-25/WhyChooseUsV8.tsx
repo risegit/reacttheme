@@ -50,14 +50,14 @@ const WhyChooseUsV8 = () => {
             Businesses work with Rise IT to solve some of the most common digital growth challenges.
               </p>
             </TextAppearAnimation>
-            <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
+                   <RevealWrapper as="ul" className="mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/contact" className="rv-button rv-button-white block md:inline-block">
+                <Link href="/project" className="rv-button rv-button-primary block md:inline-block">
                   <div className="rv-button-top">
-                    <span>Talk to an Expert</span>
+                    <span className='text-white'>Talk to an Expert</span>
                   </div>
                   <div className="rv-button-bottom">
-                    <span>Talk to an Expert</span>
+                    <span className='text-nowrap'>Talk to an Expert</span>
                   </div>
                 </Link>
               </li>
@@ -73,17 +73,6 @@ const WhyChooseUsV8 = () => {
                 <p className="mt-3 text-base leading-[1.6] tracking-[0.32px]">{feature.description}</p>
               </RevealWrapper>
             ))}
-
-            <RevealWrapper className="reveal-me mt-7 md:mt-9 lg:mt-14">
-              <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
-                <div className="rv-button-top text-center">
-                  <span>Talk to an Expert</span>
-                </div>
-                <div className="rv-button-bottom text-center">
-                  <span className="text-nowrap">Talk to an Expert</span>
-                </div>
-              </Link>
-            </RevealWrapper>
           </div>
 
           <RevealWrapper as="figure" className="reveal-me md:w-1/2">
