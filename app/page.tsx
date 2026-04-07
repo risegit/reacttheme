@@ -50,7 +50,7 @@ const home = () => {
       {/* <ImageMarque /> */}
       <TestimonialV7 />
       <BlogPostsV5 />
-     <DiffRise />
+     {/* <DiffRise /> */}
       <FaqV2 />
      
 
