@@ -41,6 +41,8 @@ const home = () => {
       <WhatWeHelpBusinessesDo />
       <AnimatedHeroImage />
       <ServicesV10 />
+       {/* CASE STUDIES section BElow */}
+      <PortfolioV5 />
       <WhyChooseUsV8 />
       {/* Marquee Section */}
       {/* _____UPAR KE SAB MERE HAI */}
@@ -48,6 +50,11 @@ const home = () => {
       {/* <ServicesV5 /> */}
       <Marquee withBorder={true} />
       {/* <ImageMarque /> */}
+      <TestimonialV7 />
+      <BlogPostsV5 />
+     <DiffRise />
+      <FaqV2 />
+     
       <Testimoniale />
       <DiffRise />
       <FaqV2 />

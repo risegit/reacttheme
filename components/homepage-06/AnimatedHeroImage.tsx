@@ -30,9 +30,19 @@ const AnimatedHeroImage = () => {
     }
   }, [])
   return (
-    <figure className="mx-auto w-[97%] overflow-hidden sm:w-full" ref={imageRef}>
-      <Image src={heroBanner} alt="Hero Banner Big Image" className="mx-auto w-[97%] sm:w-full" />
-    </figure>
+<figure
+  className="mx-auto w-[97%] overflow-hidden sm:w-full"
+  ref={imageRef}
+>
+  <video
+    className="mx-auto w-[97%] sm:w-full"
+    src="https://rivor-next.vercel.app/video/promo.mp4"
+    autoPlay
+    loop
+    muted
+    playsInline
+  />
+</figure>
   )
 }
 
