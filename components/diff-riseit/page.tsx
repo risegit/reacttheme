@@ -9,44 +9,39 @@ const WhyChooseUs = () => {
         <div className="mb-8 text-center md:mb-14">
           <TextAppearAnimation>
             <h2 className="text-appear mt-3">
-              WHAT MAKES RISE IT <i className="font-instrument">different?</i>
+              Why choose <i className="font-instrument">Rivor?</i>
             </h2>
           </TextAppearAnimation>
-          {/* <TextAppearAnimation>
+          <TextAppearAnimation>
             <p className="text-appear">The Rivor Advantage — All That Works for You</p>
-          </TextAppearAnimation> */}
+          </TextAppearAnimation>
         </div>
         <div className="flex flex-col-reverse gap-x-[30px] gap-y-8 md:flex-row">
           <div className="md:w-1/2 [&>*]:border-b">
             <RevealWrapper className="py-3.5 pr-[30px] lg:py-[30px]">
-              <h5>Strategy Before Campaigns</h5>
-              <p className="tracking-[ 0.32px] top-3 text-base leading-[1.6]">
-                Most agencies start with tactics.We Start with
-                <strong> research, audits, and strategic planning.</strong>
+              <h5>Proven AI Expertise</h5>
+              <p className="tracking-[ 0.32px] top-3 text-base leading-[1.6]">Top AI experts with proven success.</p>
+            </RevealWrapper>
+            <RevealWrapper className="py-3.5 pr-[30px] lg:py-[30px]">
+              <h5>Tailored Solutions</h5>
+              <p className="mt-3 text-base leading-[1.6] tracking-[0.32px]">
+                We are also the all AI have—each solution is tailored.
               </p>
             </RevealWrapper>
             <RevealWrapper className="py-3.5 pr-[30px] lg:py-[30px]">
-              <h5>Integrated Growth Systems</h5>
+              <h5>Data-Driven Insights</h5>
+              <p className="mt-3 text-base leading-[1.6] tracking-[0.32px]">AI analytics for accurate decisions.</p>
+            </RevealWrapper>
+            <RevealWrapper className="py-3.5 pr-[30px] lg:py-[30px]">
+              <h5>Seamless Integration</h5>
               <p className="mt-3 text-base leading-[1.6] tracking-[0.32px]">
-                SEO, advertising, social media marketing, and digital PR work best when connected. We build marketing
-                systems where each channel strengthens the others.
+                All that fits effortlessly into your existing systems.
               </p>
             </RevealWrapper>
             <RevealWrapper className="py-3.5 pr-[30px] lg:py-[30px]">
-              <h5>Marketing + Technical Expertise</h5>
+              <h5>ROI-Focused results</h5>
               <p className="mt-3 text-base leading-[1.6] tracking-[0.32px]">
-                Rise IT combines marketing strategy with
-                <strong>
-                  {' '}
-                  technical expertise in analytics, tracking systems, marketing automation, and digital infrastructure.
-                </strong>
-              </p>
-            </RevealWrapper>
-            <RevealWrapper className="py-3.5 pr-[30px] lg:py-[30px]">
-              <h5>Global Work Cycles</h5>
-              <p className="mt-3 text-base leading-[1.6] tracking-[0.32px]">
-                Digital marketing runs continuously. Our teams operate across extended work cycles including US time
-                zones, enabling faster optimisation and monitoring.
+                AI solutions to enhance efficiency and profits.
               </p>
             </RevealWrapper>
           </div>
