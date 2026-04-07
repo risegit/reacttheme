@@ -1,13 +1,10 @@
-import { MarkdownData } from '@/interface'
-import getMarkDownData from '@/utils/GetMarkDownData'
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
+import TextAppearAnimation from '../animation/TextAppearAnimation'
 
-const photographyServicesData: MarkdownData[] = getMarkDownData('data/creative-agency/services')
-
-const ServicesV9 = () => {
+const WhyChooseUs = () => {
   return (
-    <section className="overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
       <div className="container">
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:flex-row lg:mb-24 lg:justify-between">
           <div className="flex-1 md:self-start">
@@ -34,6 +31,9 @@ const ServicesV9 = () => {
               </li>
             </RevealWrapper>
           </div>
+          <RevealWrapper as="figure" className="md:w-1/2">
+            <img src="/images/home-5/why-rivor.png" alt="AI Solutions" className="h-full w-full" />
+          </RevealWrapper>
         </div>
       </div>
       <RevealWrapper className="mx-auto w-full max-w-[1170px]">
@@ -69,22 +69,15 @@ const ServicesV9 = () => {
                   </svg>
                 </div>
               </div>
-
-              <div className="overflow-hidden">
-                <figure className="h-0 -translate-y-4 transform opacity-0 transition-all duration-700 ease-in-out group-hover:h-[110px] group-hover:translate-y-0 group-hover:opacity-100 md:group-hover:h-[160px] lg:group-hover:h-[230px]">
-                  <img
-                    src={photoService.thumbnail}
-                    alt="Hover on Photography Services"
-                    className="object-cover px-5 pb-5 pt-4 transition-all duration-700 ease-in-out md:px-10 md:pb-10"
-                  />
-                </figure>
+              <div className="rv-button-bottom">
+                <span>Let’s Talk</span>
               </div>
-            </div>
-          </Link>
-        ))}
-      </RevealWrapper>
+            </Link>
+          </li>
+        </RevealWrapper>
+      </div>
     </section>
   )
 }
 
-export default ServicesV9
+export default WhyChooseUs

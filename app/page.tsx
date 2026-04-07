@@ -25,6 +25,8 @@ import WhatWeHelpBusinessesDo from '@/components/what-we-help-businesses-do/page
 import FaqV3 from '@/components/homepage-21/FaqV3'
 import WhyChooseUsV8 from '@/components/homepage-25/WhyChooseUsV8'
 import DiffRise from '@/components/diff-riseit/page'
+import Testimoniale from '@/components/testimonial/page'
+import TestimonialV12 from '@/components/homepage-24/TestimonialV12'
 
 export const metadata = {
   title: 'Photography Studio - Rivorr',
@@ -53,6 +55,12 @@ const home = () => {
      <DiffRise />
       <FaqV2 />
      
+      <Testimoniale />
+      <DiffRise />
+      <FaqV2 />
+      <BlogPostsV5 />
+      {/* CASE STUDIES section BElow */}
+      <PortfolioV5 />
 
       <CTA>
         Let's chat!
