@@ -2,45 +2,41 @@ import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
 
-const ServicesV15 = () => {
+const Section3 = () => {
   // Manually added service data
   const servicesData = [
     {
-      slug: 'search-visibility',
-      title: 'Search Visibility',
+      slug: 'conversion-optimisation',
+      title: 'Conversion Optimisation',
+      description: 'Traffic alone does not drive growth.A well-structured digital marketing system focuses on turning visitors into enquiries and customers.Conversion optimisation improves performance by analysing user behaviour, improving user journeys, and optimising marketing funnels.',
+      feature: [],
+    },
+    {
+      slug: 'conversion-rate-optimisation',
+      title: 'Conversion Rate Optimisation (CRO)',
       description:
-        'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.',
-      feature: [
-        
+        'Because increasing conversions often creates the biggest marketing impact.',
+      feature: [    
+        'Conversion Rate Optimisation',
+        'Landing Page Optimisation',
+        'User Journey Analysis',
+        'Funnel Optimisation',
+        'A/B Testing',
+        'Conversion Analytics'
+      
       ],
     },
     {
-      slug: 'seo-services',
-      title: 'SEO Services',
+      slug: 'marketing-analytics-tracking',
+      title: 'Marketing Analytics & Tracking',
       description:
-        'Because your business needs to appear where people are actively searching.',
+        'Because data should guide every marketing decision.',
       feature: [
-        'Keyword Research',
-        'Technical SEO',
-        'On-Page SEO',
-        'Search Engine Optimisation Strategy',
-        'SEO Audits',
-        'Content SEO',
-        'Local SEO',
-        'Organic Search Optimisation',
-      ],
-    },
-    {
-      slug: 'digital-pr-and-authority-building',
-      title: 'Digital PR & Authority Building',
-      description:
-        'Because strong brands are discovered not just through search engines, but through authority and credibility.',
-      feature: [
-        'Digital PR Campaigns',
-        'Online Reputation Management',
-        'Media Placements',
-        'Brand Mentions',
-        'Authority Link Building',
+        'Conversion Tracking',
+        'Google Analytics Setup',
+        'Marketing Dashboards',
+        'Performance Analytics',
+        'Campaign Reporting Systems',
       ],
     },
   ]
@@ -55,9 +51,9 @@ const ServicesV15 = () => {
             </RevealWrapper>
             <TextAppearAnimation02>
               <h2>
-                Our Brand is not
-                <span className="font-instrument italic"> &nbsp; Visible</span> <br />
-                online
+                Our marketing 
+                <span className="font-instrument italic"> &nbsp; traffic</span> <br />
+                isn&apos;t converting
               </h2>
             </TextAppearAnimation02>
           </div>
@@ -116,7 +112,7 @@ const ServicesV15 = () => {
                   {service.feature.map((f: string) => (
                     <li
                       key={f}
-                      className="leading-relexed list-disc text-base text-backgroundBody/70 dark:text-backgroundBody/70">
+                      className="leading-relaxed list-disc text-base text-backgroundBody/70 dark:text-backgroundBody/70">
                       {f}
                     </li>
                   ))}
@@ -130,4 +126,4 @@ const ServicesV15 = () => {
   )
 }
 
-export default ServicesV15
+export default Section3

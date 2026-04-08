@@ -49,7 +49,7 @@ const home = () => {
       <Marquee withBorder={true} />
       {/* <ImageMarque /> */}
       <TestimonialV7 />
-      <BlogPostsV5 />
+      {/* <BlogPostsV5 /> */}
      {/* <DiffRise /> */}
       <FaqV2 />
      

@@ -1,6 +1,6 @@
 ---
-title: 'Backend Development'
-description: 'Power your apps and systems with scalable, secure, and high-performance backend infrastructure.'
+title: 'SEO Services'
+description: 'Because your business needs to appear where people are actively searching.'
 coverImage: '/images/services/services-details2-img.png'
 badgeTitle: 'Backend Engineering'
 feature: ['API Development', 'Database Architecture']
