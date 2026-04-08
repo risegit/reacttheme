@@ -4,6 +4,10 @@ import CTA from '@/components/shared/CTA'
 import CtaImageSlider from '@/components/shared/CtaImageSlider'
 import LayoutOne from '@/components/shared/LayoutOne'
 import PageHero from '@/components/shared/PageHero'
+import Services from '@/components/services/page'
+import ServicesV15 from '@/components/homepage-17/ServicesV15'
+import Secttion2 from '@/components/section-2/page'
+import Section3 from '@/components/section-3/page'
 
 export const metadata = {
   title: 'Services ',
@@ -12,16 +16,11 @@ export const metadata = {
 const ServicesPage = () => {
   return (
     <LayoutOne>
-      <PageHero
-        badgeTitle="Services"
-        title="Services "
-        italicTitle=""
-        scale
-        description="Explore our innovative cutting-edge no-code websites designed to captivate and engage your visitors effortlessly"
-        spacing="max-md:pt-44 max-sm:pb-10 max-md:pb-16 md:py-44 lg:py-[200px] relative overflow-hidden"
-      />
-      <ServicesV14 />
-      <Process />
+   <Services/>
+   <ServicesV15/>
+    <Secttion2/>
+    <Section3/>
+    
       <CTA>
         Let's chat!
         <CtaImageSlider

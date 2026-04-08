@@ -1,6 +1,7 @@
 ---
-title: 'App Development'
-description: 'Build seamless, high-performance applications tailored to your business needs, from idea to launch.'
+title: 'Search Visibility
+'
+description: 'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.'
 coverImage: '/images/services/services-details2-img.png'
 badgeTitle: 'Mobile & Web Apps'
 feature: ['iOS & Android Apps', 'Cross-Platform Development']

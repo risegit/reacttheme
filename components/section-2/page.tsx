@@ -2,45 +2,60 @@ import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
 
-const ServicesV15 = () => {
+const Section2 = () => {
   // Manually added service data
   const servicesData = [
     {
-      slug: 'search-visibility',
-      title: 'Search Visibility',
+      slug: 'demand-generation',
+      title: 'Demand Generation',
       description:
-        'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.',
-      feature: [
-        
-      ],
+        'Generating consistent leads requires visibility across multiple platforms combined with targeted audience acquisition strategies.',
+      feature: [],
     },
     {
-      slug: 'seo-services',
-      title: 'SEO Services',
+      slug: 'performance marketing',
+      title: 'Performance Marketing',
       description:
         'Because your business needs to appear where people are actively searching.',
       feature: [
-        'Keyword Research',
-        'Technical SEO',
-        'On-Page SEO',
-        'Search Engine Optimisation Strategy',
-        'SEO Audits',
-        'Content SEO',
-        'Local SEO',
-        'Organic Search Optimisation',
+        'Google Ads Management',
+        'Meta Ads (Facebook & Instagram Ads)',
+        ' LinkedIn Advertising',
+        ' PPC Campaign Management',
+        'Paid Social Advertising',
+        ' Display Advertising',
+        ' Remarketing Campaigns',
+        ' Conversion-Focused Ad Campaigns',
       ],
     },
     {
-      slug: 'digital-pr-and-authority-building',
-      title: 'Digital PR & Authority Building',
+      slug: 'lead-generation-systems',
+      title: 'Lead Generation Systems',
       description:
-        'Because strong brands are discovered not just through search engines, but through authority and credibility.',
+        'Because reaching the right audience directly often accelerates growth.',
       feature: [
-        'Digital PR Campaigns',
-        'Online Reputation Management',
-        'Media Placements',
-        'Brand Mentions',
-        'Authority Link Building',
+        'B2B Lead Generation',
+        ' Email Marketing Campaigns',
+        ' Marketing Funnel Strategy',
+        ' Lead Nurturing Systems',
+        ' Marketing Automation',
+        ' CRM Integrations',
+        'Audience Targeting Strategies',
+      ],
+    },
+    {
+      slug: 'social-media-marketing',
+      title: 'Social Media Marketing',
+      description:
+        'Because people need to see and trust your brand organically.',
+      feature: [
+        'Social media strategy',
+        'Content creation and curation',
+        'Community management',
+        'Social media advertising',
+        'Influencer partnerships',
+        'Social media analytics and reporting',
+        'Community engagement',
       ],
     },
   ]
@@ -55,9 +70,9 @@ const ServicesV15 = () => {
             </RevealWrapper>
             <TextAppearAnimation02>
               <h2>
-                Our Brand is not
+                Our website isn’t
                 <span className="font-instrument italic"> &nbsp; Visible</span> <br />
-                online
+                generating enough leads
               </h2>
             </TextAppearAnimation02>
           </div>
@@ -130,4 +145,4 @@ const ServicesV15 = () => {
   )
 }
 
-export default ServicesV15
+export default Section2
