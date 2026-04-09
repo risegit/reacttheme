@@ -27,7 +27,7 @@ const PageHero = ({ badgeTitle, title, description, italicTitle, spacing, scale 
               {title} <i className="font-instrument italic">{italicTitle}</i>
             </h1>
           )}
-          {description && <p className="text-appear mx-auto max-w-[470px] md:max-w-[750px]">{description}</p>}
+          {description && <p className="text-appear mx-auto max-w-[470px] md:max-w-[900px]">{description}</p>}
         </RevealWrapper>
       </div>
     </section>

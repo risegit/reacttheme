@@ -1,3 +1,6 @@
 .text-white{
     color: #fff !important;
 }
+.cust-text-position-right{
+    text-align: right !important;
+}

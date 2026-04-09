@@ -7,6 +7,10 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import Marquee from '@/components/shared/Marquee'
 import PageHero from '@/components/shared/PageHero'
 import Video from '@/components/shared/Video'
+import Aboutsection2 from '@/components/aboutsection-2/page'
+import WhyChooseUs from '@/components/diff-riseit/page'
+import Aboutservice from '@/components/about-services/page'
+import Aboutwework from '@/components/about-wework/page'
 
 export const metadata = {
   title: 'About',
@@ -17,17 +21,24 @@ const AboutPage = () => {
     <LayoutOne>
       <PageHero
         badgeTitle="About"
-        title="Digital Solution "
+        title="The Idea Behind Rise IT
+"
         italicTitle="Agency"
-        description="As a agency we are working on client projects, official Webflow Templates and cloneables for the Webflow community."
+        description="Every business has expertise.
+But expertise alone is not enough.
+If the right people cannot find your business, they cannot choose it.
+Rise IT helps businesses connect their expertise with the audiences that need them.
+We focus on improving visibility, generating demand, and turning digital attention into meaningful business growth."
       />
       <Video />
-      <About />
-      <Team />
+      <Aboutsection2 />
+      <WhyChooseUs />
+      <Aboutservice />
       <Marquee withBorder={true} />
-      <AwardsV2 />
+      <Aboutwework />
+      {/* <AwardsV2 /> */}
       <CTA>
-        Let's chat!
+        Let's Build 
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/11.png' },
@@ -35,8 +46,7 @@ const AboutPage = () => {
             { id: '3', img: '/images/agent/13.png' },
           ]}
         />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">Something Meaningful!</i>
       </CTA>
     </LayoutOne>
   )

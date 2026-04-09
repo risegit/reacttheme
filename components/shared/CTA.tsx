@@ -11,7 +11,7 @@ interface CTAProps {
   buttonText?: string
 }
 
-const CTA: FC<CTAProps> = ({ children, showContactForm = false,  headingClass = '', buttonText = 'Contact Us' }) => {
+const CTA: FC<CTAProps> = ({ children, showContactForm = false,  headingClass = '', buttonText = 'Start a Conversation' }) => {
   return (
     <section className="relative pb-[70px] pt-14 md:pt-16 lg:pb-[140px] lg:pt-[88px] xl:pt-[100px]">
       <div className="container">
@@ -25,16 +25,14 @@ const CTA: FC<CTAProps> = ({ children, showContactForm = false,  headingClass = 
           </h2>
         </RevealWrapper>
         <RevealWrapper as="ul" className="mt-14 flex list-none items-center justify-center">
-          <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-            <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
+        <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
               <div className="rv-button-top">
-                <span>{buttonText}</span>
+                <span className='text-white'>Start a Conversation</span>
               </div>
               <div className="rv-button-bottom">
-                <span className="whitespace-nowrap">{buttonText}</span>
+                <span className="text-nowrap">Start a Conversation</span>
               </div>
             </Link>
-          </li>
         </RevealWrapper>
         {showContactForm && <ContactForm />}
       </div>
