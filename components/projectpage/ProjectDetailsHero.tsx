@@ -28,7 +28,7 @@ const ProjectDetailsHero = ({ badgeTitle, title, description, italicTitle, scale
             </h1>
           )}
           {description && (
-            <p className="text-appear mx-auto max-w-[470px] text-center lg:max-w-[750px]">{description}</p>
+            <p className="text-appear mx-auto max-w-[980px] text-center">{description}</p>
           )}
         </RevealWrapper>
       </div>

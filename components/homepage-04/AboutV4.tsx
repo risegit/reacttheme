@@ -32,7 +32,7 @@ const AboutV4 = () => {
           </RevealWrapper>
           <TextAppearAnimation>
             <h3 className="text-appear mb-8 text-3xl leading-tight sm:text-[34px] md:text-[44px] lg:mb-[52px] lg:text-[54px] xl:text-[64px] xl:leading-[1.1]">
-              A few words about me
+              A few words  me
             </h3>
           </TextAppearAnimation>
           <RevealWrapper className="flex flex-col gap-x-16 gap-y-16 lg:flex-row">

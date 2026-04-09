@@ -18,7 +18,8 @@ const ProjectContent = async ({ project }: any) => {
           </aside>
           <article className="project-details-body overflow-hidden [&>*]:scroll-mt-20">
             <RevealWrapper as="figure" className="max-w-[870px] md:h-[480px]">
-              <img src={project.data.thumbnail} alt="Services Big Img" className="h-full w-full object-cover" />
+              <img src={project.thumbnail} alt="Services Big Img" className="h-full w-full object-cover" />
+              {project.thumbnail}
             </RevealWrapper>
             <ReactMarkdown rehypePlugins={[[rehypeSlug]]}>{project.content}</ReactMarkdown>
           </article>

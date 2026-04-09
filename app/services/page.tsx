@@ -8,6 +8,8 @@ import Services from '@/components/services/page'
 import ServicesV15 from '@/components/homepage-17/ServicesV15'
 import Secttion2 from '@/components/section-2/page'
 import Section3 from '@/components/section-3/page'
+import Section4 from '@/components/section-04/page'
+
 
 export const metadata = {
   title: 'Services ',
@@ -20,6 +22,9 @@ const ServicesPage = () => {
    <ServicesV15/>
     <Secttion2/>
     <Section3/>
+    <Section4/>
+    {/* <Seopage params={Promise.resolve({ slug: '' })}/> */}
+    
     
       <CTA>
         Let's chat!
