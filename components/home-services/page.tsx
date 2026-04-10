@@ -2,41 +2,42 @@ import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
 
-const Section3 = () => {
+const HomeService = () => {
   // Manually added service data
   const servicesData = [
     {
-      slug: 'conversion-rate-optimization',
-      title: 'Conversion Optimisation',
-      description: 'Traffic alone does not drive growth.A well-structured digital marketing system focuses on turning visitors into enquiries and customers.Conversion optimisation improves performance by analysing user behaviour, improving user journeys, and optimising marketing funnels.',
-      feature: [],
-    },
-    {
-      slug: 'conversion-rate-optimization',
-      title: 'Conversion Rate Optimisation (CRO)',
+      slug: 'search-visibility',
+      title: 'Discover Demand',
       description:
-        'Because increasing conversions often creates the biggest marketing impact.',
-      feature: [    
-        'Conversion Rate Optimisation',
-        'Landing Page Optimisation',
-        'User Journey Analysis',
-        'Funnel Optimisation',
-        'A/B Testing',
-        'Conversion Analytics'
-      
+        'We analyse markets, competitors, audience behaviour, and digital performance through digital audits, research, and strategic analysis.',
+      feature: [
+        
       ],
     },
     {
-      slug: 'marketing-analytics-tracking',
-      title: 'Marketing Analytics & Tracking',
+      slug: 'seo',
+      title: 'Build Visibility',
       description:
-        'Because data should guide every marketing decision.',
+        'Through SEO, digital PR, and content marketing, businesses become discoverable where customers actively search.',
       feature: [
-        'Conversion Tracking',
-        'Google Analytics Setup',
-        'Marketing Dashboards',
-        'Performance Analytics',
-        'Campaign Reporting Systems',
+
+      ],
+    },
+    {
+      slug: 'digital-pr',
+      title: 'Capture Demand',
+      description:
+        'Performance marketing campaigns, Meta Ads, Google Ads, LinkedIn advertising, and social media marketing convert visibility into targeted traffic and qualified leads.',
+      feature: [
+      ]
+    },
+     {
+      slug: 'content-writing',
+      title: 'Convert & Scale',
+      description:
+        'Growth becomes sustainable through conversion optimisation, analytics infrastructure, and performance tracking systems..',
+      feature: [
+ 
       ],
     },
   ]
@@ -51,26 +52,26 @@ const Section3 = () => {
             </RevealWrapper>
             <TextAppearAnimation02>
               <h2>
-                Our marketing 
-                <span className="font-instrument italic"> &nbsp; traffic</span> <br />
-                isn&apos;t converting
+              HOW WE BUILD DIGITAL 	
+                <span className="font-instrument italic"> &nbsp; growth</span> <br />
               </h2>
             </TextAppearAnimation02>
           </div>
           <div className="max-md:w-full md:w-[40%]">
             <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-right">
-              We offer digital solutions to boost your brand and online presence.
+              Our framework connects research, visibility, demand generation, and performance optimisation into one integrated marketing system.
+
             </p>
             <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/contact" className="rv-button rv-button-white block md:inline-block">
-                  <div className="rv-button-top">
-                    <span>Get Free Quotes</span>
-                  </div>
-                  <div className="rv-button-bottom">
-                    <span>Get Free Quotes</span>
-                  </div>
-                </Link>
+               <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
+              <div className="rv-button-top">
+                <span className='text-white'>Contact</span>
+              </div>
+              <div className="rv-button-bottom">
+                <span className="text-nowrap">Contact</span>
+              </div>
+            </Link>
               </li>
             </RevealWrapper>
           </div>
@@ -112,7 +113,7 @@ const Section3 = () => {
                   {service.feature.map((f: string) => (
                     <li
                       key={f}
-                      className="leading-relaxed list-disc text-base text-backgroundBody/70 dark:text-backgroundBody/70">
+                      className="leading-relexed list-disc text-base text-backgroundBody/70 dark:text-backgroundBody/70">
                       {f}
                     </li>
                   ))}
@@ -126,4 +127,4 @@ const Section3 = () => {
   )
 }
 
-export default Section3
+export default HomeService;

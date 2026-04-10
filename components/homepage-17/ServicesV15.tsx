@@ -15,7 +15,7 @@ const ServicesV15 = () => {
       ],
     },
     {
-      slug: 'seo-services',
+      slug: 'seo',
       title: 'SEO Services',
       description:
         'Because your business needs to appear where people are actively searching.',
@@ -31,7 +31,7 @@ const ServicesV15 = () => {
       ],
     },
     {
-      slug: 'digital-pr-and-authority-building',
+      slug: 'digital-pr',
       title: 'Digital PR & Authority Building',
       description:
         'Because strong brands are discovered not just through search engines, but through authority and credibility.',
@@ -41,6 +41,19 @@ const ServicesV15 = () => {
         'Media Placements',
         'Brand Mentions',
         'Authority Link Building',
+      ],
+    },
+     {
+      slug: 'content-writing',
+      title: 'Content Writing',
+      description:
+        'Because search visibility also depends on high-quality, search-focused content.',
+      feature: [
+        'SEO Content Writing',
+        'Blog Content Writing',
+        'Website Content Writing',
+        'Thought Leadership Content',
+        'Marketing Copy',
       ],
     },
   ]
@@ -67,14 +80,14 @@ const ServicesV15 = () => {
             </p>
             <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/contact" className="rv-button rv-button-white block md:inline-block">
-                  <div className="rv-button-top">
-                    <span>Get Free Quotes</span>
-                  </div>
-                  <div className="rv-button-bottom">
-                    <span>Get Free Quotes</span>
-                  </div>
-                </Link>
+               <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
+              <div className="rv-button-top">
+                <span className='text-white'>Contact</span>
+              </div>
+              <div className="rv-button-bottom">
+                <span className="text-nowrap">Contact</span>
+              </div>
+            </Link>
               </li>
             </RevealWrapper>
           </div>
@@ -87,7 +100,7 @@ const ServicesV15 = () => {
               <h5 className="pl-7 max-sm:text-2xl">{service.title}</h5>
             </div>
             <div className="absolute z-10 h-full w-full translate-y-full border-t border-primary bg-secondary p-8 transition-all duration-700 group-hover:inset-0 group-hover:translate-y-0 dark:bg-secondary">
-              <Link href={`/app-development/${service.slug}`}>
+              <Link href={`/services/${service.slug}`}>
                 <div className="mb-[35px] flex items-center justify-between gap-1">
                   <h5 className="translate-y-5 text-primary opacity-0 transition-all delay-[240ms] duration-[800ms] group-hover:translate-y-0 group-hover:opacity-100 dark:text-backgroundBody max-sm:text-3xl">
                     {service.title}

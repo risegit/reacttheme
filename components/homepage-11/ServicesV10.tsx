@@ -44,24 +44,7 @@ const data = [
     description: 'We implement analytics dashboards, conversion tracking systems, reporting frameworks, campaign measurement, and marketing intelligence tools to guide data-driven growth decisions.',
     image: '/images/services-2/service-item-3.png',
   },
-  {
-    id: 7,
-    title: 'Promotional videos',
-    description: 'Creating compelling promotional videos to showcase your brand and products.',
-    image: '/images/services-2/service-item-4.png',
-  },
-  {
-    id: 8,
-    title: 'Promotional videos2',
-    description: 'Creating compelling promotional videos to showcase your brand and products.',
-    image: '/images/services-2/service-item-4.png',
-  },
-  {
-    id: 9,
-    title: 'Promotional videos3',
-    description: 'Creating compelling promotional videos to showcase your brand and products.',
-    image: '/images/services-2/service-item-4.png',
-  },
+ 
 
 ]
 
@@ -82,7 +65,8 @@ const ServicesV10 = () => {
           </TextAppearAnimation>
 
           <RevealWrapper as="p">
-            Each project reflects our dedication to excellence, creativity, and innovation.
+            They need solutions to real growth challenges.
+Rise IT solves these challenges through integrated marketing systems combining SEO, performance marketing, social media marketing, digital PR, conversion optimisation, website development, analytics infrastructure, and marketing strategy.
           </RevealWrapper>
         </div>
         <div ref={triggerRef} className="service-section pt-10">
@@ -100,7 +84,7 @@ const ServicesV10 = () => {
                 <figure className="hero-video-container overflow-hidden">
                   <Link
                     target="_blank"
-                    href="https://www.youtube.com/watch?v=HszQAizu-So"
+                    href=""
                     className="hero-video block ">
                     <img
                       src={item.image}
