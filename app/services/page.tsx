@@ -9,6 +9,9 @@ import ServicesV15 from '@/components/homepage-17/ServicesV15'
 import Secttion2 from '@/components/section-2/page'
 import Section3 from '@/components/section-3/page'
 import Section4 from '@/components/section-04/page'
+import Servicesaccor from '@/components/services-accord/page'
+import Services05 from '@/components/services-05/page'
+import RevealWrapper from '@/components/animation/RevealWrapper'
 
 
 export const metadata = {
@@ -20,14 +23,16 @@ const ServicesPage = () => {
     <LayoutOne>
    <Services/>
    <ServicesV15/>
-    <Secttion2/>
+   <Servicesaccor/>
+    {/* <Secttion2/> */}
     <Section3/>
     <Section4/>
+    <Services05/>
     {/* <Seopage params={Promise.resolve({ slug: '' })}/> */}
     
-    
+    <RevealWrapper>
       <CTA>
-        Let's chat!
+        Let’s build a digital marketing
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/11.png' },
@@ -35,9 +40,11 @@ const ServicesPage = () => {
             { id: '3', img: '/images/agent/17.png' },
           ]}
         />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+        system that 
+
+        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">supports real growth.</i>
       </CTA>{' '}
+      </RevealWrapper>
     </LayoutOne>
   )
 }

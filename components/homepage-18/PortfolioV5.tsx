@@ -19,7 +19,7 @@ const PortfolioV5 = () => {
         <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-6 md:mb-20 md:flex-row md:items-end lg:justify-start">
           <div className="md:flex-1">
             <RevealWrapper className="rv-badge reveal-me">
-              <span className="rv-badge-text">Success Stories</span>
+              <span className="rv-badge-text">Case Studies</span>
             </RevealWrapper>
             <TextAppearAnimation>
               <h2 className="text-appear mt-3 overflow-hidden">

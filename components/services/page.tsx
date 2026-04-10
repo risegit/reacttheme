@@ -24,7 +24,8 @@ const AboutV13 = () => {
                     </RevealWrapper>
                     
                     <RevealWrapper as="p" className="mx-auto mt-3 max-w-3xl">
-                        Our approach focuses on improving<strong> visibility, generating demand, and converting traffic into measurable business growth.</strong>
+                        Our approach focuses on building integrated marketing systems that connect visibility, demand generation, and conversion.
+
                     </RevealWrapper>
                     <RevealWrapper as="ul" className="mt-7 justify-self-center max-md:w-full md:mt-14">
                         <li className="mx-auto block w-full text-center md:inline-block md:w-auto">

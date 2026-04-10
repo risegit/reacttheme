@@ -6,44 +6,29 @@ import TextAppearAnimation from '../animation/TextAppearAnimation'
 const data = [
   {
     id: 1,
-    reviewText: 'Rivor Films transformed our brand’s message into an unforgettable visual',
-    authorName: 'Kristin Watson',
-    authorRole: 'CEO, Tech Innovators',
+    reviewText: 'Rise IT helped us significantly improve search visibility and lead generation through a structured SEO .',
+    authorName: 'Helthcare Brand',
+    authorRole: 'Helthcare Brand',
     authorImage: '/images/home-ai/team/ai-team-1.png',
     rating: 5,
   },
   {
     id: 2,
-    reviewText: 'The team at Rivor Films exceeded our expectations and delivered stunning results.',
-    authorName: 'John Doe',
-    authorRole: 'Marketing Director, Creative Agency',
+    reviewText: 'Their ability to connect SEO, advertising, and social media into one strategy made a huge difference to our marketing results.',
+    authorName: 'Manufacturing Company',
+    authorRole: 'Manufacturing Company',
     authorImage: '/images/home-ai/team/ai-team-2.png',
     rating: 4,
   },
   {
     id: 3,
-    reviewText: 'Working with Rivor Films was a game changer for our project.',
+    reviewText: 'They understand both marketing and the technical side of digital growth. That combination is rare.',
     authorName: 'Alice Smith',
-    authorRole: 'Creative Director, Design Studio',
+    authorRole: 'B2B Technology Company',
     authorImage: '/images/home-ai/team/ai-team-3.png',
     rating: 5,
   },
-  {
-    id: 4,
-    reviewText: 'The creativity and professionalism of Rivor Films is unmatched.',
-    authorName: 'Bob Johnson',
-    authorRole: 'Founder, Startup Inc.',
-    authorImage: '/images/home-ai/team/ai-team-4.png',
-    rating: 3,
-  },
-  {
-    id: 5,
-    reviewText: 'The creativity and professionalism of Rivor Films is unmatched.',
-    authorName: 'Zaks Johnson',
-    authorRole: 'Founder, Startup Inc.',
-    authorImage: '/images/home-ai/team/ai-team-5.png',
-    rating: 4,
-  },
+  
 ]
 
 const TestimonialV7 = () => {
@@ -55,10 +40,9 @@ const TestimonialV7 = () => {
         </RevealWrapper>
         <TextAppearAnimation>
           <h2 className="text-appear my-3">
-            Our respected happy
-            <i className="font-instrument">clients </i>
-            <br />
-            <i className="font-instrument">says</i>
+            What our 
+            <i className="font-instrument"> clients says</i>
+                        
           </h2>
         </TextAppearAnimation>
       </div>

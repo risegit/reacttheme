@@ -36,7 +36,7 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
       <div className="container">
         <div className="mb-8 text-center">
           <TextAppearAnimation>
-            <h2 className="text-appear mx-auto max-w-[770px]">TRUSTED BY BUSINESSES ACROSS INDUSTRIES</h2>
+            <h2 className="text-appear mx-auto max-w-[770px]">TRUSTED BY BUSINESSES <i className="font-instrument">across industries</i></h2>
           </TextAppearAnimation>
         </div>
       </div>

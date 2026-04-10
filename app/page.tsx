@@ -25,6 +25,7 @@ import WhatWeHelpBusinessesDo from '@/components/what-we-help-businesses-do/page
 import FaqV3 from '@/components/homepage-21/FaqV3'
 import WhyChooseUsV8 from '@/components/homepage-25/WhyChooseUsV8'
 import DiffRise from '@/components/diff-riseit/page'
+import HomeService from '@/components/home-services/page'
 
 export const metadata = {
   title: 'Photography Studio - Rivorr',
@@ -35,10 +36,13 @@ const home = () => {
     <LayoutOne>
       <HeroV11 />
       {/* <HeroV18 /> */}
-      <Homeabout />
-      <WhatWeHelpBusinessesDo />
       <AnimatedHeroImage />
-      <ServicesV10 />
+       <WhatWeHelpBusinessesDo />
+        <Marquee withBorder={true} />
+      <Homeabout />
+        <ServicesV10 />
+        <HomeService/>
+
        {/* CASE STUDIES section BElow */}
       <PortfolioV5 />
       <WhyChooseUsV8 />
@@ -46,7 +50,7 @@ const home = () => {
       {/* _____UPAR KE SAB MERE HAI */}
       {/* <ClientsV3 /> */}
       {/* <ServicesV5 /> */}
-      <Marquee withBorder={true} />
+     
       {/* <ImageMarque /> */}
       <TestimonialV7 />
       {/* <BlogPostsV5 /> */}

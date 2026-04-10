@@ -58,6 +58,21 @@ const Section2 = () => {
         'Community engagement',
       ],
     },
+     {
+      slug: 'social-media-marketing',
+      title: 'Social Media Marketing',
+      description:
+        'Because people need to see and trust your brand organically.',
+      feature: [
+        'Social media strategy',
+        'Content creation and curation',
+        'Community management',
+        'Social media advertising',
+        'Influencer partnerships',
+        'Social media analytics and reporting',
+        'Community engagement',
+      ],
+    },
   ]
 
   return (
