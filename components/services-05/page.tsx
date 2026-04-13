@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
+import { slug } from 'github-slugger'
 
 const Services05 = () => {
   // Manually added service data
@@ -33,7 +34,7 @@ const Services05 = () => {
       ],
     },
     {
-      slug: 'digital-pr-and-authority-building',
+      slug: 'graphic-design',
       title: 'Graphic Design & Marketing Collaterals',
       description:
         '',

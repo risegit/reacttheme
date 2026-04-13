@@ -39,7 +39,7 @@ const home = () => {
       <AnimatedHeroImage />
        <WhatWeHelpBusinessesDo />
         <Marquee withBorder={true} />
-      <Homeabout />
+        <Homeabout />
         <ServicesV10 />
         <HomeService/>
 

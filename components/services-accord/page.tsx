@@ -66,6 +66,7 @@ const servicesData = [
     id: 5,
     title: 'Email Marketing',
     subtitle: 'Because consistent communication helps nurture prospects and maintain engagement with customers.',
+    slug: 'email-marketing',
     items: [
     'Email Campaign Strategy',
     'Newsletter Campaigns',
