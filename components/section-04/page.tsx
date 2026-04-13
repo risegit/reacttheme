@@ -67,7 +67,7 @@ const Section4 = () => {
             <span className="rv-badge-text">Services</span>
           </RevealWrapper>
           <TextAppearAnimation>
-            <h2 className="text-appear mx-auto max-w-[770px]">Our brand communication feels<span className="font-instrument italic"> Outdated</span> </h2>
+            <h2 className="text-appear mx-auto max-w-[770px]">Our brand communication feels<span className="font-instrument italic"> outdated</span> </h2>
           </TextAppearAnimation>
         </div>
         <RevealWrapper className="mx-auto w-full max-w-[1170px] [&>*:not(:last-child)]:mb-6">
