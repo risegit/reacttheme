@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation from '../animation/TextAppearAnimation'
+import { slug } from 'github-slugger'
 
 const servicesData = [
   {
@@ -19,6 +20,7 @@ const servicesData = [
   {
     id: 2,
     title: 'Website Design & Development',
+    slug: 'website-design-development',
     subtitle: 'Because your website should support both visibility and conversion.',
     items: [
 'Website Design',
@@ -37,6 +39,7 @@ const servicesData = [
   {
     id: 3,
     title: 'Marketing Infrastructure & Automation',
+    slug: 'marketing-analytics-tracking',
     subtitle: 'Because scalable growth requires strong systems behind the scenes.',
     items: [
     'Marketing Automation',
