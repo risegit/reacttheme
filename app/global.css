@@ -4,3 +4,9 @@
 .cust-text-position-right{
     text-align: right !important;
 }
+.cta-span{
+    display: block;
+    font-family: "satoshi", "satoshi Fallback";
+    font-size: 36px;
+}
+
