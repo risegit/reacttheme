@@ -34,12 +34,12 @@ const WhyChooseUsV8 = () => {
   return (
     <section className="relative overflow-hidden py-14 md:py-16 lg:py-[88px] xl:py-[100px]">
       <div className="container">
-        <div className="mb-16 flex flex-col items-start justify-center gap-x-10  xl:pb-[100px] xl:pt-[100px] gap-y-4 md:flex-row lg:mb-24 lg:justify-between">
+        <div className="mb-16 flex flex-col items-start justify-center gap-x-10  xl:pb-[100px] xl:pt-[50px] gap-y-4 md:flex-row lg:mb-24 lg:justify-between">
           <div className="flex-1 md:self-start">
             <TextAppearAnimation>
               <h2 className="text-appear">
-                WHAT BUSINESSES ACHIEVE WITH
-                <i className="font-instrument"> Rise IT? </i>
+             WHAT BUSINESSES ACHIEVE WITH 
+                <i className="font-instrument"> Rise IT Digital? </i>
               </h2>
             </TextAppearAnimation>
           </div>

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
 import { slug } from 'github-slugger'
+import DelayScroll from '../delay-scroll'
 
 const Services05 = () => {
   // Manually added service data

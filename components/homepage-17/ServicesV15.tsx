@@ -1,12 +1,18 @@
+'use client';
+
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
+import DelayScroll from '../delay-scroll'
 
 const ServicesV15 = () => {
+
+  DelayScroll();
+
   // Manually added service data
   const servicesData = [
     {
-      slug: 'search-visibility',
+      slug: 'seo',
       title: 'Search Visibility',
       description:
         'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.',
@@ -59,7 +65,8 @@ const ServicesV15 = () => {
   ]
 
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <>
+    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]" id="search-visibility">
       <div className="container">
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-3 md:mb-20 md:flex-row md:items-center lg:justify-start">
           <div className="md:w-[60%]">
@@ -94,8 +101,8 @@ const ServicesV15 = () => {
         </div>
       </div>
       <div className="flex justify-center max-xl:flex-wrap max-xl:gap-5 xl:px-5 max-xl:[&>*:first-child]:border-r dark:max-xl:[&>*:first-child]:border-dark [&>*:last-child]:border-l [&>*:last-child]:border-r dark:[&>*:last-child]:border-l-dark dark:[&>*:last-child]:border-r-dark [&>*:not(:last-child)]:border-l dark:[&>*:not(:last-child)]:border-l-dark max-xl:[&>*:nth-child(2)]:border-r dark:max-xl:[&>*:nth-child(2)]:border-dark max-2xl:[&>*:nth-child(3)]:border-r dark:max-2xl:[&>*:nth-child(3)]:border-dark [&>*]:border-y dark:[&>*]:border-y-dark">
-        {servicesData.map((service) => (
-          <RevealWrapper key={service.slug} className="group relative h-[500px] w-[400px] overflow-hidden">
+        {servicesData.map((service, index) => (
+          <RevealWrapper key={`{service.slug} - ${index}`} className="group relative h-[500px] w-[400px] overflow-hidden">
             <div className="absolute flex h-full w-full translate-y-0 items-center justify-start opacity-100 transition-all duration-700 group-hover:-translate-y-full group-hover:opacity-0">
               <h5 className="pl-7 max-sm:text-2xl">{service.title}</h5>
             </div>
@@ -136,10 +143,11 @@ const ServicesV15 = () => {
                 </ul>
               </Link>
             </div>
-          </RevealWrapper>
+           </RevealWrapper>
         ))}
       </div>
     </section>
+    </>
   )
 }
 

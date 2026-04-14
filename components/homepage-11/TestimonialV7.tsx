@@ -33,7 +33,7 @@ const data = [
 
 const TestimonialV7 = () => {
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[70px]">
       <div className="container mb-8 text-center md:mb-14">
         <RevealWrapper className="rv-badge">
           <span className="rv-badge-text">User Reviews  </span>

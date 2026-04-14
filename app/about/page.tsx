@@ -23,7 +23,7 @@ const AboutPage = () => {
         badgeTitle="About"
         title="The Idea Behind Rise IT
 "
-        italicTitle="Agency"
+        italicTitle="Digital"
         description="Every business has expertise.
 But expertise alone is not enough.
 If the right people cannot find your business, they cannot choose it.

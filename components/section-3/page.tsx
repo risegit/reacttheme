@@ -1,12 +1,16 @@
+'use client'
+
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
+import DelayScroll from '../delay-scroll'
 
 const Section3 = () => {
+   DelayScroll();
   // Manually added service data
   const servicesData = [
     {
-      slug: 'conversion-rate-optimization',
+      slug: 'conversion-optimization',
       title: 'Conversion Optimisation',
       description: 'Traffic alone does not drive growth.A well-structured digital marketing system focuses on turning visitors into enquiries and customers.Conversion optimisation improves performance by analysing user behaviour, improving user journeys, and optimising marketing funnels.',
       feature: [],
@@ -42,7 +46,7 @@ const Section3 = () => {
   ]
 
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]" id="conversion-optimisation">
       <div className="container">
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-3 md:mb-20 md:flex-row md:items-center lg:justify-start">
           <div className="md:w-[60%]">
