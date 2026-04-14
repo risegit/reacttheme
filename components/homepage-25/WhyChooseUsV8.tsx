@@ -47,7 +47,7 @@ const WhyChooseUsV8 = () => {
           <div className="w-full md:max-w-80 md:self-end lg:max-w-[470px]">
             <TextAppearAnimation>
               <p className="text-appear max-w-lg md:place-self-end md:text-right">
-            Businesses work with Rise IT to solve some of the most common digital growth challenges.
+                Businesses work with Rise IT to solve some of the most common digital growth challenges.
               </p>
             </TextAppearAnimation>
                    <RevealWrapper as="ul" className="mt-5 justify-self-end max-md:w-full md:mt-10">
