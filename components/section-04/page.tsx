@@ -6,11 +6,13 @@ import { useState } from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation from '../animation/TextAppearAnimation'
 import { slug } from 'github-slugger'
+import DelayScroll from '../delay-scroll'
 
 const servicesData = [
   {
     id: 1,
     title: 'Digital Infrastructure',
+    slug : 'digital-infrastructure',
     subtitle: 'A strong digital presence requires reliable infrastructure',
     items: [
       'Modern websites must be fast, conversion-focused, search-friendly, and integrated with marketing analytics and automation systems.',
@@ -20,7 +22,7 @@ const servicesData = [
   {
     id: 2,
     title: 'Website Design & Development',
-    slug: 'website-design-development',
+    slug: 'web-development',
     subtitle: 'Because your website should support both visibility and conversion.',
     items: [
 'Website Design',
@@ -59,8 +61,11 @@ const Section4 = () => {
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index)
   }
+
+  DelayScroll();
+
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]" id="digital-infrastructure">
       <div className="absolute left-1/2 top-[47%] -z-40 -translate-x-1/2 -translate-y-[45%] scale-x-[2.7] scale-y-[3.8] sm:scale-y-[3.3] md:scale-y-[3.2] lg:scale-y-[2.4] xl:scale-x-[2.4] xl:scale-y-[1.2]">
         <Image src={gradientBg} alt="gradient-bg" />
       </div>
@@ -89,12 +94,16 @@ const Section4 = () => {
                     {service.subtitle}
                   </span>
                 </h3> */}
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="flex flex-col items-center gap-x-10 gap-y-3 text-[25px] font-normal leading-[25.2px] text-secondary dark:text-white md:flex-row md:text-4xl md:leading-[1.2]">
                 <h3 className="flex flex-col items-center gap-x-10 gap-y-3 text-[25px] font-normal leading-[25.2px] text-secondary dark:text-white md:flex-row md:text-4xl md:leading-[1.2]">
                   <span className="text-inherit max-w-[250px]">{service.title}</span>
                   <span className="pr-[2px] max-w-[450px] text-base text-secondary/70 dark:text-white/70 md:text-xl md:leading-[1.4] md:tracking-[0.4px]">
                     {service.subtitle}
                   </span>
                 </h3>
+                </Link>
                 <div className="accordion-header-iconV5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -144,7 +153,7 @@ const Section4 = () => {
         </RevealWrapper>
         <RevealWrapper as="ul" className="reveal-me mt-14 flex justify-center">
           <li className="max-md:w-full">
-            {/* <Link
+            <Link
               href="/services"
               className="rv-button rv-button-white block w-full text-center md:inline-block md:w-auto">
               <div className="rv-button-top">
@@ -153,7 +162,7 @@ const Section4 = () => {
               <div className="rv-button-bottom">
                 <span>Explore Services</span>
               </div>
-            </Link> */}
+            </Link>
           </li>
         </RevealWrapper>
       </div>

@@ -80,3 +80,96 @@ const HeroGradientAnimation = ({ scale = false }: PropsType) => {
 }
 
 export default HeroGradientAnimation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 'use client'
+
+// import heroGradient from '@/public/images/hero-gradient-background.png'
+// import { useGSAP } from '@gsap/react'
+// import { gsap, Linear } from 'gsap'
+// import Image from 'next/image'
+// import { useEffect, useRef, useState } from 'react'
+
+// interface PropsType {
+//   scale?: boolean
+// }
+
+// const HeroGradientAnimation = ({ scale = false }: PropsType) => {
+//   const [isClient, setIsClient] = useState(false)
+//   const wrapperRef = useRef<HTMLDivElement | null>(null)
+//   const bgRef = useRef<HTMLImageElement | null>(null)
+
+//   useEffect(() => {
+//     setIsClient(true)
+//   }, [])
+
+//   useGSAP(
+//     () => {
+//       if (isClient && wrapperRef.current && bgRef.current) {
+//         const wrapper = wrapperRef.current
+
+//         // Move toward top-right
+//         const moveAnimation = gsap.to(wrapper, {
+//           x: 100,          // move right
+//           y: -100,         // move up
+//           duration: 4,
+//           repeat: -1,
+//           yoyo: true,      // comes back smoothly
+//           ease: 'sine.inOut',
+//         })
+
+//         return () => {
+//           moveAnimation.kill()
+//         }
+//       }
+//     },
+//     { dependencies: [isClient] }
+//   )
+
+//   if (!isClient) {
+//     return (
+//       <div className="absolute left-0 top-0 -z-10 h-full w-full blur-[0px]">
+//         <Image
+//           src={heroGradient}
+//           alt="hero-gradient-background"
+//           priority
+//           placeholder="blur"
+//           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+//         />
+//       </div>
+//     )
+//   }
+
+//   return (
+//     <div
+//       ref={wrapperRef}
+//       className={`absolute left-0 top-0 -z-10 h-full w-full blur-[15px] ${
+//         scale ? 'scale-75' : 'scale-100'
+//       }`}
+//     >
+//       <Image
+//         src={heroGradient}
+//         alt="hero-gradient-background"
+//         priority
+//         placeholder="blur"
+//         ref={bgRef}
+//         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+//       />
+//     </div>
+//   )
+// }
+
+// export default HeroGradientAnimation

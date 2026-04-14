@@ -16,7 +16,7 @@ const achievementStats = [
 const AboutV8 = () => {
   const { revealRef } = useReveal()
   return (
-    <section className="about relative pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px] ">
+    <section className="about relative pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px] xl:pt[70px] ">
       <div className="container">
         <RevealWrapper>
        

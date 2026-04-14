@@ -32,7 +32,7 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
   }
 
   return (
-    <section className="relative mx-auto w-full pt-14 max-w-[1920px] xl:pb-[100px] xl:pt-[100px] max-md:pt-0.5">
+    <section className="relative mx-auto w-full pt-14 max-w-[1920px] xl:pb-[100px] xl:pt-[10px] max-md:pt-0.5">
       <div className="container">
         <div className="mb-8 text-center">
           <TextAppearAnimation>

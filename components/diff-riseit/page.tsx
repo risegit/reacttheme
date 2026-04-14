@@ -4,7 +4,7 @@ import TextAppearAnimation from '../animation/TextAppearAnimation'
 
 const WhyChooseUs = () => {
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[70px]">
       <div className="container">
         
         <div className="mb-8 text-right md:mb-14">

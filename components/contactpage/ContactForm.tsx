@@ -136,47 +136,7 @@ const ContactForm = () => {
             </span>
           </div>
 
-          <div className="relative">
-            <label
-              htmlFor="budget"
-              className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
-              Project Budget*
-            </label>
-            <select
-              id="budget"
-              name="budget"
-              value={formData.budget}
-              onChange={handleChange}
-              className="mt-3 w-full appearance-none text-ellipsis border bg-backgroundBody px-5 py-4 indent-px text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark"
-              required>
-              <option value="40k">$10k - $25k</option>
-              <option value="55k">$25k - $50k</option>
-              <option value="90k">$50k - $100k</option>
-              <option value="100k+">$100k+</option>
-            </select>
-            <span className="absolute right-5 top-1/2 inline translate-y-1/3 dark:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M6 9L12 15L18 9"
-                  stroke="black"
-                  strokeOpacity="0.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-            <span className="absolute right-5 top-1/2 hidden translate-y-1/3 dark:inline">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M6 9L12 15L18 9"
-                  stroke="white"
-                  strokeOpacity="0.7"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-          </div>
+
 
           <div className="md:col-span-full">
             <label

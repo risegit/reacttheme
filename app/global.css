@@ -9,4 +9,11 @@
     font-family: "satoshi", "satoshi Fallback";
     font-size: 36px;
 }
-
+@media (max-width: 640px) {
+    .xs\:flex-row {
+        flex-direction: row;
+    }
+    .xs\:flex-wrap{
+        flex-wrap: wrap;
+    }
+}
