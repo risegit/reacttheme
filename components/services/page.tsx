@@ -23,10 +23,7 @@ const AboutV13 = () => {
                         Rise IT helps businesses solve core digital growth challenges through integrated marketing systems combining SEO, performance marketing, social media marketing, digital PR, conversion optimisation, website development, and marketing strategy.
                     </RevealWrapper>
                     
-                    <RevealWrapper as="p" className="mx-auto mt-3 max-w-3xl">
-                        Our approach focuses on building integrated marketing systems that connect visibility, demand generation, and conversion.
-
-                    </RevealWrapper>
+               
                     <RevealWrapper as="ul" className="mt-7 justify-self-center max-md:w-full md:mt-14">
                         <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
                             <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">

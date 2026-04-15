@@ -33,7 +33,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px]">
+    <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[20px]">
       <div className="container">
         <RevealWrapper
           as="form"
@@ -165,7 +165,7 @@ const ContactForm = () => {
               required></textarea>
           </div>
 
-          <div className="col-span-full sm:mt-14 md:mx-auto">
+          <div className="col-span-full sm:mt-5 md:mx-auto">
             <button type="submit" className="rv-button rv-button-primary block w-full md:inline-block md:w-auto">
               <div className="rv-button-top">
                 <span>Send Message</span>

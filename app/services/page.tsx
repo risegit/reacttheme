@@ -24,7 +24,6 @@ const ServicesPage = () => {
    <Services/>
    <ServicesV15/>
    <Servicesaccor/>
-    {/* <Secttion2/> */}
     <Section3/>
     <Section4/>
     <Services05/>

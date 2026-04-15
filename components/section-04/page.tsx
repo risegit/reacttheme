@@ -9,16 +9,16 @@ import { slug } from 'github-slugger'
 import DelayScroll from '../delay-scroll'
 
 const servicesData = [
-  {
-    id: 1,
-    title: 'Digital Infrastructure',
-    slug : 'digital-infrastructure',
-    subtitle: 'A strong digital presence requires reliable infrastructure',
-    items: [
-      'Modern websites must be fast, conversion-focused, search-friendly, and integrated with marketing analytics and automation systems.',
+  // {
+  //   id: 1,
+  //   title: 'Digital Infrastructure',
+  //   slug : 'digital-infrastructure',
+  //   subtitle: 'A strong digital presence requires reliable infrastructure',
+  //   items: [
+  //     'Modern websites must be fast, conversion-focused, search-friendly, and integrated with marketing analytics and automation systems.',
  
-    ],
-  },
+  //   ],
+  // },
   {
     id: 2,
     title: 'Website Design & Development',
@@ -72,11 +72,16 @@ const Section4 = () => {
       <div className="container">
         <div className="mb-8 text-center md:mb-20">
           <RevealWrapper className="rv-badge reveal-me mb-5 md:mb-8">
-            <span className="rv-badge-text">Services</span>
+            <span className="rv-badge-text">Digital Infrastructure</span>
           </RevealWrapper>
           <TextAppearAnimation>
             <h2 className="text-appear mx-auto max-w-[770px]">Our brand communication feels<span className="font-instrument italic"> outdated</span> </h2>
           </TextAppearAnimation>
+               <p className="mx-auto mt-3 max-w-3xl text-center">
+       Generating consistent leads requires visibility across multiple platforms combined with targeted audience acquisition strategies.
+       Demand generation connects paid advertising, social media marketing, and lead generation systems to attract qualified prospects and convert them into enquiries.
+
+        </p>
         </div>
         <RevealWrapper className="mx-auto w-full max-w-[1170px] [&>*:not(:last-child)]:mb-6">
           {servicesData.map((service, index) => (
@@ -151,7 +156,7 @@ const Section4 = () => {
             </div>
           ))}
         </RevealWrapper>
-        <RevealWrapper as="ul" className="reveal-me mt-14 flex justify-center">
+        {/* <RevealWrapper as="ul" className="reveal-me mt-14 flex justify-center">
           <li className="max-md:w-full">
             <Link
               href="/services"
@@ -164,7 +169,7 @@ const Section4 = () => {
               </div>
             </Link>
           </li>
-        </RevealWrapper>
+        </RevealWrapper> */}
       </div>
     </section>
   )

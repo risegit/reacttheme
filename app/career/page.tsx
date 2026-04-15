@@ -3,6 +3,8 @@ import CTA from '@/components/shared/CTA'
 import CtaImageSlider from '@/components/shared/CtaImageSlider'
 import LayoutOne from '@/components/shared/LayoutOne'
 import PageHero from '@/components/shared/PageHero'
+import Carrer1 from './Career-sec1'
+import CareerSection from '@/components/career-section/pages'
 
 export const metadata = {
   title: 'Contact',
@@ -12,24 +14,22 @@ const ContactPage = () => {
   return (
     <LayoutOne>
       <PageHero
-        title="Join Our Team"
+        title="Work With Us"
         badgeTitle="Career"
-        description="Discover our innovative, cutting-edge no-code websites, crafted to effortlessly captivate and engage your visitors."
+        description="Rise IT is a digital marketing agency working across strategy, SEO, performance marketing, content, design, and website development.
+Our work involves helping businesses solve real marketing challenges. Some days involve analysing campaign performance. Some days involve building ideas, creating content, or improving websites.
+The work is varied, and it requires people who enjoy figuring things out.
+If that kind of work interests you, we would be happy to hear from you."
         scale
         spacing="pt-[130px] md:pt-[180px] pb-20 sm:pb-32 md:pb-36 lg:pb-36 xl:pb-[100px] relative overflow-hidden"
       />
-      <Careerform />
+      <Carrer1 />
+      <CareerSection />
       <CTA>
-        Let's chat!
-        <CtaImageSlider
-          slides={[
-            { id: '1', img: '/images/agent/01.jpg' },
-            { id: '2', img: '/images/agent/02.jpg' },
-            { id: '3', img: '/images/agent/03.jpg' },
-          ]}
-        />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+    <h5>  We are always interested in meeting people who enjoy thoughtful work and are curious about how marketing and businesses evolve.
+If that sounds like you, feel free to reach out.</h5>
+
+       
       </CTA>
     </LayoutOne>
   )

@@ -7,15 +7,15 @@ import DelayScroll from '../delay-scroll'
 const Services05 = () => {
   // Manually added service data
   const servicesData = [
-    {
-      slug: 'search-visibility',
-      title: 'Creative & Brand Communication',
-      description:
-        'Strong marketing also depends on clear messaging and compelling visual communication.Creative content helps businesses communicate ideas clearly while supporting marketing campaigns across digital platforms.',
-      feature: [
+    // {
+    //   slug: 'search-visibility',
+    //   title: 'Creative & Brand Communication',
+    //   description:
+    //     'Strong marketing also depends on clear messaging and compelling visual communication.Creative content helps businesses communicate ideas clearly while supporting marketing campaigns across digital platforms.',
+    //   feature: [
         
-      ],
-    },
+    //   ],
+    // },
     {
       slug: 'seo',
       title: 'Content Production',
@@ -58,7 +58,7 @@ const Services05 = () => {
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-3 md:mb-20 md:flex-row md:items-center lg:justify-start">
           <div className="md:w-[60%]">
             <RevealWrapper className="rv-badge mb-3 md:mb-4">
-              <span className="rv-badge-text">Services</span>
+              <span className="rv-badge-text">Creative & Brand Communication</span>
             </RevealWrapper>
             <TextAppearAnimation02>
               <h2>
@@ -68,10 +68,11 @@ const Services05 = () => {
             </TextAppearAnimation02>
           </div>
           <div className="max-md:w-full md:w-[40%]">
-            <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-right">
-              We offer digital solutions to boost your brand and online presence.
+            <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-left">
+             Strong marketing also depends on clear messaging and compelling visual communication. Creative content helps businesses communicate ideas clearly while supporting marketing campaigns across digital platforms.
+
             </p>
-            <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
+            {/* <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
                <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
               <div className="rv-button-top">
@@ -82,7 +83,7 @@ const Services05 = () => {
               </div>
             </Link>
               </li>
-            </RevealWrapper>
+            </RevealWrapper> */}
           </div>
         </div>
       </div>
