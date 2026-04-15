@@ -11,6 +11,7 @@ import Aboutsection2 from '@/components/aboutsection-2/page'
 import WhyChooseUs from '@/components/diff-riseit/page'
 import Aboutservice from '@/components/about-services/page'
 import Aboutwework from '@/components/about-wework/page'
+import ProcessV4 from '@/components/homepage-07/ProcessV4'
 
 export const metadata = {
   title: 'About',
@@ -32,10 +33,11 @@ We focus on improving visibility, generating demand, and turning digital attenti
       />
       <Video />
       <Aboutsection2 />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
       <Aboutservice />
       <Marquee withBorder={true} />
-      <Aboutwework />
+      <ProcessV4 /> 
+      {/* <Aboutwework /> */}
       {/* <AwardsV2 /> */}
       <CTA>
         Let's Build 

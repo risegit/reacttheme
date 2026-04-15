@@ -10,17 +10,17 @@ import { slug } from 'github-slugger'
 import DelayScroll from '../delay-scroll'
 
 const servicesData = [
-  {
-    id: 1,
-    title: 'Demand Generation',
-    subtitle: 'Generating consistent leads requires visibility',
-    slug: 'demand-generation',
-    items: [
-      'Across multiple platforms combined with targeted audience acquisition strategies.',
-      'Demand generation connects paid advertising, social media marketing, and lead generation ',
-      'Systems to attract qualified prospects and convert them into enquiries.',
-    ],
-  },
+  // {
+  //   id: 1,
+  //   title: 'Demand Generation',
+  //   subtitle: 'Generating consistent leads requires visibility',
+  //   slug: 'demand-generation',
+  //   items: [
+  //     'Across multiple platforms combined with targeted audience acquisition strategies.',
+  //     'Demand generation connects paid advertising, social media marketing, and lead generation ',
+  //     'Systems to attract qualified prospects and convert them into enquiries.',
+  //   ],
+  // },
   {
     id: 2,
     title: 'Performance Marketing',
@@ -91,15 +91,20 @@ const Servicesaccor = () => {
         <Image src={gradientBg} alt="gradient-bg" />
       </div>
       <div className="container">
-        <div className="mb-8 text-center md:mb-20">
+        <div className="mb-8 text-center md:mb-10">
           <RevealWrapper className="rv-badge reveal-me mb-5 md:mb-8">
-            <span className="rv-badge-text">Services</span>
+            <span className="rv-badge-text">Demand Generation</span>
           </RevealWrapper>
           <TextAppearAnimation>
             <h2 className="text-appear mx-auto max-w-[770px]">Our website isn’t<span className="font-instrument italic"> &nbsp; generating</span> enough leads.</h2>
           </TextAppearAnimation>
         </div>
-        <RevealWrapper className="mx-auto w-full max-w-[1170px] [&>*:not(:last-child)]:mb-6">
+        <RevealWrapper className="mx-auto w-full max-w-[1150px] [&>*:not(:last-child)]:mb-6">
+             <p className="mx-auto mt-3 max-w-3xl text-center">
+       Generating consistent leads requires visibility across multiple platforms combined with targeted audience acquisition strategies.
+       Demand generation connects paid advertising, social media marketing, and lead generation systems to attract qualified prospects and convert them into enquiries.
+
+        </p>
           {servicesData.map((service, index) => (
             <div
               key={service.id}

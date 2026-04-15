@@ -11,15 +11,15 @@ const ServicesV15 = () => {
 
   // Manually added service data
   const servicesData = [
-    {
-      slug: 'seo',
-      title: 'Search Visibility',
-      description:
-        'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.',
-      feature: [
+    // {er
+    //   slug: 'seo',
+    //   title: 'Search Visibility',
+    //   description:
+    //     'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.',
+    //   feature: [
         
-      ],
-    },
+    //   ],
+    // },
     {
       slug: 'seo',
       title: 'SEO Services',
@@ -71,7 +71,7 @@ const ServicesV15 = () => {
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-3 md:mb-20 md:flex-row md:items-center lg:justify-start">
           <div className="md:w-[60%]">
             <RevealWrapper className="rv-badge mb-3 md:mb-4">
-              <span className="rv-badge-text">Services</span>
+              <span className="rv-badge-text">Search Visibility</span>
             </RevealWrapper>
             <TextAppearAnimation02>
               <h2>
@@ -82,21 +82,10 @@ const ServicesV15 = () => {
             </TextAppearAnimation02>
           </div>
           <div className="max-md:w-full md:w-[40%]">
-            <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-right">
-              We offer digital solutions to boost your brand and online presence.
+            <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-left">
+             When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.
             </p>
-            <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
-              <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-               <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
-              <div className="rv-button-top">
-                <span className='text-white'>Contact</span>
-              </div>
-              <div className="rv-button-bottom">
-                <span className="text-nowrap">Contact</span>
-              </div>
-            </Link>
-              </li>
-            </RevealWrapper>
+        
           </div>
         </div>
       </div>

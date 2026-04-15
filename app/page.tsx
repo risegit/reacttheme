@@ -41,11 +41,11 @@ const home = () => {
         <Marquee withBorder={true} />
         <Homeabout />
         <ServicesV10 />
-        <HomeService/>
+        {/* <HomeService/> */}
 
        {/* CASE STUDIES section BElow */}
       <PortfolioV5 />
-      <WhyChooseUsV8 />
+      {/* <WhyChooseUsV8 /> */}
       {/* Marquee Section */}
       {/* _____UPAR KE SAB MERE HAI */}
       {/* <ClientsV3 /> */}

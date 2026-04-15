@@ -9,12 +9,12 @@ const Section3 = () => {
    DelayScroll();
   // Manually added service data
   const servicesData = [
-    {
-      slug: 'conversion-optimization',
-      title: 'Conversion Optimisation',
-      description: 'Traffic alone does not drive growth.A well-structured digital marketing system focuses on turning visitors into enquiries and customers.Conversion optimisation improves performance by analysing user behaviour, improving user journeys, and optimising marketing funnels.',
-      feature: [],
-    },
+    // {
+    //   slug: 'conversion-optimization',
+    //   title: 'Conversion Optimisation',
+    //   description: 'Traffic alone does not drive growth.A well-structured digital marketing system focuses on turning visitors into enquiries and customers.Conversion optimisation improves performance by analysing user behaviour, improving user journeys, and optimising marketing funnels.',
+    //   feature: [],
+    // },
     {
       slug: 'conversion-rate-optimization',
       title: 'Conversion Rate Optimisation (CRO)',
@@ -51,7 +51,7 @@ const Section3 = () => {
         <div className="mb-16 flex flex-col items-start justify-center gap-x-10 gap-y-3 md:mb-20 md:flex-row md:items-center lg:justify-start">
           <div className="md:w-[60%]">
             <RevealWrapper className="rv-badge mb-3 md:mb-4">
-              <span className="rv-badge-text">Services</span>
+              <span className="rv-badge-text">Conversion Rate Optimisation</span>
             </RevealWrapper>
             <TextAppearAnimation02>
               <h2>
@@ -62,10 +62,12 @@ const Section3 = () => {
             </TextAppearAnimation02>
           </div>
           <div className="max-md:w-full md:w-[40%]">
-            <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-right">
-              We offer digital solutions to boost your brand and online presence.
+            <p className="text-appear text-appear-2 max-w-lg max-md:text-justify md:place-self-end md:text-left">
+             Traffic alone does not drive growth.
+A well-structured digital marketing system focuses on turning visitors into enquiries and customers. Conversion optimisation improves marketing performance by analysing user behaviour and improving marketing funnels.
+
             </p>
-            <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
+            {/* <RevealWrapper as="ul" className="reveal-me mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
                 <Link href="/contact" className="rv-button rv-button-white block md:inline-block">
                   <div className="rv-button-top">
@@ -76,7 +78,7 @@ const Section3 = () => {
                   </div>
                 </Link>
               </li>
-            </RevealWrapper>
+            </RevealWrapper> */}
           </div>
         </div>
       </div>
