@@ -146,17 +146,18 @@ By combining strategic planning with automation and analytics, we help businesse
 <RevealWrapper>
             <CTA>
               Strengthen customer engagement through email.
-                <CtaImageSlider
+               
+           
+                   <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
+</h5> <CtaImageSlider
                     slides={[
                         { id: '1', img: '/images/agent/06.png' },
                         { id: '2', img: '/images/agent/07.png' },
                         { id: '3', img: '/images/agent/08.png' },
                     ]}
                 />
-           
-                   <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5>
             </CTA>
+            
             </RevealWrapper>
         </LayoutOne>
     )

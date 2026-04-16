@@ -130,18 +130,19 @@ Our monitoring and audit services help ensure that SEO strategies remain effecti
       {/* Pass data to client component for interactive features */}
       <SeoPageClient project={project} />
       
-      <CTA>
-        Let's chat!
-        <CtaImageSlider
-          slides={[
-            { id: '1', img: '/images/agent/06.png' },
-            { id: '2', img: '/images/agent/07.png' },
-            { id: '3', img: '/images/agent/08.png' },
-          ]}
-        />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
-      </CTA>
+         <CTA>
+               Strengthen your brand authority online.
+                <CtaImageSlider
+                    slides={[
+                        { id: '1', img: '/images/agent/06.png' },
+                        { id: '2', img: '/images/agent/07.png' },
+                        { id: '3', img: '/images/agent/08.png' },
+                    ]}
+                />
+           
+                   <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
+</h5>
+            </CTA>
     </LayoutOne>
   )
 }

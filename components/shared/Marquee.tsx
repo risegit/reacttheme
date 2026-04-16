@@ -1,6 +1,5 @@
 'use client'
 import { data } from '@/data/logo/logo'
-import useScrollingMarquee from '@/hooks/useScrollingMarquee'
 import gradientBg from '@/public/images/gradient-bg.png'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,28 +7,13 @@ import React from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation from '../animation/TextAppearAnimation'
 
-interface LoopConfig {
-  repeat?: number
-  paused?: boolean
-  speed?: number
-  snap?: number | false | ((value: number) => number)
-  paddingRight?: string | number
-}
-
 interface WithBorderProps {
   withBorder: boolean
 }
 
 const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
-  const { marqueeRef, pauseMarquee, resumeMarquee } = useScrollingMarquee()
-
-  const handleMouseEnter = () => {
-    pauseMarquee()
-  }
-
-  const handleMouseLeave = () => {
-    resumeMarquee()
-  }
+  // Duplicate data for seamless scrolling
+  const duplicatedData = [...data, ...data]
 
   return (
     <section className="relative mx-auto w-full pt-14 max-w-[1920px] xl:pb-[100px] xl:pt-[10px] max-md:pt-0.5">
@@ -40,20 +24,68 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
           </TextAppearAnimation>
         </div>
       </div>
+      
+      <style jsx>{`
+        @keyframes scrollLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
+        @keyframes scrollRight {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+        
+        .animate-scroll-left {
+          animation: scrollLeft 20s linear infinite;
+        }
+        
+        .animate-scroll-right {
+          animation: scrollRight 20s linear infinite;
+        }
+        
+        .animate-scroll-left:hover,
+        .animate-scroll-right:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
       {withBorder ? (
         <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
           className="relative -z-0 overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
           <div className="absolute left-1/2 top-1/2 -z-30 -translate-x-1/2 -translate-y-1/2 scale-x-[2.5] scale-y-50 lg:scale-y-[0.3]">
             <Image src={gradientBg} alt="gradient-bg" />
           </div>
-          <div className="relative overflow-hidden">
-            <div ref={marqueeRef} className="z-50 flex w-fit flex-nowrap gap-2.5 whitespace-nowrap">
-              {data.map((item) => (
+          
+          {/* Row 1 - Right to Left */}
+          <div className="relative overflow-hidden mb-4">
+            <div className="flex w-fit flex-nowrap gap-2.5 whitespace-nowrap animate-scroll-left">
+              {duplicatedData.map((item, idx) => (
                 <div
-                  key={item.id}
-                  className="z-50 flex h-24 w-48 flex-shrink-0 items-center justify-center border border-secondary/10 bg-backgroundBody dark:border-backgroundBody/10 dark:bg-dark">
+                  key={`row1-${item.id}-${idx}`}
+                  className="flex h-24 w-48 flex-shrink-0 items-center justify-center border border-secondary/10 bg-backgroundBody dark:border-backgroundBody/10 dark:bg-dark">
+                  <img src={item.logo} alt={item.alt} className="inline-block dark:hidden" />
+                  <img src={item.darkLogo} alt={item.alt} className="hidden dark:inline-block" />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2 - Left to Right */}
+          <div className="relative overflow-hidden">
+            <div className="flex w-fit flex-nowrap gap-2.5 whitespace-nowrap animate-scroll-right">
+              {duplicatedData.map((item, idx) => (
+                <div
+                  key={`row2-${item.id}-${idx}`}
+                  className="flex h-24 w-48 flex-shrink-0 items-center justify-center border border-secondary/10 bg-backgroundBody dark:border-backgroundBody/10 dark:bg-dark">
                   <img src={item.logo} alt={item.alt} className="inline-block dark:hidden" />
                   <img src={item.darkLogo} alt={item.alt} className="hidden dark:inline-block" />
                 </div>
@@ -62,22 +94,39 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
           </div>
         </div>
       ) : (
-        <div className="overflow-hidden pb  -14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+        <div className="overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
           <RevealWrapper as="p" className="container mb-10 text-wrap text-center lg:mb-20">
             Trusted by over 100+ fast-growing companies all around the world
           </RevealWrapper>
-          <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="relative">
-            <div ref={marqueeRef} className="z-50 flex w-fit flex-nowrap gap-2.5 whitespace-nowrap">
-              {data.map((item) => (
+          
+          {/* Row 1 - Right to Left */}
+          <div className="relative mb-4 overflow-hidden">
+            <div className="flex w-fit flex-nowrap gap-2.5 whitespace-nowrap animate-scroll-left">
+              {duplicatedData.map((item, idx) => (
                 <div
-                  key={item.id}
-                  className="z-50 flex h-24 w-48 flex-shrink-0 items-center justify-center border border-secondary/10 bg-backgroundBody dark:border-backgroundBody/10 dark:bg-dark">
+                  key={`row1-${item.id}-${idx}`}
+                  className="flex h-24 w-48 flex-shrink-0 items-center justify-center border border-secondary/10 bg-backgroundBody dark:border-backgroundBody/10 dark:bg-dark">
                   <img src={item.logo} alt={item.alt} className="inline-block dark:hidden" />
                   <img src={item.darkLogo} alt={item.alt} className="hidden dark:inline-block" />
                 </div>
               ))}
             </div>
           </div>
+
+          {/* Row 2 - Left to Right */}
+          <div className="relative overflow-hidden">
+            <div className="flex w-fit flex-nowrap gap-2.5 whitespace-nowrap animate-scroll-right">
+              {duplicatedData.map((item, idx) => (
+                <div
+                  key={`row2-${item.id}-${idx}`}
+                  className="flex h-24 w-48 flex-shrink-0 items-center justify-center border border-secondary/10 bg-backgroundBody dark:border-backgroundBody/10 dark:bg-dark">
+                  <img src={item.logo} alt={item.alt} className="inline-block dark:hidden" />
+                  <img src={item.darkLogo} alt={item.alt} className="hidden dark:inline-block" />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <RevealWrapper as="ul" className="reveal-me container mt-7 grid justify-self-center max-md:w-full md:mt-14">
             <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
               <Link href="#" className="rv-button rv-button-white block md:inline-block">

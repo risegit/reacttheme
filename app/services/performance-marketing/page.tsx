@@ -142,12 +142,12 @@ By analysing user behaviour, refining audience targeting, and optimising campaig
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <PerformanceMarketing project={project} />
-      
+
       <CTA>
-        Let's chat!
+        Build a lead generation system that drives real opportunities.
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
@@ -155,8 +155,9 @@ By analysing user behaviour, refining audience targeting, and optimising campaig
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+
+        <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
+        </h5>
       </CTA>
     </LayoutOne>
   )

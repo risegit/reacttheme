@@ -9,6 +9,9 @@
     font-family: "satoshi", "satoshi Fallback";
     font-size: 36px;
 }
+footer .container{
+    max-width:80% !important
+}
 @media (max-width: 640px) {
     .xs\:flex-row {
         flex-direction: row;
