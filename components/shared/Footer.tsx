@@ -6,6 +6,14 @@ import Link from 'next/link'
 import FooterProvider from './FooterProvider'
 
 const Footer = () => {
+  // Split address into array for mapping
+  const addressLines = [
+    "Vastu Prestige, 203-B & C, 2nd Floor,",
+    "New Link Road, Above Tanishq Showroom,",
+    "Andheri (W), Mumbai,",
+    "Maharashtra 400053"
+  ]
+
   return (
     <FooterProvider>
       <div className="container">
@@ -14,10 +22,6 @@ const Footer = () => {
             <h5 className="mb-4 font-satoshi text-sm font-bold uppercase tracking-[3px] text-white sm:mb-8">
               Reach Us
             </h5>
-            <p className="mb-5 text-sm text-white">
-              Book a quick 15 min meeting where we discuss if our offer <br />
-              would work for your case
-            </p>
             <div className="group flex max-w-[360px] items-center justify-between gap-4 bg-primary bg-opacity-30 p-4 backdrop-blur-2xl">
               <Image className="h-[55px] w-auto" src={logo} alt="logo" />
               <div>
@@ -59,11 +63,25 @@ const Footer = () => {
               </ul>
             </div>
           ))}
+
+          {/* Address Column */}
+          <div>
+            <h5 className="mb-4 font-satoshi text-sm font-bold uppercase tracking-[3px] text-white sm:mb-8">
+              Our Address
+            </h5>
+            <ul>
+              {addressLines.map((line, idx) => (
+                <li key={idx} className="mb-4">
+                  <span className="text-white text-sm leading-relaxed">{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
       <div className="absolute bottom-0 w-full">
-        <h5 className=" mb-10   footer-text xs:text-5xl absolute bottom-0 left-1/2 w-full -translate-x-1/2 translate-y-[30%] text-nowrap text-center font-satoshi text-4xl font-medium tracking-widest sm:text-6xl md:text-[88px] lg:text-[120px] xl:text-[150px] 2xl:text-[170px]">
+        <h5 className="mb-10 footer-text xs:text-5xl absolute bottom-0 left-1/2 w-full -translate-x-1/2 translate-y-[30%] text-nowrap text-center font-satoshi text-4xl font-medium tracking-widest sm:text-6xl md:text-[88px] lg:text-[120px] xl:text-[150px] 2xl:text-[170px]">
           RISE IT 
         </h5>
       </div>

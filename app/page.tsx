@@ -28,7 +28,7 @@ import DiffRise from '@/components/diff-riseit/page'
 import HomeService from '@/components/home-services/page'
 
 export const metadata = {
-  title: 'Photography Studio - Rivorr',
+  title: 'Rise IT Digital Marketing Agency in Andheri West , Mumbai',
 }
 
 const home = () => {
@@ -68,7 +68,7 @@ const home = () => {
           ]}
         />
         with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10"></i>
       </CTA>
     </LayoutOne>
   )

@@ -76,7 +76,7 @@ const ServicesV15 = () => {
             <TextAppearAnimation02>
               <h2>
                 Our Brand is not
-                <span className="font-instrument italic"> &nbsp; Visible</span> <br />
+                <span className="font-instrument italic"> &nbsp; visible</span> <br />
                 online
               </h2>
             </TextAppearAnimation02>
