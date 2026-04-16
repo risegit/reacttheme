@@ -21,17 +21,6 @@
       { "href": "/career", "label": "career" },
       { "href": "/contact", "label": "Contact" }
     ]
-  },
-  {
-    "title": "Important Link",
-    "links": [
-      { "href": "/career-02", "label": "Career 02" },
-   
-      { "href": "/team", "label": "Team" },
-      { "href": "/team/1", "label": "Team Details" },
-      { "href": "/changelog", "label": "Changelog" },
-      { "href": "/password", "label": "Password Protectedd" },
-      { "href": "/404", "label": "404" }
-    ]
   }
+
 ]
