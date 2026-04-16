@@ -30,7 +30,7 @@
       { "href": "/team", "label": "Team" },
       { "href": "/team/1", "label": "Team Details" },
       { "href": "/changelog", "label": "Changelog" },
-      { "href": "/password", "label": "Password Protected" },
+      { "href": "/password", "label": "Password Protectedd" },
       { "href": "/404", "label": "404" }
     ]
   }
