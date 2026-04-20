@@ -124,7 +124,7 @@ const Carrer1 = () => {
 
           {/* Closing Message */}
           <RevealWrapper>
-            <p className="mt-16 md:max-w-[800px]">
+            <p className="mt-5 md:max-w-[800px]">
               We are always interested in meeting people who enjoy thoughtful work and are curious about how marketing and businesses evolve.
             </p>
             <p className="mt-4 font-semibold">

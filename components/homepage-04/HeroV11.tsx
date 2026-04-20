@@ -136,7 +136,7 @@ const HeroV11 = () => {
   return (
     <RevealWrapper
       as="section"
-      className="mb-5 relative overflow-hidden pb-60 pt-[130px] md:pb-24 md:pt-[160px] lg:pb-32 xl:pb-[180px] xl:pt-[200px]">
+      className="mb-5 relative overflow-hidden pb-10 pt-[130px] md:pb-24 md:pt-[160px] lg:pb-32 xl:pb-[180px] xl:pt-[200px]">
       <HeroGradientAnimation />
       <div className="container">
         <div className="flex items-center justify-center">
@@ -144,12 +144,12 @@ const HeroV11 = () => {
             <span className="rv-badge-text">Studio</span>
           </div>
         </div>
-        <h2 className="text-center mt-20">
+        <h2 className="text-center md:mt-20 sm:mt-5">
           Building <i className="font-instrument"> visibility</i>, generating <i className="font-instrument"> demand</i>, and scaling<i className="font-instrument">  growth</i> through<br />
          digital marketing systems
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center">
-          Rise IT is a growth marketing partner helping businesses strengthen their digital presence through<strong> SEO, performance marketing, social media marketing, digital PR, and integrated digital marketing strategy.
+           We are growth marketing partner helping businesses strengthen their digital presence through<strong> SEO, performance marketing, social media marketing, digital PR, and integrated digital marketing strategy.
           </strong>
         </p>
 
