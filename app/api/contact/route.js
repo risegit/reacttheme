@@ -13,11 +13,11 @@ export async function POST(request) {
     } = await request.json();
 
     // Gmail SMTP transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail", // simplifies config
+   const transporter = nodemailer.createTransport({
+      service: "gmail",
       auth: {
-        user: process.env.GMAIL_USER, // your gmail
-        pass: process.env.GMAIL_APP_PASSWORD, // 16-char app password
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASS, // Gmail App Password
       },
     });
 
