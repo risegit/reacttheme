@@ -141,7 +141,7 @@ const HeroV11 = () => {
       <div className="container">
         <div className="flex items-center justify-center">
           <div className="rv-badge mb-2">
-            <span className="rv-badge-text">Studio</span>
+            <span className="rv-badge-text">Digital Marketing Agency</span>
           </div>
         </div>
         <h2 className="text-center md:mt-20 sm:mt-5">
@@ -164,8 +164,6 @@ const HeroV11 = () => {
               </div>
             </Link>
             <p className="mx-auto mt-3 max-w-3xl text-center mt-5">
-
-              
               14+ years helping businesses grow through digital marketing.
             </p>
           </li>

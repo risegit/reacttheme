@@ -24,7 +24,7 @@ const PortfolioV5 = () => {
             <TextAppearAnimation>
               <h2 className="text-appear mt-3 overflow-hidden">
                 Real results
-                <span className="font-instrument italic"> real impact</span>
+                <span className="font-instrument italic">real impact</span>
               </h2>
             </TextAppearAnimation>
           </div>
