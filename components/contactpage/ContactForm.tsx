@@ -7,6 +7,7 @@ const ContactForm = () => {
     name: '',
     company: '',
     email: '',
+    phone: '',
     services: [] as string[],
     message: '',
   })
@@ -44,11 +45,43 @@ const ContactForm = () => {
     })
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log('Form Data Submitted:', formData)
-    alert(`${formData.name} Your Data Has Been Submitted`)
+const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("Message sent successfully ✅");
+
+      // Reset form
+      setFormData({
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        services: [],
+        message: "",
+      });
+
+    } else {
+      alert("Failed to send message ❌");
+      console.error(data);
+    }
+
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong ❌");
   }
+};
 
   return (
     <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px]">
@@ -57,7 +90,7 @@ const ContactForm = () => {
           as="form"
           onSubmit={handleSubmit}
           className="reveal-me mx-auto grid max-w-[800px] grid-cols-1 gap-[30px] md:grid-cols-2">
-          
+
           {/* Full Name - Full Width */}
           <div className="md:col-span-full">
             <label
@@ -115,21 +148,21 @@ const ContactForm = () => {
           </div>
 
           {/* Service Type - Custom Dropdown with Checkboxes - Full Width */}
-          <div className="md:col-span-full relative">
+          <div>
             <label
               htmlFor="service"
               className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
               Service Type*
             </label>
-            
+
             {/* Custom Dropdown Trigger */}
             <div
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className="mt-3 w-full cursor-pointer border bg-backgroundBody py-4 px-5 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark flex justify-between items-center"
             >
               <span className={formData.services.length === 0 ? "text-gray-400" : ""}>
-                {formData.services.length === 0 
-                  ? "Select services" 
+                {formData.services.length === 0
+                  ? "Select services"
                   : `${formData.services.length} service${formData.services.length > 1 ? 's' : ''} selected`}
               </span>
               <svg
@@ -197,6 +230,26 @@ const ContactForm = () => {
                 ))}
               </div>
             )}
+          </div>
+          {/* Number */}
+          <div>
+            <label
+              htmlFor="email"
+              className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
+              Phone No
+            </label>
+            <input
+              type="tel"
+              pattern="[0-9]{10}"
+              maxLength={10}
+              id="number"
+              name="phone"
+              value={formData.phone}
+              onChange={handleInputChange}
+              placeholder="Enter mobile number"
+              className="mt-3 w-full border bg-backgroundBody py-4 pl-5 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark"
+              required
+            />
           </div>
 
           {/* Project Brief - Full Width */}
