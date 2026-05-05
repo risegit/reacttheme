@@ -1,5 +1,7 @@
-import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
@@ -12,28 +14,12 @@ export async function POST(request) {
       message,
     } = await request.json();
 
-    // Gmail SMTP transporter
-    const transporter = nodemailer.createTransport({
-      service: "gmail", // simplifies config
-      auth: {
-        user: process.env.GMAIL_USER, // your gmail
-        pass: process.env.GMAIL_APP_PASSWORD, // 16-char app password
-      },
-    });
-
-    const mailOptions = {
-      from: `"RiseIT" <${process.env.GMAIL_USER}>`,
-      to: ["developer@riseit.com"], // where you receive emails
-      replyTo: email, // IMPORTANT: so you can reply to user directly
+    await resend.emails.send({
+      from: "RiseIT <onboarding@resend.dev>",
+      // from: "RiseIT <developer@riseit.com>", 
+      to: ["developer@riseit.com"],
+      reply_to: email,
       subject: `Contact form Enquiry from <${email}>`,
-      text: `
-        Name: ${name}
-        Company: ${company}
-        Email: ${email}
-        Phone: ${phone}
-        Services: ${services}
-        Message: ${message}
-      `,
       html: `
         <h2>New Contact Form Enquiry</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -43,16 +29,17 @@ export async function POST(request) {
         <p><strong>Services:</strong> ${services}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
-    };
+      text: `
+        Name: ${name}
+        Company: ${company}
+        Email: ${email}
+        Phone: ${phone}
+        Services: ${services}
+        Message: ${message}
+      `,
+    });
 
-    try {
-      await transporter.sendMail(mailOptions);
-      return NextResponse.json({ message: "Message sent successfully." });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      console.log("Error sending email:", error);
-      return NextResponse.json({ message: "Message not sent." });
-    }
+    return NextResponse.json({ message: "Message sent successfully." });
 
   } catch (error) {
     console.error("Error sending email:", error);
