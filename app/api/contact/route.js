@@ -18,13 +18,21 @@ export async function POST(request) {
       message,
     } = await request.json();
 
-    await resend.emails.send({
-      from: "RiseIT <onboarding@resend.dev>",
-      to: ["developer@riseit.com"],
-      reply_to: email,
-      subject: `Contact form Enquiry from <${email}>`,
-      html: `<h2>New Contact Form Enquiry</h2>`,
-    });
+await resend.emails.send({
+  from: "RiseIT <onboarding@resend.dev>",
+  to: ["developer@riseit.com"],
+  reply_to: email,
+  subject: `Contact form Enquiry from <${email}>`,
+  html: `
+    <h2>New Contact Form Enquiry</h2>
+    <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Company:</strong> ${company}</p>
+    <p><strong>Email:</strong> ${email}</p>
+    <p><strong>Phone:</strong> ${phone}</p>
+    <p><strong>Services:</strong> ${services}</p>
+    <p><strong>Message:</strong> ${message}</p>
+  `,
+});
 
     return NextResponse.json({ message: "Message sent successfully." });
 
