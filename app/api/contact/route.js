@@ -19,7 +19,7 @@ export async function POST(request) {
     } = await request.json();
 
 await resend.emails.send({
-  from: "RiseIT <onboarding@resend.dev>",
+  from: "RiseIT <developer@send.riseit.com>",
   to: ["developer@riseit.com"],
   reply_to: email,
   subject: `Contact form Enquiry from <${email}>`,
