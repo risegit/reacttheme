@@ -5,6 +5,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY); // ✅ moved here
+
     const {
       name,
       company,
@@ -16,7 +18,6 @@ export async function POST(request) {
 
     await resend.emails.send({
       from: "RiseIT <onboarding@resend.dev>",
-      // from: "RiseIT <developer@riseit.com>", 
       to: ["developer@riseit.com"],
       reply_to: email,
       subject: `Contact form Enquiry from <${email}>`,
