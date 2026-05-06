@@ -5,7 +5,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import dynamic from 'next/dynamic'
+const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
+  ssr: false,
+})
 
 interface WithBorderProps {
   withBorder: boolean

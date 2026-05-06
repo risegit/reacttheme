@@ -1,8 +1,11 @@
+
+
+
 import RevealWrapper from '@/components/animation/RevealWrapper'
-import TextAppearAnimation from '@/components/animation/TextAppearAnimation'
 import CaseStudy from '@/components/homepage-18/CaseStudy'
 import getMarkDownData from '@/utils/GetMarkDownData'
 import Link from 'next/link'
+import AnimatedHeading from '@/components/homepage-18/AnimatedHeading'
 
 interface WorkType {
   slug: string
@@ -21,19 +24,14 @@ const PortfolioV5 = () => {
             <RevealWrapper className="rv-badge reveal-me">
               <span className="rv-badge-text">Case Studies</span>
             </RevealWrapper>
-            <TextAppearAnimation>
-              <h2 className="text-appear mt-3 overflow-hidden">
-                Real results
-                <span className="font-instrument italic">real impact</span>
-              </h2>
-            </TextAppearAnimation>
+            <AnimatedHeading />
           </div>
           <div className="max-md:w-full md:flex-1">
-            <TextAppearAnimation>
+            {/* <TextAppearAnimation> */}
               <p className="text-appear overflow-hidden md:text-right">
                 Words that win customers, Build trust &amp; increase revenue
               </p>
-            </TextAppearAnimation>
+            {/* </TextAppearAnimation> */}
             <RevealWrapper as="ul" className="mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
                 <Link href="/project" className="rv-button rv-button-primary block md:inline-block">

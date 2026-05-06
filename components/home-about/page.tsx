@@ -3,7 +3,10 @@ import useReveal from '@/hooks/useReveal'
 import CounterAnimation from '@/utils/CounterAnimation'
 import RevealWrapper from '../animation/RevealWrapper'
 import CircleTextAnimation from '../shared/CircleTextAnimation'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import dynamic from 'next/dynamic'
+const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
+  ssr: false,
+})
 
 const achievementStats = [
   { value: 14, label: 'Years of Experience', suffix: '+' },
