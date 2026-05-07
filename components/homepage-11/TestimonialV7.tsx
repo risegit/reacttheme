@@ -1,7 +1,12 @@
+'use client'
+
 import { cn } from '@/utils/cn'
 import Marquee from 'react-fast-marquee'
 import RevealWrapper from '../animation/RevealWrapper'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import dynamic from 'next/dynamic'
+const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
+  ssr: false,
+})
 
 const data = [
   {
