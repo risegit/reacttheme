@@ -2,6 +2,7 @@ import RevealWrapper from '@/components/animation/RevealWrapper';
 import TextAppearAnimation from '@/components/animation/TextAppearAnimation';
 import CaseStudy from '@/components/homepage-18/CaseStudy';
 import Link from 'next/link';
+import AnimatedHeading from './AnimatedHeading';
 
 // Hardcoded case study data based on the provided markdown content
 const caseStudiesData = [
