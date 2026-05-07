@@ -7,6 +7,8 @@ interface PropsType {
   italicTitle?: string
   description?: string
   spacing?: string
+  heading: string
+  headingDescription: string
   scale?: boolean
 }
 

@@ -19,10 +19,10 @@ const Footer = () => {
       <div className="container">
         <div className="relative z-10 flex flex-col flex-wrap justify-center gap-y-10 sm:flex-row sm:justify-between sm:gap-y-16">
           <div className="pr-8 max-lg:basis-full">
-            <h5 className="mb-4 font-satoshi text-sm font-bold uppercase tracking-[3px] text-white sm:mb-8">
+            {/* <h5 className="mb-4 font-satoshi text-sm font-bold uppercase tracking-[3px] text-white sm:mb-8">
               Reach Us
-            </h5>
-            <div className="group flex max-w-[360px] items-center justify-between gap-4 bg-primary bg-opacity-30 p-4 backdrop-blur-2xl">
+            </h5> */}
+            {/* <div className="group flex max-w-[360px] items-center justify-between gap-4 bg-primary bg-opacity-30 p-4 backdrop-blur-2xl">
               <Image className="h-[55px] w-auto" src={logo} alt="logo" />
               <div>
                 <h6 className="font-satoshi text-sm font-bold text-white">Schedule a Free Meeting</h6>
@@ -42,7 +42,7 @@ const Footer = () => {
                   />
                 </figure>
               </Link>
-            </div>
+            </div> */}
           </div>
 
           {footerData.map((section, index) => (

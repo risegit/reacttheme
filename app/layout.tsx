@@ -22,11 +22,11 @@ export default function RootLayout({
       <body className={`${satoshi.variable} antialiased`}>
         <Suspense fallback={<div>Loading...</div>}>
           <SmoothScrollProvider>
-            <ThemeModeProvider>
+            {/* <ThemeModeProvider> */}
               <ThemeSwitcher />
               {/* <CursorPointer /> */}
               {children}
-            </ThemeModeProvider>
+            {/* </ThemeModeProvider> */}
           </SmoothScrollProvider>
         </Suspense>
       </body>

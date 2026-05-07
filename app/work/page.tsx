@@ -39,7 +39,7 @@ const homepage23 = () => {
             { id: '3', img: '/images/agent/03.jpg' },
           ]}
         />can grow.
-        <span className="cta-span mb-3 mt-10">If you're looking to improve visibility, generate leads, or strengthen your digital presence, we would be happy to start a conversation.</span>
+        <h5 className="cta-span mb-3 mt-10">If you're looking to improve visibility, generate leads, or strengthen your digital presence, we would be happy to start a conversation.</h5>
       </CTA>
       
       </RevealWrapperV2>
