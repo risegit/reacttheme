@@ -3,10 +3,13 @@ import useReveal from '@/hooks/useReveal'
 import CounterAnimation from '@/utils/CounterAnimation'
 import RevealWrapper from '../animation/RevealWrapper'
 import CircleTextAnimation from '../shared/CircleTextAnimation'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import dynamic from 'next/dynamic'
+const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
+  ssr: false,
+})
 
 const achievementStats = [
-  { value: 14, label: ' Digital Marketing Experience', suffix: '+' },
+  { value: 14, label: 'Years of Experience', suffix: '+' },
   { value: 80, label: ' Growth & Marketing Engagements', suffix: '+' },
   { value: 280, label: ' Businesses Served', suffix: '+' },
   { value: 20, label: ' Healthcare, B2B, Ecommerce & More', suffix: '+' },
@@ -47,7 +50,7 @@ const AboutV8 = () => {
                 <CounterAnimation number={achievement.value} />
                 {achievement.suffix}
               </h2>
-              <p className="text-lg self-center">{achievement.label}</p>
+              <h6 className="text-lg self-center">{achievement.label}</h6>
             </RevealWrapper>
           ))}
         </div>

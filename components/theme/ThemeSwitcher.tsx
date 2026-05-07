@@ -13,7 +13,7 @@ const ThemeSwitcher = () => {
 
   return mount ? (
     <div className="toggle-button fixed bottom-10 right-10 z-[1000]">
-      <button
+      {/* <button
         onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
         type="button"
         className="fixed bottom-10 right-10 z-[9999] flex size-11 items-center justify-center rounded-[1px] bg-black/90 text-secondary backdrop-blur-xl focus:outline-none focus:ring-0 focus:ring-gray-200 dark:bg-white/90 dark:text-white">
@@ -34,7 +34,7 @@ const ThemeSwitcher = () => {
             fill="#000"
             transform="translate(1.25, 1.25)"></path>
         </svg>
-      </button>
+      </button> */}
     </div>
   ) : null
 }
