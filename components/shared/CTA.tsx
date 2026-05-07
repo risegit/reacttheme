@@ -16,13 +16,13 @@ const CTA: FC<CTAProps> = ({ children, showContactForm = false,  headingClass = 
     <section className="relative pb-[70px] pt-14 md:pt-16 lg:pb-[140px] lg:pt-[88px] xl:pt-[100px]">
       <div className="container">
         <RevealWrapper>
-          <h2
+          <h4
             className={cn(
               'text-center font-normal xl:text-[96px] xl:leading-[1.1] xl:tracking-[-2.88px]',
               headingClass,
             )}>
             {children}
-          </h2>
+          </h4>
         </RevealWrapper>
         <RevealWrapper as="ul" className="mt-14 flex list-none items-center justify-center">
         <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">

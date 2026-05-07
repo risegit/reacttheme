@@ -1,19 +1,46 @@
+import RevealWrapper from '@/components/animation/RevealWrapper';
+import TextAppearAnimation from '@/components/animation/TextAppearAnimation';
+import CaseStudy from '@/components/homepage-18/CaseStudy';
+import Link from 'next/link';
+import AnimatedHeading from './AnimatedHeading';
 
-
-
-import RevealWrapper from '@/components/animation/RevealWrapper'
-import CaseStudy from '@/components/homepage-18/CaseStudy'
-import getMarkDownData from '@/utils/GetMarkDownData'
-import Link from 'next/link'
-import AnimatedHeading from '@/components/homepage-18/AnimatedHeading'
-
-interface WorkType {
-  slug: string
-  content: string
-  [key: string]: any
-}
-
-const caseStudiesData: WorkType[] = getMarkDownData('data/copy-write-agency')
+// Hardcoded case study data based on the provided markdown content
+const caseStudiesData = [
+  {
+    id: '1',
+    slug: 'b2b-custom-branding-company',
+    title: 'B2B custom branding company ',
+    image: '/images/home-5/case-study-3.png',
+    thumbnail: '/images/home-5/case-study-3.png',
+    alt: 'e-commerce-brand-3x-sales-growth',
+    category: 'Movie Theiter',
+    challenges: [
+      'Challenge:The client needed to scale monthly ad spend while maintaining profitability in online advertising. ',
+      'Results: We generated 33% more clicks while spending slightly less per click.',
+    ],
+    year: 2025,
+    date: 'June 10',
+    description:
+      'Lorem Ipsum is a type of placeholder text commonly used in the design and publishing industries. It allows designers to fill a layout with text that resembles natural language without the distraction of meaningful content. This helps to focus on the visual aspects of the design, such as typography, spacing, and overall composition, making it easier to evaluate the aesthetic qualities of a project.',
+  },
+  {
+    id: '2',
+    slug: 'saas-company-40-percent-boost-in-conversions',
+    title: 'SaaS company: 40% boost in conversions',
+    image: '/images/home-5/case-study-4.png',
+    thumbnail: '/images/home-5/case-study-4.png',
+    alt: 'saas-company-boost-in-conversions',
+    category: 'Movie Theiter',
+    challenges: [
+      'Challenge: Ineffective ad copy, poor click-through rate.',
+      'Results: 40% increase in conversion rates, lower cost per acquisition.',
+    ],
+    year: 2025,
+    date: 'June 10',
+    description:
+      'Lorem Ipsum is a type of placeholder text commonly used in the design and publishing industries. It allows designers to fill a layout with text that resembles natural language without the distraction of meaningful content. This helps to focus on the visual aspects of the design, such as typography, spacing, and overall composition, making it easier to evaluate the aesthetic qualities of a project.',
+  },
+];
 
 const PortfolioV5 = () => {
   return (
@@ -34,12 +61,12 @@ const PortfolioV5 = () => {
             {/* </TextAppearAnimation> */}
             <RevealWrapper as="ul" className="mt-5 justify-self-end max-md:w-full md:mt-10">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
-                <Link href="/project" className="rv-button rv-button-primary block md:inline-block">
+                <Link href="/work" className="rv-button rv-button-primary block md:inline-block">
                   <div className="rv-button-top">
-                    <span className='text-white'>More Case Studies</span>
+                    <span className="text-white">More Case Studies</span>
                   </div>
                   <div className="rv-button-bottom">
-                    <span className='text-nowrap'>More Case Studies</span>
+                    <span className="text-nowrap">More Case Studies</span>
                   </div>
                 </Link>
               </li>
@@ -49,17 +76,17 @@ const PortfolioV5 = () => {
         <div className="mb-[60px] space-y-[30px]">
           {caseStudiesData.map((study) => (
             <CaseStudy
-              key={study.slug}
+              key={study.id}
               title={study.title}
               image={study.image}
               challenges={study.challenges}
-              detailsLink={`/copy-write-agency/${study.slug}`}
+              detailsLink={`/work/${study.slug}`}
             />
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PortfolioV5
+export default PortfolioV5;
