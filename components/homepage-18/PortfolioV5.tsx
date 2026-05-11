@@ -9,7 +9,7 @@ const caseStudiesData = [
   {
     id: '1',
     slug: 'b2b-custom-branding-company',
-    title: 'B2B custom branding company ',
+    title: 'Google Ads ',
     image: '/images/home-5/case-study-3.png',
     thumbnail: '/images/home-5/case-study-3.png',
     alt: 'e-commerce-brand-3x-sales-growth',
@@ -25,15 +25,15 @@ const caseStudiesData = [
   },
   {
     id: '2',
-    slug: 'saas-company-40-percent-boost-in-conversions',
-    title: 'SaaS company: 40% boost in conversions',
+    slug: 'b2b-customer',
+    title: 'Meta Ads',
     image: '/images/home-5/case-study-4.png',
     thumbnail: '/images/home-5/case-study-4.png',
     alt: 'saas-company-boost-in-conversions',
     category: 'Movie Theiter',
     challenges: [
-      'Challenge: Ineffective ad copy, poor click-through rate.',
-      'Results: 40% increase in conversion rates, lower cost per acquisition.',
+      'Challenge: The client’s social media presence lacked reach and engagement and wasn’t effectively driving users back to the website',
+      'Results: We saw strong growth across both platforms, with reach and visibility increasing significantly year over year',
     ],
     year: 2025,
     date: 'June 10',
@@ -49,7 +49,7 @@ const PortfolioV5 = () => {
         <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-6 md:mb-20 md:flex-row md:items-end lg:justify-start">
           <div className="md:flex-1">
             <RevealWrapper className="rv-badge reveal-me">
-              <span className="rv-badge-text">Case Studies</span>
+              {/* <span className="rv-badge-text">Case Studies</span> */}
             </RevealWrapper>
             <AnimatedHeading />
           </div>

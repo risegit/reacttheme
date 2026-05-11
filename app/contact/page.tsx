@@ -14,7 +14,7 @@ const ContactPage = () => {
       <PageHero
         title="Let's Work Together"
         badgeTitle="Contact"
-        description="Discover our innovative, cutting-edge no-code websites, crafted to effortlessly captivate and engage your visitors."
+        description="If you're exploring ways to improve your digital presence, generate more leads, or strengthen your marketing systems, we would be happy to talk."
         scale
         spacing="pt-[130px] md:pt-[180px] pb-20 sm:pb-32 md:pb-36 lg:pb-36 xl:pb-[100px] relative overflow-hidden"
       />

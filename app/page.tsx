@@ -29,8 +29,9 @@ const home = () => {
       {/* <HeroV18 /> */}
       <AnimatedHeroImage />
        <WhatWeHelpBusinessesDo />
-        <Marquee withBorder={true} />
+       
         <Homeabout />
+         <Marquee withBorder={true} />
         <ServicesV10 />
         {/* <HomeService/> */}
 

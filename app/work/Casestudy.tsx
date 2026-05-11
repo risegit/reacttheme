@@ -10,7 +10,7 @@ interface projectType {
   [key: string]: any
 }
 
-const caseStudies: projectType[] = getMarkDownData('data/portfolio-agency/case-studies').slice(0, 4)
+const caseStudies: projectType[] = getMarkDownData('data/case-studies').slice(0, 4)
 
 const Case = () => {
   return (
@@ -27,7 +27,7 @@ const Case = () => {
         <div className="grid grid-cols-1 gap-x-6 gap-y-9 md:grid-cols-2">
           {caseStudies?.map((project) => (
             <RevealWrapper key={project.slug} className="single-project-item underline-hover-effect">
-              <Link href={`/portfolio-agency/case-study/${project.slug}`} className="w-full">
+              <Link href={`/work/${project.slug}`} className="w-full">
                 <figure className="overflow-hidden">
                   <Image
                     src={project?.thumbnail}

@@ -25,14 +25,14 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
   const triggerRef = useRef<HTMLDivElement>(null)
 
   const {
-    offset = 60,
+    offset = 0,
     duration = 2,
     ease = 'none',
     start = 'top top',
     markers = false,
     scrub = 1,
     onAnimationCreated,
-    extraScroll = 370,
+    extraScroll = 200,
   } = options
 
   useGSAP(
@@ -44,8 +44,14 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
 
       const getScrollAmount = () => {
         const contentWidth = content.scrollWidth
-        return -(contentWidth - window.innerWidth + offset + extraScroll)
+        const viewportWidth = window.innerWidth
+        const scrollDistance = contentWidth - viewportWidth + offset
+        return -Math.max(0, scrollDistance)
       }
+
+      // Set content to flex-nowrap to prevent wrapping
+      content.style.display = 'flex'
+      content.style.flexWrap = 'nowrap'
 
       const animation = gsap.to(content, {
         x: getScrollAmount(),
@@ -53,18 +59,16 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
         ease,
       })
 
+      const viewportWidth = window.innerWidth
       const scrollTrigger = ScrollTrigger.create({
         trigger,
         start,
-        end: () => `+=${Math.abs(getScrollAmount()) + window.innerWidth * 0.1}`,
+        end: () => `+=${Math.abs(getScrollAmount()) + viewportWidth * 0.5}`,
         pin: true,
         animation,
         scrub,
         invalidateOnRefresh: true,
         markers,
-        onRefresh: () => {
-          animation.vars.x = getScrollAmount()
-        },
       })
 
       if (onAnimationCreated) {

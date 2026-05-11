@@ -18,8 +18,6 @@ const ProjectDetailsHero = ({
   description,
   italicTitle,
   scale,
-  heading,
-  headingDescription
 }: PropsType) => {
   return (
     <section className="relative overflow-hidden pt-28 max-md:pb-20 sm:pb-28 md:py-[155px] lg:py-[177px]">

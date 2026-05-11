@@ -1,13 +1,15 @@
 'use client'
 
-import useHorizontalScroll from '@/hooks/useHorizontalScroll'
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
-import dynamic from 'next/dynamic'
-const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
-  ssr: false,
-})
+import TextAppearAnimation from '../animation/TextAppearAnimation'
+import { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const data = [
   {
@@ -47,7 +49,7 @@ const data = [
     title: 'Digital Infrastructure',
     href: '#digital-infrastructure',
     description:
-      'We build scalable digital foundations through website design and development, marketing automation systems, CRM integrations, analytics setup, tracking infrastructure, and digital performance optimisation',
+      'We build scalable digital foundations through website design and development, marketing automation systems, CRM integrations, analytics setup, tracking infrastructure, and digital performance optimisation.',
     image: '/images/services-2/service-item-4.png',
   },
   {
@@ -61,191 +63,166 @@ const data = [
 ]
 
 const ServicesV10 = () => {
-  const { contentRef, triggerRef } = useHorizontalScroll()
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
+  const triggerRef = useRef<HTMLDivElement>(null)
+  const contentRef = useRef<HTMLDivElement>(null)
+  const [cardWidth, setCardWidth] = useState(370)
 
+  // Responsive card width
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
+    const updateWidth = () => {
+      const w = window.innerWidth
+      setCardWidth(w <= 1366 && w >= 1280 ? 250 : 370)
     }
-    
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    
-    return () => window.removeEventListener('resize', checkMobile)
+    updateWidth()
+    window.addEventListener('resize', updateWidth)
+    return () => window.removeEventListener('resize', updateWidth)
   }, [])
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % data.length)
-  }
+  // Self-contained GSAP horizontal scroll — no external hook needed
+  useEffect(() => {
+    const trigger = triggerRef.current
+    const content = contentRef.current
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + data.length) % data.length)
-  }
+    // Mobile: skip horizontal scroll entirely
+    if (!trigger || !content || window.innerWidth < 768) return
 
-  // Desktop Horizontal Scroll View
-  const DesktopView = () => (
-    <div ref={triggerRef} className="service-section pt-10">
-      <div
-        ref={contentRef}
-        className="video-section service-wrapper flex w-fit flex-col gap-6 overflow-x-hidden pl-[5%] pr-[30px] max-md:gap-y-10 sm:flex-row sm:flex-nowrap">
-        {data.map((item) => (
-          <div
-            key={item.id}
-            className="group"
-            style={{
-              width: typeof window !== 'undefined' && window.innerWidth <= 1366 && window.innerWidth >= 1280 ? "250px" : "370px"
-            }}
-          >
-            <figure className="hero-video-container overflow-hidden">
-              <Link
-                target="blank"
-                href={`/services${item.href}`}
-                className="hero-video block">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
-                />
-              </Link>
-            </figure>
-            <h3 className="mb-2.5 mt-[30px] text-2xl leading-[1.1] tracking-normal md:text-[32px]">{item.title}</h3>
-            <p className="max-w-[95%] text-base leading-[1.6] tracking-[0.32px]">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  )
+    let animation: gsap.core.Tween
+    let st: ScrollTrigger
+    let cancelled = false
 
-  // Mobile Carousel View
-  const MobileView = () => (
-    <div className="relative pt-10">
-      {/* Carousel Container */}
-      <div className="overflow-hidden px-4">
-        <div 
-          className="flex transition-transform duration-300 ease-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {data.map((item) => (
-            <div
-              key={item.id}
-              className="w-full flex-shrink-0 px-2"
-            >
-              <figure className="hero-video-container overflow-hidden rounded-lg">
-                <Link
-                  target="blank"
-                  href={`/services${item.href}`}
-                  className="hero-video block">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-auto w-full"
-                  />
-                </Link>
-              </figure>
-              <h3 className="mb-2.5 mt-[30px] text-2xl leading-[1.1] tracking-normal">{item.title}</h3>
-              <p className="text-base leading-[1.6] tracking-[0.32px]">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+    const getScrollAmount = () => -Math.max(0, content.scrollWidth - window.innerWidth)
 
-      {/* Navigation Arrows - Now centered on the card */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-2 top-[45%] -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 z-10"
-        aria-label="Previous slide"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-      
-      <button
-        onClick={nextSlide}
-        className="absolute right-2 top-[45%] -translate-y-1/2 bg-white/90 hover:bg-white rounded-full p-2 shadow-lg transition-all duration-200 z-10"
-        aria-label="Next slide"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+    const initGSAP = () => {
+      if (cancelled) return
 
-      {/* Dots Indicator */}
-      <div className="flex justify-center gap-2 mt-8">
-        {data.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`h-2 rounded-full transition-all duration-200 ${
-              currentSlide === index ? 'w-8 bg-primary' : 'w-2 bg-gray-300'
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  )
+      // Always kill previous instances before creating new ones
+      st?.kill()
+      animation?.kill()
+
+      animation = gsap.to(content, {
+        x: getScrollAmount,
+        ease: 'none',
+        duration: 1,
+      })
+
+      st = ScrollTrigger.create({
+        trigger,
+        start: 'top top',
+        // end is exactly the scroll distance to reveal all cards — no overshoot
+        end: () => `+=${Math.abs(getScrollAmount())}`,
+        pin: true,
+        animation,
+        scrub: 1,
+        anticipatePin: 1,       // smooths the jank at pin-start
+        invalidateOnRefresh: true,
+      })
+    }
+
+    // Wait for all images to load so scrollWidth measurement is accurate.
+    // Without this, GSAP measures before images have dimensions → wrong end point.
+    const images = Array.from(content.querySelectorAll<HTMLImageElement>('img'))
+    const pending = images.filter((img) => !img.complete)
+
+    const waitForImages = (): Promise<void> =>
+      new Promise((resolve) => {
+        if (pending.length === 0) return resolve()
+        let done = 0
+        const tick = () => { if (++done >= pending.length) resolve() }
+        pending.forEach((img) => {
+          img.addEventListener('load', tick, { once: true })
+          img.addEventListener('error', tick, { once: true }) // never block on broken images
+        })
+      })
+
+    // Double rAF ensures we run after the browser has fully painted,
+    // not just after React's commit — this fixes the intermittent "works on refresh" bug.
+    waitForImages().then(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(initGSAP)
+      })
+    })
+
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        st?.kill()
+        animation?.kill()
+        gsap.set(content, { x: 0 })
+      } else {
+        ScrollTrigger.refresh()
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      cancelled = true
+      st?.kill()
+      animation?.kill()
+      gsap.set(content, { clearProps: 'x' })
+      window.removeEventListener('resize', handleResize)
+    }
+  // Re-run when cardWidth changes (covers the SSR→client hydration jump)
+  }, [cardWidth])
 
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[60px]">
+    // `isolate` creates a new CSS stacking context so the pinned section
+    // never bleeds z-index over adjacent sections during GSAP pinning
+    <section className="relative isolate pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[60px]">
+
+      {/* Heading lives OUTSIDE triggerRef so it scrolls away normally
+          and never overlaps the horizontally-scrolling cards */}
       <div className="container">
         <div className="mb-8 text-center md:mb-14">
           <RevealWrapper className="rv-badge reveal-me">
             <span className="rv-badge-text">Services</span>
           </RevealWrapper>
-
           <TextAppearAnimation>
             <h2 className="text-appear my-3">
-              MARKETING PROBLEMS{' '}
-              <i className="font-instrument">we solve</i>
+              MARKETING PROBLEMS <i className="font-instrument">we solve</i>
             </h2>
           </TextAppearAnimation>
-
           <RevealWrapper as="p">
-            They need solutions to real growth challenges.
-            Rise IT solves these challenges through integrated marketing
-            systems combining SEO, performance marketing, social media
-            marketing, digital PR, conversion optimisation, website
-            development, analytics infrastructure, and marketing strategy.
+            They need solutions to real growth challenges. Rise IT solves these challenges through
+            integrated marketing systems combining SEO, performance marketing, social media
+            marketing, digital PR, conversion optimisation, website development, analytics
+            infrastructure, and marketing strategy.
           </RevealWrapper>
         </div>
+      </div>
 
-        <div ref={triggerRef} className="service-section pt-10">
-          <div
-            ref={contentRef}
-            className="video-section service-wrapper flex w-fit flex-col gap-6 overflow-x-hidden pl-[5%] pr-[30px] max-md:gap-y-10 sm:flex-row sm:flex-nowrap"
-          >
-            {data.map((item) => (
-              <div
-                key={item.id}
-                className="w-[370px] xl:w-[250px] 2xl:w-[370px]"
-              >
-                <figure className="hero-video-container overflow-hidden">
-                  <Link
-                    target="_blank"
-                    href={`/services${item.href}`}
-                    className="hero-video block"
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </Link>
-                </figure>
-
-                <h3 className="mb-2.5 mt-[30px] text-2xl leading-[1.1] tracking-normal md:text-[32px]">
-                  {item.title}
-                </h3>
-
-                <p className="max-w-[95%] text-base leading-[1.6] tracking-[0.32px]">
-                  {item.description}
-                </p>
-              </div>
-            ))}
-          </div>
+      {/* Only the card strip is pinned — heading never gets trapped inside */}
+      <div ref={triggerRef} className="service-section pt-10">
+        <div
+          ref={contentRef}
+          className="video-section service-wrapper flex w-fit flex-col gap-6 overflow-x-hidden pl-[5%] pr-[30px] max-md:gap-y-10 sm:flex-row sm:flex-nowrap"
+        >
+          {data.map((item) => (
+            <div
+              key={item.id}
+              className="flex-shrink-0"
+              style={{ width: cardWidth }}
+            >
+              <figure className="hero-video-container overflow-hidden">
+                <Link
+                  target="_blank"
+                  href={`/services${item.href}`}
+                  className="hero-video block"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </Link>
+              </figure>
+              <h3 className="mb-2.5 mt-[30px] text-2xl leading-[1.1] tracking-normal md:text-[32px]">
+                {item.title}
+              </h3>
+              <p className="max-w-[95%] text-base leading-[1.6] tracking-[0.32px]">
+                {item.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
