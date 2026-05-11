@@ -30,10 +30,9 @@ const AboutV8 = () => {
             <span className="rv-badge-text">Services</span>
           </RevealWrapper>
           <TextAppearAnimation>
-            <RevealWrapper>    <h2 className="text-appear my-3">
+              <h2 className="text-appear my-3">
            PROVEN DIGITAL MARKETING <i className="font-instrument">experience</i>
-            </h2></RevealWrapper>
-        
+            </h2>
           </TextAppearAnimation>
 
           <RevealWrapper as="p">

@@ -20,3 +20,6 @@ footer .container{
         flex-wrap: wrap;
     }
 }
+p.custom-highlight {
+    margin-bottom: 10px !important;
+}
