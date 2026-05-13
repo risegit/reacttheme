@@ -18,7 +18,7 @@ const Case = () => {
       <div className="container">
         <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:mb-20 md:flex-row md:items-end lg:justify-between">
           <SectionHeader
-            italicTitle="Selectedd"
+            italicTitle="Selected"
             headingTitle="Growth Stories Studies"
             description="Below are examples of how businesses have used digital marketing systems to improve visibility, generate leads, and strengthen their digital presence."
           />

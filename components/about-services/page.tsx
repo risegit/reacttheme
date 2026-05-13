@@ -47,7 +47,7 @@ const data = [
     id: 7,
     title: 'Conversion rate optimisation',
     description: 'Protect your brand during challenging times.',
-    slug: 'conversion-rate-optimisation'
+    slug: 'conversion-rate-optimization'
   },
   {
     id: 8,
