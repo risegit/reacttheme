@@ -1,4 +1,4 @@
-import Clients from '@/components/homepage-03/Clients'
+// import Clients from '@/components/homepage-03/Clients'
 import AboutV4 from '@/components/homepage-04/AboutV4'
 import HeroV11 from '@/components/homepage-04/HeroV11'
 
@@ -17,6 +17,7 @@ import FaqV2 from '@/components/shared/FaqV2'
 import PortfolioV5 from '@/components/homepage-18/PortfolioV5'
 import TestimonialV7 from '@/components/homepage-11/TestimonialV7'
 import WhatWeHelpBusinessesDo from '@/components/what-we-help-businesses-do/page'
+import Clients from '@/components/clients/page'
 
 export const metadata = {
   title: 'Rise IT Digital Marketing Agency in Andheri West , Mumbai',
@@ -29,9 +30,8 @@ const home = () => {
       {/* <HeroV18 /> */}
       <AnimatedHeroImage />
        <WhatWeHelpBusinessesDo />
-       
         <Homeabout />
-         <Marquee withBorder={true} />
+         {/* <Marquee withBorder={true} /> */}
         <ServicesV10 />
         {/* <HomeService/> */}
 
@@ -48,6 +48,7 @@ const home = () => {
       {/* <BlogPostsV5 /> */}
      {/* <DiffRise /> */}
       <FaqV2 />
+      <Clients />
      
 
       <CTA>

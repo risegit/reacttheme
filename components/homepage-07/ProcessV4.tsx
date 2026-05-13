@@ -63,8 +63,7 @@ const ProcessV4 = () => {
                 <div className="ml-[30px]">
                   <h3 className="">Kickoff the Project</h3>
                   <p className="mt-5 max-w-[483px]">
-                    Sign the contract, send the deposit, lean back, and let us do our thing. We’ll invite you to a
-                    design review meeting in 5-7 business days.
+                    Sign the contract, send the deposit, lean back, and let us do our thing.
                   </p>
                 </div>
               </li>

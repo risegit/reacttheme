@@ -22,8 +22,7 @@ const AboutPage = () => {
     <LayoutOne>
       <PageHero
         badgeTitle="About"
-        title="The Idea Behind Rise IT
-"
+        title="The Idea Behind Rise IT"
         italicTitle="Digital"
         description="Every business has expertise.
 But expertise alone is not enough.

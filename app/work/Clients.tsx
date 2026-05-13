@@ -78,7 +78,7 @@ const Industries = () => {
             italicTitle="Industries"
             serviceHeadingColor
             description="Over the years we have worked with businesses across a wide range of industries. Each industry brings different customer behaviour, competitive dynamics, and marketing challenges.
-."
+"
           />
         </div>
       </div>

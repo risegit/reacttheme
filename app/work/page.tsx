@@ -13,6 +13,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import Case from './Casestudy'
 import RevealWrapperV2 from '@/components/animation/RevealWrapperV2'
 import Industries from './Clients'
+import Clients from '@/components/clients/page'
 
 export const metadata = {
   title: 'Management Consulting Agency - Rivor',
@@ -28,7 +29,8 @@ const homepage23 = () => {
       {/* <WhyChooseUsV8 /> */}
       {/* <ProjectCaseStudies /> */}
       <RevealWrapperV2>
-        <Industries />
+        <Clients/>
+        {/* <Industries /> */}
       
     
       <CTA buttonText="Get Started Today">

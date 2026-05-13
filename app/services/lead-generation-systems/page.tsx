@@ -53,7 +53,7 @@ Structured outreach systems help generate conversations, introduce services, and
 - **Cold email campaign systems**
 - **Prospect outreach workflows**
 - **Email campaign management**
-- ** Lead engagement campaigns**
+- **Lead engagement campaigns**
 
 
 ### Marketing Funnel Strategy
@@ -108,7 +108,7 @@ Audience targeting strategies help businesses reach decision-makers who are most
 - **Audience targeting strategy**
 - **Customer segmentation analysis**
 - **Target account identification**
-- ** Prospect profiling**
+- **Prospect profiling**
 - **Audience acquisition strategy**
 
 ### OUR APPROACH

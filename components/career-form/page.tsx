@@ -168,7 +168,7 @@ const ContactForm = () => {
           <div className="col-span-full sm:mt-5 md:mx-auto">
             <button type="submit" className="rv-button rv-button-primary block w-full md:inline-block md:w-auto">
               <div className="rv-button-top"> 
-                <span>Send Message</span>
+                <span className='text-white'>Send Message</span>
               </div>
               <div className="rv-button-bottom">
                 <span className="text-nowrap">Send Message</span>
