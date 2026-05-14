@@ -9,10 +9,10 @@ const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimati
 })
 
 const achievementStats = [
-  { value: 14, label: 'Years of Experience', suffix: '+' },
-  { value: 80, label: ' Growth & Marketing Engagements', suffix: '+' },
-  { value: 280, label: ' Businesses Served', suffix: '+' },
-  { value: 20, label: ' Healthcare, B2B, Ecommerce & More', suffix: '+' },
+  { value: 13, label: 'Years of Experience', suffix: '+' },
+  { value: 350, label: 'million USD in revenues generated for clients', suffix: '+' },
+  { value: 110, label: ' Global Businesses Served', suffix: '+' },
+  { value: 15, label: ' Countries with client presence', suffix: '+' },
 
 ]
 

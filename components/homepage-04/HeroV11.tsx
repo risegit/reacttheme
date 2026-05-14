@@ -143,7 +143,7 @@ const HeroV11 = () => {
       <div className="container">
         <div className="flex items-center justify-center">
           <div className="rv-badge mb-2">
-            <span className="rv-badge-text">Digital Marketing Agency</span>
+            {/* <span className="rv-badge-text">Digital Marketing Agency</span> */}
           </div>
         </div>
         <h2 className="text-center md:mt-20 sm:mt-5">

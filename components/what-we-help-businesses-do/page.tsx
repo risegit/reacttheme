@@ -23,23 +23,23 @@ const Homepage16 = () => {
             <div className="[&>*:not(:first-child)]:mt-3.5">
 
               <RevealWrapper className="py-2.5">
-                <h6>Improve search visibility</h6>
-                <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
-                  Every campaign is backed by analytics and tailored for ROI.
-                </p>
-              </RevealWrapper>
-
-              <RevealWrapper className="py-2.5">
-                <h6>Generate consistent leads</h6>
-                <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
-                  We create seamless experiences across digital platforms.
-                </p>
-              </RevealWrapper>
-
-              <RevealWrapper className="py-2.5">
-                <h6>Strengthen brand presence online</h6>
+                <h6>Launch and Build Your Brand</h6>
                 <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
                   A perfect blend of creativity and data-driven insights.
+                </p>
+              </RevealWrapper>
+
+              <RevealWrapper className="py-2.5">
+                <h6>Improve Visibility across Online Platforms</h6>
+                <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
+                 We create seamless experiences across digital platforms.
+                </p>
+              </RevealWrapper>
+
+              <RevealWrapper className="py-2.5">
+                <h6>Grow your Business</h6>
+                <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
+                  Every campaign is backed by analytics and tailored for ROI.
                 </p>
               </RevealWrapper>
 
