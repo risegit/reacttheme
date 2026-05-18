@@ -320,11 +320,11 @@ export default function Navbar() {
       <nav
         ref={menuRef}
         data-lenis-prevent="true"
-        className="menu fixed right-6 top-0 z-[99999] min-h-screen w-full overflow-y-auto opacity-0 before:absolute before:top-0 before:w-[1px] before:bg-backgroundBody before:bg-opacity-10 before:content-none md:before:left-[40%] md:before:h-screen md:before:content-[''] lg:before:left-[32%] lg:before:h-[calc(100vh-87px)] xl:before:left-[40%] xl:before:h-[calc(100vh-94px)]">
+        className="menu fixed inset-0 z-[99999] flex min-h-screen w-full items-center justify-center overflow-y-auto opacity-0">
         <button
           ref={closeBtnRef}
           onClick={closeMenu}
-          className="menu-close sticky left-[89%] top-9 h-[40px] w-[40px] cursor-pointer text-white sm:left-[90%] md:left-[93%] lg:left-[94.7%] xl:left-[96.5%] 2xl:left-[97%]"
+          className="menu-close fixed right-6 top-6 z-[100000] h-[40px] w-[40px] cursor-pointer text-white sm:right-8 sm:top-8"
           aria-label="Close Menu">
           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 50 50">
             <path
@@ -333,15 +333,12 @@ export default function Navbar() {
             />
           </svg>
         </button>
-        <div className="menu-wrapper relative z-[99999] mx-auto flex max-h-[90vh] max-w-[300px] flex-col gap-8 overflow-y-auto overflow-x-hidden pb-4 sm:max-w-[400px] md:top-14 md:max-h-none md:max-w-[580px] md:gap-16 md:overflow-visible md:pt-0 lg:max-w-[900px] xl:max-w-[1030px] 2xl:top-12">
+        <div className="menu-wrapper relative z-[99999] flex w-full max-w-[300px] flex-col items-center justify-center gap-8 sm:max-w-[400px] md:max-w-[580px] md:gap-16 lg:max-w-[900px] xl:max-w-[1030px]">
           <MenuList ref={menuItemsRef} onItemClick={closeMenu} />
         </div>
-        <div className="menu-footer fixed bottom-0 w-full border-t border-white border-opacity-10 max-lg:hidden lg:block">
+        <div className="menu-footer fixed bottom-0 left-0 w-full border-t border-white border-opacity-10 max-lg:hidden lg:block">
           <div className="menu-footer-content mx-auto flex max-w-[300px] flex-col justify-between py-8 sm:max-w-[400px] md:max-w-[600px] md:flex-row lg:max-w-[900px] xl:max-w-[1130px]">
-            <p className="mb-4 w-full text-sm text-white md:mb-0 md:w-auto">
-              2261 Market Street #5039 San Francisco, CA 94114
-            </p>
-            <SocialIcons />
+            {/* Your footer content here */}
           </div>
         </div>
       </nav>

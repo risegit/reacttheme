@@ -80,13 +80,13 @@ const ServicesV10 = () => {
   return (
     <section className="relative pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[60px]">
       <div className="container">
-        <div className="mb-8 text-center md:mb-14">
+        <div className="text-center">
           <RevealWrapper className="rv-badge reveal-me">
             <span className="rv-badge-text">Services</span>
           </RevealWrapper>
           <TextAppearAnimation>
             <h2 className="text-appear my-3">
-              BUSINESS  PROBLEMS <i className="font-instrument">we solve</i>
+              BUSINESS  PROBLEMS<br/> <i className="font-instrument">we solve</i>
             </h2>
           </TextAppearAnimation>
 
@@ -107,9 +107,9 @@ const ServicesV10 = () => {
           ref={contentRef}
           className="flex w-full flex-row gap-6 pl-[5%] pr-[5%]"
           style={{
-            // Full height of the sticky viewport
-            height: '90vh',
-            alignItems: 'center', // vertically center cards within the sticky 100vh
+            height: '100vh',
+            alignItems: 'center',
+            paddingBottom: '20px',
           }}
         >
           {data.map((item) => (

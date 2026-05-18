@@ -79,7 +79,7 @@ Clear and structured website content improves user experience while supporting c
 - **Service page content development**
 - **Homepage messaging**
 - **Product and service descriptions**
-- ** SEO-friendly website content**
+- **SEO-friendly website content**
 
 ### Landing Page Copywriting
 Landing pages are often the first interaction potential customers have with a brand during marketing campaigns.
