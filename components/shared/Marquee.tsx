@@ -19,9 +19,9 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
   const duplicatedData = [...data, ...data]
 
   return (
-    <section className="relative mx-auto w-full pt-14 max-w-[1920px] xl:pb-[100px] xl:pt-[10px] max-md:pt-0.5">
+    <section className="relative mx-auto w-full max-w-[1920px] xl:pb-[100px]">
       <div className="container">
-        <div className="mb-8 text-center">
+        <div className="text-center mb-8 md:mb-20">
           <TextAppearAnimation>
             <h2 className="text-appear mx-auto max-w-[770px]">TRUSTED BY BUSINESSES <i className="font-instrument">across industries</i></h2>
           </TextAppearAnimation>
@@ -63,7 +63,7 @@ const Marquee: React.FC<WithBorderProps> = ({ withBorder }) => {
 
       {withBorder ? (
         <div
-          className="relative -z-0 overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]">
+          className="relative -z-0 overflow-hidden">
           <div className="absolute left-1/2 top-1/2 -z-30 -translate-x-1/2 -translate-y-1/2 scale-x-[2.5] scale-y-50 lg:scale-y-[0.3]">
             <Image src={gradientBg} alt="gradient-bg" />
           </div>

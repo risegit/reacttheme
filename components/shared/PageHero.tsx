@@ -12,7 +12,7 @@ interface PropsType {
 
 const PageHero = ({ badgeTitle, title, description, italicTitle, spacing, scale }: PropsType) => {
   return (
-    <section className={`${spacing ?? 'relative overflow-hidden py-32 md:py-40 lg:py-[185px]'} `}>
+    <section className={`${spacing ?? 'relative overflow-hidden pt-32 pb-10 md:pt-40 md:pb-20 lg:pt-[185px] lg:pb-[100px]'} `}>
       <HeroGradientAnimation scale={scale} />
 
       <div className="container">

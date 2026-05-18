@@ -143,7 +143,7 @@ const ClientsLogos = ({ showAll = false }) => {
   const logos = isWorkPage ? allLogos : allLogos.slice(0, 20)
 
   return (
-    <section className="relative mx-auto w-full pt-14 max-w-[1920px] xl:pb-[100px] xl:pt-[10px] max-md:pt-0.5">
+    <section className="relative mx-auto w-full pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[70px]">
       <div className="container px-4 mx-auto">
         <div className="container">
           <div className="mb-8 text-center">

@@ -73,7 +73,7 @@ const PortfolioV5 = () => {
             </RevealWrapper>
           </div>
         </div>
-        <div className="mb-[60px] space-y-[30px]">
+        <div className="mt-[60px] space-y-[30px]">
           {caseStudiesData.map((study) => (
             <CaseStudy
               key={study.id}

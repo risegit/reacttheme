@@ -76,7 +76,7 @@ const SolutionV3 = () => {
   return (
     <section
       ref={triggerRef}
-      className="service-section overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[70px]"
+      className="service-section overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[48px] lg:pt-[88px] xl:pb-[50px] xl:pt-[70px]"
       aria-labelledby="solutions-heading" >
       <div className="container">
         <div className="grid grid-cols-12 items-start gap-y-3 md:gap-x-10">
