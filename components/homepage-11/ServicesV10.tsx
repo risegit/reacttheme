@@ -17,7 +17,7 @@ const data = [
     href: '#search-visibility',
     description:
       "We improve discoverability through SEO strategy, technical SEO, content marketing, digital PR, authority building, and search optimisation, helping businesses rank higher and attract consistent organic traffic.",
-    image: '/images/services-2/service-1.png',
+    image: '/images/services-2/services-1.jpg',
   },
   {
     id: 2,
@@ -25,35 +25,35 @@ const data = [
     href: '#demand-generation',
     description:
       'We build demand generation systems using performance marketing, Meta Ads, Google Ads, LinkedIn advertising, social media marketing, email marketing, and lead generation strategies that attract and convert qualified audiences.',
-    image: '/images/services-2/service-3.png',
+    image: '/images/services-2/services-2.jpg',
   },
   {
     id: 3,
     title: 'Conversion Optimisation',
     href: '#conversion-optimisation',
     description: 'Through conversion rate optimisation, landing page optimisation, marketing funnel strategy, user journey optimisation, analytics tracking, and performance measurement systems, we improve conversion performance.',
-    image: '/images/services-2/service-4.png',
+    image: '/images/services-2/services-3.jpg',
   },
   {
     id: 4,
     title: 'Brand Authority',
     href: '#search-visibility',
     description: 'We strengthen brand presence through content strategy, social media marketing, digital PR campaigns, corporate video production, brand storytelling, and authority-driven content marketing.',
-    image: '/images/services-2/service-2.png',
+    image: '/images/services-2/services-4.jpg',
   },
   {
     id: 5,
     title: 'Digital Infrastructure',
     href: '#digital-infrastructure',
     description: 'We build scalable digital foundations through website design and development, marketing automation systems, CRM integrations, analytics setup, tracking infrastructure, and digital performance optimisation',
-    image: '/images/services-2/service-item-4.png',
+    image: '/images/services-2/services-5.jpg',
   },
   {
     id: 6,
     title: 'Marketing Intelligence',
     href: '#conversion-optimisation',
     description: 'We implement analytics dashboards, conversion tracking systems, reporting frameworks, campaign measurement, and marketing intelligence tools to guide data-driven growth decisions.',
-    image: '/images/services-2/service-item-3.png',
+    image: '/images/services-2/services-6.jpg',
   },
 ]
 

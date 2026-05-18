@@ -58,6 +58,7 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
         start,
         end: () => `+=${Math.abs(getScrollAmount()) + window.innerWidth * 0.1}`,
         pin: true,
+        pinSpacing: true, // Ensure pin spacing is enabled
         animation,
         scrub,
         invalidateOnRefresh: true,
@@ -82,6 +83,7 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
         scrollTrigger.kill()
         window.removeEventListener('resize', handleResize)
       }
+      
     },
     {
       dependencies: [offset, duration, ease, start, markers, scrub, extraScroll, onAnimationCreated],
