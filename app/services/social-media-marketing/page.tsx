@@ -79,7 +79,7 @@ Consistent organic content helps businesses remain discoverable while strengthen
 - **Organic content strategy**
 - **Brand storytelling content**
 - **Audience engagement content**
-- ** Educational content development**
+- **Educational content development**
 - **Brand visibility campaigns**
 
 

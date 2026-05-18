@@ -127,7 +127,7 @@ By combining analytics infrastructure with clear reporting and analysis, we help
 - **Conversion Rate Optimisation**
 - **Lead Generation Systems**
 - **Growth Marketing Strategy**
-- ** Marketing Infrastructure & Automation**
+- **Marketing Infrastructure & Automation**
 
 
 

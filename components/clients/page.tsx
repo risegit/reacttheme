@@ -70,6 +70,21 @@ const ClientsLogos = ({ showAll = false }) => {
   // Array of all logos for easy mapping
   const allLogos = [
   { id: 42, src: logo42, alt: "SBI Life" },
+  { id: 10, src: logo10, alt: "Cult" },
+  { id: 19, src: logo19, alt: "Hettich" },
+  
+  
+  { id: 15, src: logo15, alt: "Galaxy Surfactants" },
+  { id: 22, src: logo22, alt: "ICPA" },
+  { id: 30, src: logo30, alt: "Nexdigm" },
+  { id: 5, src: logo5, alt: "Ashtech India" },
+  { id: 48, src: logo48, alt: "Swan" },
+  { id: 9, src: logo9, alt: "Cocoon Fine Rugs" },
+  { id: 16, src: logo16, alt: "Great Escape" },
+  { id: 33, src: logo33, alt: "Promom Direct" },
+  { id: 14, src: logo14, alt: "Fitness World" },
+  { id: 27, src: logo27, alt: "Lloyds" },
+
   { id: 17, src: logo17, alt: "Harkesh Rubber" },
   { id: 8, src: logo8, alt: "Beyondesign" },
   { id: 51, src: logo51, alt: "Toshvin Analytical" },
@@ -78,48 +93,48 @@ const ClientsLogos = ({ showAll = false }) => {
   { id: 3, src: logo3, alt: "Alps Chemicals" },
   { id: 28, src: logo28, alt: "My India Nursing Home" },
   { id: 45, src: logo45, alt: "Square Logo" },
-  { id: 22, src: logo22, alt: "ICPA" },
+  
   { id: 54, src: logo54, alt: "Victory Korea Dry" },
-  { id: 15, src: logo15, alt: "Galaxy Surfactants" },
+ 
   { id: 39, src: logo39, alt: "Roche" },
   { id: 6, src: logo6, alt: "Avi Global Plast" },
   { id: 31, src: logo31, alt: "Orwo Gro" },
-  { id: 48, src: logo48, alt: "Swan" },
-  { id: 19, src: logo19, alt: "Hettich" },
+ 
+  
   { id: 26, src: logo26, alt: "Kserve" },
   { id: 43, src: logo43, alt: "Seven Hats Consulting" },
-  { id: 10, src: logo10, alt: "Cult" },
+
   { id: 36, src: logo36, alt: "Quint Consulting Services" },
-  { id: 14, src: logo14, alt: "Fitness World" },
+  
   { id: 50, src: logo50, alt: "The Drip Bar" },
   { id: 24, src: logo24, alt: "Kalayatan Cargo" },
   { id: 41, src: logo41, alt: "Rolliflex" },
   { id: 2, src: logo2, alt: "Abnd Logo" },
   { id: 47, src: logo47, alt: "Stonestry" },
-  { id: 33, src: logo33, alt: "Promom Direct" },
+  
   { id: 18, src: logo18, alt: "HEPO India" },
   { id: 53, src: logo53, alt: "VAMS" },
-  { id: 9, src: logo9, alt: "Cocoon Fine Rugs" },
+
   { id: 29, src: logo29, alt: "Neptunus" },
   { id: 38, src: logo38, alt: "River Comics" },
   { id: 44, src: logo44, alt: "Sir HN Hospital Trust" },
-  { id: 5, src: logo5, alt: "Ashtech India" },
+ 
   { id: 49, src: logo49, alt: "Tal Success" },
   { id: 13, src: logo13, alt: "Feriadoss and More" },
   { id: 40, src: logo40, alt: "Rolliflex Cables" },
   { id: 20, src: logo20, alt: "HOD" },
   { id: 32, src: logo32, alt: "Precision Electricals" },
-  { id: 27, src: logo27, alt: "Lloyds" },
+ 
   { id: 1, src: logo1, alt: "A C Pharma Specialities LLP" },
   { id: 52, src: logo52, alt: "Unitec Fibers" },
   { id: 37, src: logo37, alt: "Rexseal" },
-  { id: 16, src: logo16, alt: "Great Escape" },
+  
   { id: 46, src: logo46, alt: "Stone Shippers Limited" },
   { id: 11, src: logo11, alt: "Digi Suraksha" },
   { id: 25, src: logo25, alt: "Kapadia" },
   { id: 34, src: logo34, alt: "Q Devices" },
   { id: 7, src: logo7, alt: "Bayy Cosmetics" },
-  { id: 30, src: logo30, alt: "Nexdigm" },
+ 
   { id: 23, src: logo23, alt: "Insta Curry Cups" },
   { id: 4, src: logo4, alt: "Amigo Academy" },
   { id: 21, src: logo21, alt: "Host My Trips" },
@@ -147,7 +162,7 @@ const ClientsLogos = ({ showAll = false }) => {
                 key={logo.id}
                 className="flex items-center justify-center p-3 lg:p-4 bg-white  transition-all duration-300 hover:shadow-lg hover:scale-105 group"
               >
-                <div className="relative w-24 h-16 lg:w-28 lg:h-20">
+                <div className="relative w-28 h-16 lg:w-28 lg:h-20">
                   <Image
                     src={logo.src}
                     alt={logo.alt}

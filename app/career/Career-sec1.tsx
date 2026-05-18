@@ -4,8 +4,8 @@ import Link from 'next/link'
 const Carrer1 = () => {
   return (
     <>
-      <section className="relative overflow-hidden pb-14 pt-[137px] md:pb-[90px] md:pt-[180px] lg:pb-[0px] lg:pt-[15px]">
-        
+      <section className="relative overflow-hidden pb-14 pt-[17px] md:pb-[90px] md:pt-[160px] lg:pb-[0px] lg:pt-[15px]">
+
         {/* Gradient Background Effect */}
         <div
           id="hero-gradient-wrapper"
@@ -19,16 +19,16 @@ const Carrer1 = () => {
         </div>
 
         <RevealWrapper className="container">
-          
+
           <h2 className="mb-6 mt-5 border-y border-secondary/40 py-6 dark:border-backgroundBody/40 sm:mt-10 md:mb-10 lg:py-10 xl:leading-[1.1]">
-           The Kind of People We <i className="font-instrument"><br /> look for</i>
+            The Kind of People We <i className="font-instrument"><br /> look for</i>
           </h2>
           <RevealWrapper>
-            <p className="md:max-w-[670px]">
-             We usually work best with people who are:
+            <p className="md:max-w-[670px] sm:pt-5">
+              We usually work best with people who are:
             </p>
           </RevealWrapper>
-          
+
           {/* Points */}
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
             {/* Column 1 */}
@@ -69,13 +69,13 @@ const Carrer1 = () => {
               </li>
             </ul>
           </div>
-          
+
           <RevealWrapper>
             <p className="mt-8 md:max-w-[750px]">
               You do not need to know everything on day one. But you should be willing to learn and take ownership of your work.
             </p>
           </RevealWrapper>
-          
+
           <RevealWrapper>
             <ul className="mt-8 flex list-none justify-start md:mt-14">
               <li className="block w-full text-center md:inline-block md:w-auto">
@@ -98,7 +98,7 @@ const Carrer1 = () => {
             <h2 className="mt-20 border-y border-secondary/40 py-6 dark:border-backgroundBody/40 md:mb-10 lg:py-10">
               Open Roles
             </h2>
-            <p className="md:max-w-[670px]">
+            <p className="md:max-w-[670px] sm:mt-15">
               This section will list current openings.
             </p>
             <p className="mt-4 md:max-w-[750px]">
@@ -114,8 +114,10 @@ const Carrer1 = () => {
             <p className="md:max-w-[670px]">
               Send your resume and portfolio (if applicable) to:
             </p>
-            <p className="mt-2 text-primary">
-              careers@riseit.com
+            <p >
+              <a href="mailto:careers@riseit.com">
+                <span className="mt-2 text-primary text-xl">careers@riseit.com</span>
+              </a>
             </p>
             <p className="mt-4 md:max-w-[750px]">
               Include a short note about the kind of work you are interested in and why you would like to work with Rise IT.

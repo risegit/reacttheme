@@ -6,31 +6,81 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone:'',
+    phone: '',
     subject: '',
     message: '',
-    resume:'',
+    resume: '',
   })
 
   const [selectedFile, setSelectedFile] = useState('')
-  
-    // Handle file selection
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-      const file = event.target.files?.[0]
-      setSelectedFile(file ? `Selected file: ${file.name}` : '')
+  const [file, setFile] = useState<File | null>(null)
+
+  // Handle file selection
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      setFile(file)
+      setSelectedFile(`Selected file: ${file.name}`)
+      setFormData((prev) => ({ ...prev, resume: file.name }))
+    } else {
+      setSelectedFile('')
+      setFile(null)
+      setFormData((prev) => ({ ...prev, resume: '' }))
     }
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    console.log('Form Data Submitted:', formData)
-    alert(`${formData.name} Your Data Has Been Submited`)
-    // Add your form submission logic here (e.g., API call)
-  }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    try {
+      // For file upload, you might want to use FormData
+      const formDataToSend = new FormData()
+      formDataToSend.append('name', formData.name)
+      formDataToSend.append('email', formData.email)
+      formDataToSend.append('phone', formData.phone)
+      formDataToSend.append('subject', formData.subject)
+      formDataToSend.append('message', formData.message)
+      if (file) {
+        formDataToSend.append('resume', file)
+      }
+
+      const res = await fetch("/api/carrers", {
+        method: "POST",
+        body: formDataToSend, // Remove Content-Type header for FormData
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        alert("Message sent successfully ✅");
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          resume: "",
+        });
+        setSelectedFile('')
+        setFile(null)
+
+      } else {
+        alert("Failed to send message ❌");
+        console.error(data);
+      }
+
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong ❌");
+    }
+  };
 
   return (
     <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[20px]">
@@ -39,6 +89,7 @@ const ContactForm = () => {
           as="form"
           onSubmit={handleSubmit}
           className="reveal-me mx-auto grid max-w-[800px] grid-cols-1 gap-[30px] md:grid-cols-2">
+          
           <div className="md:col-span-full">
             <label
               htmlFor="name"
@@ -59,14 +110,14 @@ const ContactForm = () => {
 
           <div>
             <label
-              htmlFor="company"
+              htmlFor="phone"
               className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
-              Phone 
+              Phone
             </label>
             <input
-              type="text"
-              id="company"
-              name="company"
+              type="tel"
+              id="phone"
+              name="phone"
               value={formData.phone}
               onChange={handleChange}
               placeholder="Your Phone Number"
@@ -94,14 +145,14 @@ const ContactForm = () => {
 
           <div className="relative">
             <label
-              htmlFor="service"
+              htmlFor="subject"
               className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
               Subject
             </label>
-             <input
+            <input
               type="text"
               id="subject"
-              name="email"
+              name="subject"
               value={formData.subject}
               onChange={handleChange}
               placeholder="Position you are applying for"
@@ -111,43 +162,43 @@ const ContactForm = () => {
           </div>
 
           <div className="w-full">
-              <label
-                htmlFor="resume"
-                className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
-                Resume*
-              </label>
-              <div className="mt-3 border border-secondary/10 p-3 dark:border-dark">
-                <div className="flex items-center justify-space-between">
-                  <div className="mx-auto flex flex-wrap items-center gap-6">
-                    <label className="relative cursor-pointer">
-                      <input
-                        type="file"
-                        className="hidden"
-                        accept=".pdf,.doc,.docx,.png,.jpg"
-                        onChange={handleFileChange}
+            <label
+              htmlFor="resume"
+              className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
+              Resume*
+            </label>
+            <div className="mt-3 border border-secondary/10 p-3 dark:border-dark">
+              <div className="flex items-center justify-space-between">
+                <div className="mx-auto flex flex-wrap items-center gap-6">
+                  <label className="relative cursor-pointer">
+                    <input
+                      type="file"
+                      className="hidden"
+                      accept=".pdf,.doc,.docx,.png,.jpg"
+                      onChange={handleFileChange}
+                    />
+                    <figure className="inline-flex gap-2 rounded-full border border-secondary/30 px-2 py-1 text-base text-secondary/70 transition-colors hover:bg-gray-100 dark:border-backgroundBody/30 dark:bg-dark/10 dark:text-backgroundBody/70 dark:hover:bg-dark-300 md:px-6 md:py-1">
+                      <img
+                        src="/images/icons/file-upload.svg"
+                        className="left-0 inline-flex dark:hidden"
+                        alt="drag&drop"
                       />
-                      <figure className="inline-flex gap-2 rounded-full border border-secondary/30 px-2 py-1 text-base text-secondary/70 transition-colors hover:bg-gray-100 dark:border-backgroundBody/30 dark:bg-dark/10 dark:text-backgroundBody/70 dark:hover:bg-dark-300 md:px-6 md:py-1">
-                        <img
-                          src="/images/icons/file-upload.svg"
-                          className="left-0 inline-flex dark:hidden"
-                          alt="drag&drop"
-                        />
-                        <img
-                          src="/images/icons/file-upload-dark.svg"
-                          className="left-0 hidden dark:inline"
-                          alt="drag&drop"
-                        />
-                        <span> Upload File </span>
-                      </figure>
-                    </label>
-                    <h3 className="mb-2 text-[13px] leading-7 tracking-[0.4px] text-secondary/70 dark:text-backgroundBody/70">
-                      Or drag and drop here
-                    </h3>
-                  </div>
+                      <img
+                        src="/images/icons/file-upload-dark.svg"
+                        className="left-0 hidden dark:inline"
+                        alt="drag&drop"
+                      />
+                      <span> Upload File </span>
+                    </figure>
+                  </label>
+                  <h3 className="mb-2 text-[13px] leading-7 tracking-[0.4px] text-secondary/70 dark:text-backgroundBody/70">
+                    Or drag and drop here
+                  </h3>
                 </div>
-                <div>{selectedFile}</div>
               </div>
+              <div className="mt-2 text-sm text-gray-600 dark:text-gray-400">{selectedFile}</div>
             </div>
+          </div>
 
           <div className="md:col-span-full">
             <label
@@ -160,14 +211,16 @@ const ContactForm = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder=""
+              placeholder="Your message here..."
+              rows={5}
               className="mt-3 w-full border bg-backgroundBody py-4 pl-5 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark"
-              required></textarea>
+              required
+            />
           </div>
 
           <div className="col-span-full sm:mt-5 md:mx-auto">
             <button type="submit" className="rv-button rv-button-primary block w-full md:inline-block md:w-auto">
-              <div className="rv-button-top"> 
+              <div className="rv-button-top">
                 <span className='text-white'>Send Message</span>
               </div>
               <div className="rv-button-bottom">

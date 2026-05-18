@@ -10,16 +10,15 @@ const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimati
 
 const achievementStats = [
   { value: 13, label: 'Years of Experience', suffix: '+' },
-  { value: 350, label: 'million USD in revenues generated for clients', suffix: '+' },
-  { value: 110, label: ' Global Businesses Served', suffix: '+' },
-  { value: 15, label: ' Countries with client presence', suffix: '+' },
-
+  { value: 350, label: 'Million USD in revenues generated for clients', suffix: '+' },
+  { value: 110, label: 'Global businesses served', suffix: '+' },
+  { value: 15, label: 'Countries with client presence', suffix: '+' },
 ]
 
 const AboutV8 = () => {
   const { revealRef } = useReveal()
   return (
-    <section className="about relative pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px] xl:pt[70px] ">
+    <section className="about relative pb-14 pt-14 md:pb-16 lg:pb-[88px] xl:pb-[100px] xl:pt[70px] ">
       <div className="container">
         <RevealWrapper>
        
@@ -40,16 +39,16 @@ const AboutV8 = () => {
           </RevealWrapper>
         </div>
         </RevealWrapper>
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 gap-16">
+        <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 xl:gap-8">
           {achievementStats.map((achievement, index) => (
             <RevealWrapper
               key={achievement.label}
-              className="flex min-w-[355px] flex-col items-center justify-center border-t py-7 dark:border-dark sm:flex-row sm:items-start sm:justify-between lg:min-w-[300px] xl:min-w-[355px]">
-              <h2 className="sm:min-w-[170px]">
+              className="flex flex-col items-center justify-center border-t py-7 dark:border-dark text-center">
+              <h2 className="mb-2">
                 <CounterAnimation number={achievement.value} />
                 {achievement.suffix}
               </h2>
-              <h6 className="text-lg self-center">{achievement.label}</h6>
+              <h6 className="text-base md:text-lg max-w-[200px] mx-auto">{achievement.label}</h6>
             </RevealWrapper>
           ))}
         </div>

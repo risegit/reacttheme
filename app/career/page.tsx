@@ -26,10 +26,8 @@ If that kind of work interests you, we would be happy to hear from you."
       <Carrer1 />
       <CareerSection />
       <CTA>
-    <h5>  We are always interested in meeting people who enjoy thoughtful work and are curious about how marketing and businesses evolve.
-If that sounds like you, feel free to reach out.</h5>
-
-       
+        <h5>  We are always interested in meeting people who enjoy thoughtful work and are curious about how marketing and businesses evolve.
+          If that sounds like you, feel free to reach out.</h5>
       </CTA>
     </LayoutOne>
   )
