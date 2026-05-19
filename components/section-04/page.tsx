@@ -67,7 +67,7 @@ const Section4 = () => {
   return (
     <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]" id="digital-infrastructure">
       <div className="absolute left-1/2 top-[47%] -z-40 -translate-x-1/2 -translate-y-[45%] scale-x-[2.7] scale-y-[3.8] sm:scale-y-[3.3] md:scale-y-[3.2] lg:scale-y-[2.4] xl:scale-x-[2.4] xl:scale-y-[1.2]">
-        <Image src={gradientBg} alt="gradient-bg" />
+        <Image src={gradientBg} className='gradient-bg' alt="gradient-bg" />
       </div>
       <div className="container">
         <div className="mb-8 text-center md:mb-20">

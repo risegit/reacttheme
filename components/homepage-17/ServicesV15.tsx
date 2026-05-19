@@ -1,5 +1,4 @@
 'use client';
-
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation02 from '../animation/TextAppearAnimation02'
@@ -11,15 +10,6 @@ const ServicesV15 = () => {
 
   // Manually added service data
   const servicesData = [
-    // {er
-    //   slug: 'seo',
-    //   title: 'Search Visibility',
-    //   description:
-    //     'When potential customers search for products or services related to your business, your brand should appear clearly and consistently. Improving search visibility requires a combination of search engine optimisation, authority building, and content strategy that helps your website rank higher and attract qualified organic traffic.',
-    //   feature: [
-        
-    //   ],
-    // },
     {
       slug: 'seo',
       title: 'SEO Services',

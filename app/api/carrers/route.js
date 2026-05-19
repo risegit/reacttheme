@@ -21,7 +21,7 @@ export async function POST(request) {
     // Prepare email content
     const emailData = {
       from: "RiseIT Careers <developer@send.riseit.com>",
-      to: ["developer@riseit.com"],
+      to: ["nimish.shrimankar@riseit.in"],
       reply_to: email,
       subject: `Job Application: ${subject} from ${name}`,
       html: `
