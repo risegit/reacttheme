@@ -183,7 +183,7 @@ const HeroV11 = () => {
       <figure className="absolute right-[2%] top-[32%] hidden lg:block">
         <img src="/images/home-4/img4.png" alt="" className="decorative-image" ref={setImageRef(3)} />
       </figure>
-      <figure className="absolute bottom-[4%] left-[12%] hidden md:block lg:bottom-[7%] lg:left-[23%]">
+      <figure className="absolute bottom-[4%] left-[12%] hidden md:block lg:bottom-[7%] lg:left-[13%]">
         <img src="/images/home-4/img5.png" alt="" className="decorative-image" ref={setImageRef(4)} />
       </figure>
       <figure className="absolute bottom-[1%] right-[3%] hidden md:block lg:bottom-[3%] lg:right-[5%]">

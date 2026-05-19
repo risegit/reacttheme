@@ -1,3 +1,4 @@
+// Sectionwork1.tsx
 import Link from 'next/link'
 import RevealWrapper from '@/components/animation/RevealWrapper'
 
@@ -5,7 +6,7 @@ const Sectionwork1 = () => {
     return (
         <section
             id="hero"
-            className="relative overflow-hidden pb-14 pt-[137px] md:pb-16 md:pt-[160px] lg:pb-[88px] xl:pb-[112px] xl:pt-[220px]"
+            className="relative overflow-hidden pb-10 pt-[137px] md:pb-12 md:pt-[160px] lg:pb-14 xl:pb-16 xl:pt-[220px]"
             aria-labelledby="hero-heading"
         >
             {/* Gradient */}
