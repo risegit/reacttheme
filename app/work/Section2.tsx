@@ -1,10 +1,12 @@
+// Section2.tsx
 import RevealWrapper from '@/components/animation/RevealWrapper'
 import Link from 'next/link'
 
 const Section2 = () => {
   return (
     <>
-      <section className="relative overflow-hidden pb-14 pt-[137px] md:pb-[90px] md:pt-[180px] lg:pb-[110px] lg:pt-[150px]">
+    
+      <section className="relative overflow-hidden pb-10 pt-10 md:pb-12 md:pt-12 lg:pb-14 lg:pt-14 xl:pb-16 xl:pt-16">
         
         {/* Gradient Background Effect */}
         <div
@@ -23,11 +25,11 @@ const Section2 = () => {
           <h1 className="mb-6 mt-5 border-y border-secondary/40 py-6 dark:border-backgroundBody/40 sm:mt-10 md:mb-10 lg:py-10 xl:leading-[1.1]">
             How We Work With <i className="font-instrument"><br />clients</i>
           </h1>
-<RevealWrapper>
-          <p className="md:max-w-[670px]">
-            Every engagement usually begins with understanding the business and its current digital presence.
-          </p>
-</RevealWrapper>
+          <RevealWrapper>
+            <p className="md:max-w-[670px]">
+              Every engagement usually begins with understanding the business and its current digital presence.
+            </p>
+          </RevealWrapper>
           {/* Points */}
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:max-w-[800px]">
             
@@ -67,23 +69,23 @@ const Section2 = () => {
 
           </div>
           <RevealWrapper>
-          <p className="mt-8 md:max-w-[750px]">
-            From there, we help businesses implement and optimise marketing systems that support visibility, lead generation, and conversion.
-          </p>
+            <p className="mt-8 md:max-w-[750px]">
+              From there, we help businesses implement and optimise marketing systems that support visibility, lead generation, and conversion.
+            </p>
           </RevealWrapper>
-<RevealWrapper>
-          <ul className="mt-8 flex list-none justify-start md:mt-14">
-            <li className="block w-full text-center md:inline-block md:w-auto">
-              <Link href="/contact" className="rv-button rv-button-sm rv-button-primary block md:inline-block">
-                <div className="rv-button-top">
-                  <span className='text-white'>Let’s Talk</span>
-                </div>
-                <div className="rv-button-bottom">
-                  <span className="text-nowrap">Let’s Talk</span>
-                </div>
-              </Link>
-            </li>
-          </ul>
+          <RevealWrapper>
+            <ul className="mt-8 flex list-none justify-start md:mt-14">
+              <li className="block w-full text-center md:inline-block md:w-auto">
+                <Link href="/contact" className="rv-button rv-button-sm rv-button-primary block md:inline-block">
+                  <div className="rv-button-top">
+                    <span className='text-white'>Let’s Talk</span>
+                  </div>
+                  <div className="rv-button-bottom">
+                    <span className="text-nowrap">Let’s Talk</span>
+                  </div>
+                </Link>
+              </li>
+            </ul>
           </RevealWrapper>
 
         </RevealWrapper>
