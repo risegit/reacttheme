@@ -4,11 +4,10 @@ import useCustomHorizontalScroll from '@/hooks/useCustomHorizontalScroll'
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
   ssr: false,
 })
-
 
 const data = [
   {
@@ -58,27 +57,46 @@ const data = [
 ]
 
 const ServicesV10 = () => {
-  // isClient is now returned from the hook directly
   const { contentRef, triggerRef, isClient } = useCustomHorizontalScroll()
   const [cardWidth, setCardWidth] = useState<number>(370)
+  const [visibleCount, setVisibleCount] = useState<number>(4)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const updateWidth = () => {
       const width = window.innerWidth
       if (width <= 1366 && width >= 1280) {
-        setCardWidth(250)
+        setCardWidth(300)
       } else {
         setCardWidth(370)
+      }
+      
+      // Calculate how many cards fit based on viewport width
+      // This ensures exactly 4 cards visible by default
+      if (containerRef.current) {
+        const containerWidth = containerRef.current.clientWidth
+        const gap = 24 // gap-6 = 24px
+        const availableWidth = containerWidth - (gap * (visibleCount - 1))
+        const calculatedWidth = availableWidth / visibleCount
+        
+        // Only adjust if needed, but keep base card width
+        if (calculatedWidth < cardWidth && cardWidth > 250) {
+          setCardWidth(Math.max(calculatedWidth, 250))
+        }
       }
     }
 
     updateWidth()
     window.addEventListener('resize', updateWidth)
     return () => window.removeEventListener('resize', updateWidth)
-  }, [])
+  }, [cardWidth, visibleCount])
+
+  // Split data into visible (first 4) and scrollable (last 2)
+  const visibleCards = data.slice(0, visibleCount)
+  const scrollableCards = data.slice(visibleCount)
 
   return (
-    <section className="relative pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[60px]">
+    <section className="relative pb-10 pt-14 md:pb-16 md:pt-16 lg:pb-[8px] lg:pt-[68px] xl:pb-[10px]">
       <div className="container">
         <div className="text-center mb-8">
           <RevealWrapper className="rv-badge reveal-me">
@@ -92,16 +110,10 @@ const ServicesV10 = () => {
 
           <RevealWrapper as="p">
            Let Rise IT Digital help you scale your business while maximizing ROI. Contact us today for a free consultation.
-
           </RevealWrapper>
         </div>
       </div>
 
-      {/*
-        IMPORTANT: triggerRef must be OUTSIDE the container div so it spans full width.
-        The hook wraps it in a pin-spacer and makes it sticky.
-        The container padding/centering lives inside contentRef's children instead.
-      */}
       <div ref={triggerRef} className="service-section home-sevice-container w-full">
         <div
           ref={contentRef}
@@ -110,9 +122,12 @@ const ServicesV10 = () => {
             height: '100vh',
             alignItems: 'start',
             paddingBottom: '20px',
+            overflowX: 'auto',
+            scrollbarWidth: 'thin',
           }}
         >
-          {data.map((item) => (
+          {/* Visible Cards - First 4 */}
+          {visibleCards.map((item) => (
             <div
               key={item.id}
               className="flex-shrink-0"
@@ -122,7 +137,36 @@ const ServicesV10 = () => {
                 <Link
                   target="_blank"
                   href={`/services${item.href}`}
-                  className="hero-video block"
+                  className="hero-video block group"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-auto w-full transition-transform duration-500 group-hover:scale-105"
+                  />
+                </Link>
+              </figure>
+              <h3 className="mb-2.5 mt-[30px] text-2xl leading-[1.1] tracking-normal md:text-[32px]">
+                {item.title}
+              </h3>
+              <p className="max-w-[95%] text-base leading-[1.6] tracking-[0.32px]">
+                {item.description}
+              </p>
+            </div>
+          ))}
+
+          {/* Scrollable Cards - Last 2 (only visible on scroll) */}
+          {scrollableCards.map((item) => (
+            <div
+              key={item.id}
+              className="flex-shrink-0 scrollable-card"
+              style={{ width: isClient ? cardWidth : 370 }}
+            >
+              <figure className="hero-video-container overflow-hidden">
+                <Link
+                  target="_blank"
+                  href={`/services${item.href}`}
+                  className="hero-video block group"
                 >
                   <img
                     src={item.image}

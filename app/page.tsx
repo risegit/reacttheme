@@ -37,6 +37,7 @@ const home = () => {
 
        {/* CASE STUDIES section BElow */}
       <PortfolioV5 />
+        <Clients />
       {/* <WhyChooseUsV8 /> */}
       {/* Marquee Section */}
       {/* _____UPAR KE SAB MERE HAI */}
@@ -44,11 +45,12 @@ const home = () => {
       {/* <ServicesV5 /> */}
      
       {/* <ImageMarque /> */}
-      <TestimonialV7 />
+     
       {/* <BlogPostsV5 /> */}
      {/* <DiffRise /> */}
       <FaqV2 />
-      <Clients />
+       <TestimonialV7 />
+    
      
 
       <CTA>

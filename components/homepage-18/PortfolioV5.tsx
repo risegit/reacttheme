@@ -44,7 +44,7 @@ const caseStudiesData = [
 
 const PortfolioV5 = () => {
   return (
-    <section className="pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[70px]">
+    <section className="pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[68px] lg:pt-[60px] xl:pb-[68px] xl:pt-[20px]">
       <div className="container">
         <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-6 md:mb-20 md:flex-row md:items-end lg:justify-start">
           <div className="md:flex-1">

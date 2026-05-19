@@ -18,7 +18,7 @@ const achievementStats = [
 const AboutV8 = () => {
   const { revealRef } = useReveal()
   return (
-    <section className="about relative pb-14 pt-14 md:pb-16 lg:pb-[88px] xl:pb-[100px] xl:pt[70px] ">
+    <section className="about relative pb-14 pt-14 md:pb-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt[70px] ">
       <div className="container">
         <RevealWrapper>
        
@@ -42,8 +42,10 @@ const AboutV8 = () => {
         <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 xl:gap-8">
           {achievementStats.map((achievement, index) => (
             <RevealWrapper
-              key={achievement.label}
-              className="flex flex-col items-center justify-center border-t py-7 dark:border-dark text-center">
+              
+            key={achievement.label}
+              className="flex flex-col items-center justify-center border-t py-7 dark:border-dark text-center text-left
+              ">
               <h2 className="mb-2">
                 <CounterAnimation number={achievement.value} />
                 {achievement.suffix}

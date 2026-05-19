@@ -23,9 +23,10 @@ footer .container{
 p.custom-highlight {
     margin-bottom: 10px !important;
 }
-/* @media (max-width: 1366px) and (min-width: 1280px) {
-    .home-sevice-container h3{
-        font-size: 24px !important;
+@media (min-width: 1666px){
+    .gradient-bg{
+        max-width: 68%;
+        margin: 0 auto;
     }
-} */
+}
  

@@ -156,40 +156,40 @@ const ClientsLogos = ({ showAll = false }) => {
 
         {/* Logo Grid */}
         <div className="w-full">
-          {/* Desktop Grid */}
-          <div className={`hidden md:grid gap-6 lg:gap-8 ${isWorkPage ? 'md:grid-cols-5' : 'md:grid-cols-5'}`}>
+          {/* Desktop Grid - Minimal gap, no padding */}
+          <div className={`hidden md:grid gap-0 ${isWorkPage ? 'md:grid-cols-5' : 'md:grid-cols-5'}`}>
             {logos.map((logo) => (
               <div
                 key={logo.id}
-                className="flex items-center justify-center p-4 lg:p-6 bg-  transition-all duration-300 hover:scale-105 group"
+                className="flex items-center justify-center p-0 transition-all duration-300 hover:scale-105 group border-r border-b border-gray-100"
               >
-                <div className="relative w-40 h-28 lg:w-48 lg:h-32">
+                <div className="relative w-48 h-32 lg:w-56 lg:h-36">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
-                    className="object-contain transition-all duration-300 grayscale group-hover:grayscale-0"
-                    sizes="(max-width: 192px) 100vw, 192px"
+                    className="object-contain transition-all duration-300 grayscale group-hover:grayscale-0 p-4"
+                    sizes="(max-width: 224px) 100vw, 224px"
                   />
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Mobile Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden gap-4">
+          {/* Mobile Grid - Minimal gap, no padding */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:hidden gap-0">
             {logos.map((logo) => (
               <div
                 key={logo.id}
-                className="flex items-center justify-center p-3 bg-white rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 group"
+                className="flex items-center justify-center p-0 bg-white transition-all duration-300 hover:shadow-lg hover:scale-105 group border-r border-b border-gray-100"
               >
-                <div className="relative w-28 h-20">
+                <div className="relative w-36 h-24">
                   <Image
                     src={logo.src}
                     alt={logo.alt}
                     fill
-                    className="object-contain transition-all duration-300 grayscale group-hover:grayscale-0"
-                    sizes="(max-width: 112px) 100vw, 112px"
+                    className="object-contain transition-all duration-300 grayscale group-hover:grayscale-0 p-3"
+                    sizes="(max-width: 144px) 100vw, 144px"
                   />
                 </div>
               </div>
