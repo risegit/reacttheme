@@ -43,7 +43,7 @@ const Homepage16 = () => {
                 </p>
               </RevealWrapper>
 
-              <RevealWrapper className="py-2.5">
+              {/* <RevealWrapper className="py-2.5">
                 <h6>Increase website conversion rates</h6>
                 <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
                   Cutting-edge marketing technologies for optimal results.
@@ -55,7 +55,7 @@ const Homepage16 = () => {
                 <p className="mt-1.5 text-base leading-[1.6] tracking-[0.32px]">
                   You'll always know what's working.
                 </p>
-              </RevealWrapper>
+              </RevealWrapper> */}
 
             </div>
 
@@ -63,7 +63,7 @@ const Homepage16 = () => {
             <RevealWrapper as="ul" className="mt-7 max-md:w-full md:mt-14">
               <li className="mx-auto block w-full text-center md:inline-block md:w-auto">
                 <Link
-                  href="/portfolio-agency/case-study"
+                  href="/contact"
                   className="rv-button rv-button-primary block md:inline-block"
                 >
                   <div className="rv-button-top">

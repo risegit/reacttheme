@@ -22,7 +22,7 @@ const FaqV2: FC<PropsType> = ({ titleChange = false }) => {
   return (
     <section className="pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[70px]">
       <div className="container">
-        <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:mb-20 md:flex-row md:items-end lg:justify-between">
+        {/* <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:mb-20 md:flex-row md:items-end lg:justify-between">
           <TextAppearAnimation>
           <SectionHeader
             headingTitle=" FAQ's"
@@ -31,6 +31,27 @@ const FaqV2: FC<PropsType> = ({ titleChange = false }) => {
             description="When detailing testimonials it's important to include key elements that provide context and authenticity"
           />
           </TextAppearAnimation>
+        </div> */}
+        <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-6 md:mb-20 md:flex-row md:items-end lg:justify-start">
+          <div className="md:flex-1">
+            <RevealWrapper className="md:w-[55%]">
+              <div className="rv-badge mb-3.5">
+                <span className="rv-badge-text">FAQs</span>
+              </div>
+              <TextAppearAnimation>
+                <h2 className="text-appear">
+                  FAQ's
+                </h2>
+              </TextAppearAnimation>
+            </RevealWrapper>
+          </div>
+          <div className="max-md:w-full md:flex-1">
+            <TextAppearAnimation>
+                <p className="text-appear overflow-hidden md:text-right">
+                  When detailing testimonials it's important to include key elements that provide context and authenticity
+                </p>
+              </TextAppearAnimation>
+            </div>
         </div>
 
         <div className="mx-auto grid w-full grid-cols-1 items-start gap-7 md:grid-cols-2 lg:grid-cols-3">
