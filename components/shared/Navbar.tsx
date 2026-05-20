@@ -290,7 +290,7 @@ export default function Navbar() {
           <div className="flex justify-between">
             <Link href="/" className="relative z-10">
               <Image
-                className="inline-block max-h-[68px] w-auto dark:hidden"
+                className="inline-block  w-auto dark:hidden"
                 src={logo}
                 alt="logo"
                 width={136}

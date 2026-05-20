@@ -44,7 +44,7 @@ const AboutV8 = () => {
             <RevealWrapper
               
             key={achievement.label}
-              className="flex flex-col items-center justify-center border-t py-7 dark:border-dark text-center text-left
+              className="flex flex-col items-center justify-center border-t py-7 dark:border-dark text-center 
               ">
               <h2 className="mb-2">
                 <CounterAnimation number={achievement.value} />
