@@ -30,3 +30,43 @@ p.custom-highlight {
     }
 }
  
+/* Fix for horizontal scroll section overlapping */
+.service-section {
+  position: relative;
+  z-index: 1;
+}
+
+.horizontal-scroll-container {
+  position: relative;
+  z-index: 2;
+  overflow-x: visible;
+}
+
+/* Ensure proper stacking context */
+.service-section .container {
+  position: relative;
+  z-index: 10;
+  background: inherit;
+}
+
+/* Prevent overlap on mobile */
+@media (max-width: 767px) {
+  .service-wrapper {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .service-wrapper::-webkit-scrollbar {
+    height: 4px;
+  }
+  
+  .service-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  .service-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+}
