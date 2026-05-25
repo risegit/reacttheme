@@ -24,7 +24,7 @@ const useReveal = () => {
             end: 'top -10%',
             scrub: true,
             pin: '.about',
-            pinSpacing: true,
+            // pinSpacing: true,
           },
           opacity: 0.2,
           stagger: 0.1,
