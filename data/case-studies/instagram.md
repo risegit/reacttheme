@@ -1,7 +1,7 @@
 ---
 title: 'Instagram'
 description: 'Introducing our latest creation the Best Sellers No-Code Website! Seamlessly blending creativity and functionality, this innovative platform empowers businesses to showcase their top products with style and efficiency. Say goodbye to coding hassles and hello to a user-friendly interface.'
-thumbnail: '/images/home-3/services-3.png'
+thumbnail: '/images/home-4/Ads-02.jpg'
 coverImage: '/images/services/services-details-img.png'
 badge: 'Project case study'
 ---

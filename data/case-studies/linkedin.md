@@ -1,7 +1,7 @@
 ---
 title: 'Linkedin'
 description: 'Discover the innovative Best Sellers No-Code Website platform, designed to empower businesses with a seamless blend of creativity and functionality. Experience a user-friendly interface that eliminates coding hassles.'
-thumbnail: '/images/project-3/services-6.png'
+thumbnail: '/images/home-4/Ads-03.jpg'
 coverImage: '/images/services/services-details-img.png'
 badge: 'Project case study'
 ---

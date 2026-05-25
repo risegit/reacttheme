@@ -16,14 +16,14 @@ const HeroV11 = () => {
 
   useEffect(() => {
     const imagePaths: string[] = [
-      '/images/home-4/img1.png',
-      '/images/home-4/img2.png',
-      '/images/home-4/img3.png',
-      '/images/home-4/img4.png',
-      '/images/home-4/img5.png',
-      '/images/home-4/img6.png',
-      '/images/home-4/img7.png',
-      '/images/home-4/img8.png',
+      '/images/home-4/Banner-01.jpg',
+      '/images/home-4/Banner-03.jpg',
+      '/images/home-4/Banner-03.jpg',
+      '/images/home-4/Banner-02.jpg',
+      '/images/home-4/Banner-05.jpg',
+      '/images/home-4/Banner-06.jpg',
+      '/images/home-4/Banner-04.jpg',
+      '/images/home-4/Banner-02.jpg',
     ]
 
     const translations: Translation[] = [
@@ -172,29 +172,27 @@ const HeroV11 = () => {
         </ul>
       </div>
       <figure className="absolute left-[8%] top-[7%] hidden md:block lg:left-[24%] lg:top-[11%]">
-        <img src="/images/home-4/img1.png" alt="" className="decorative-image" ref={setImageRef(0)} />
+        <img src="/images/home-4/Banner-01.jpg" alt="" className="decorative-image" ref={setImageRef(0)} />
       </figure>
       <figure className="absolute right-[15%] top-[7%] hidden md:block lg:right-[29%] lg:top-[11%]">
-        <img src="/images/home-4/img2.png" alt="" className="decorative-image" ref={setImageRef(1)} />
+        <img src="/images/home-4/Banner-02.jpg" alt="" className="decorative-image" ref={setImageRef(1)} />
       </figure>
       <figure className="absolute left-[2%] top-[42%] hidden lg:block">
-        <img src="/images/home-4/img3.png" alt="" className="decorative-image" ref={setImageRef(2)} />
+        <img src="/images/home-4/Banner-03.jpg" alt="" className="decorative-image" ref={setImageRef(2)} />
       </figure>
       <figure className="absolute right-[2%] top-[32%] hidden lg:block">
-        <img src="/images/home-4/img4.png" alt="" className="decorative-image" ref={setImageRef(3)} />
+        <img src="/images/home-4/Banner-04.jpg" alt="" className="decorative-image" ref={setImageRef(3)} />
       </figure>
       <figure className="absolute bottom-[4%] left-[12%] hidden md:block lg:bottom-[7%] lg:left-[13%]">
-        <img src="/images/home-4/img5.png" alt="" className="decorative-image" ref={setImageRef(4)} />
+        <img src="/images/home-4/Banner-05.jpg" alt="" className="decorative-image" ref={setImageRef(4)} />
       </figure>
       <figure className="absolute bottom-[1%] right-[3%] hidden md:block lg:bottom-[3%] lg:right-[5%]">
-        <img src="/images/home-4/img6.png" alt="" className="decorative-image" ref={setImageRef(5)} />
+        <img src="/images/home-4/Banner-06.jpg" alt="" className="decorative-image" ref={setImageRef(5)} />
       </figure>
         <figure className="absolute bottom-[1%] right-[3%] hidden md:block lg:bottom-[3%] lg:right-[5%]">
-        <img src="/images/home-4/img7.png" alt="" className="decorative-image" ref={setImageRef(5)} />
+        <img src="/images/home-4/Banner-02.jpg" alt="" className="decorative-image" ref={setImageRef(5)} />
       </figure>
-      <figure className="absolute bottom-[1%] right-[3%] hidden md:block lg:bottom-[3%] lg:right-[5%]">
-        <img src="/images/home-4/img8.png" alt="" className="decorative-image" ref={setImageRef(5)} />
-      </figure>
+
     </RevealWrapper>
   )
 }

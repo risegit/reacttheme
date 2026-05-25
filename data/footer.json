@@ -5,7 +5,7 @@
       { "href": "/services/seo", "label": "SEO" },
       { "href": "/services/digital-pr", "label": "Digital PR & Authority Building" },
       { "href": "/services/content-writing", "label": "Content Writing" },
-      { "href": "/services/performance-marketing", "label": "Case Study" },
+      { "href": "/services/performance-marketing", "label": "Performance Marketing" },
       { "href": "/services/lead-generation-systems", "label": "Lead Generation Systems" },
       { "href": "/services/social-media-marketing", "label": "Social Media Marketing" },
       { "href": "/services/email-marketing", "label": "Email Marketing" }
@@ -18,7 +18,7 @@
       { "href": "/about", "label": "About" },
       { "href": "/servies", "label": "Services" },
       { "href": "/work", "label": "Work" },
-      { "href": "/career", "label": "career" },
+      { "href": "/career", "label": "Career" },
       { "href": "/contact", "label": "Contact" }
     ]
   }
