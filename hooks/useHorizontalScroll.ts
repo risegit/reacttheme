@@ -1,130 +1,254 @@
+// hooks/useHorizontalScroll.ts
 'use client'
 
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef } from 'react'
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger)
-}
+import { useEffect, useRef, useCallback, useState } from 'react'
 
 interface HorizontalScrollOptions {
   offset?: number
-  duration?: number
-  ease?: string
-  start?: string
   markers?: boolean
-  scrub?: number | boolean
-  onAnimationCreated?: (animation: gsap.core.Tween, scrollTrigger: ScrollTrigger) => void
-  extraScroll?: number
   disabled?: boolean
+  extraScroll?: number
 }
 
 const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
   const contentRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLDivElement>(null)
-  const [isReady, setIsReady] = useState(false)
+  const pinSpacerRef = useRef<HTMLDivElement | null>(null)
+  const [isClient, setIsClient] = useState(false)
 
   const {
-    offset = 60,
-    duration = 2,
-    ease = 'none',
-    start = 'top 100px',
+    offset = 0,
     markers = false,
-    scrub = 1,
-    onAnimationCreated,
-    extraScroll = 370,
+    disabled = false,
+    extraScroll = 0,
   } = options
 
-  // Wait for component to mount and styles to load
-  useEffect(() => {
-    // Small delay to ensure CSS is fully loaded
-    const timer = setTimeout(() => setIsReady(true), 100)
-    return () => clearTimeout(timer)
+  const logMarker = useCallback((message: string, color: string = 'blue') => {
+    if (markers) {
+      console.log(`%c[HorizontalScroll] ${message}`, `color: ${color}`)
+    }
+  }, [markers])
+
+  // Get the total scroll width needed
+  const getTotalScrollWidth = useCallback(() => {
+    const content = contentRef.current
+    if (!content) return 0
+    const maxScrollLeft = content.scrollWidth - content.clientWidth
+    return Math.max(0, maxScrollLeft + offset + extraScroll)
+  }, [offset, extraScroll])
+
+  // Core scroll handler — maps vertical scroll progress → horizontal scrollLeft
+  const updateHorizontalScroll = useCallback(() => {
+    const content = contentRef.current
+    const pinSpacer = pinSpacerRef.current
+    if (!content || !pinSpacer || disabled) return
+
+    const totalScrollWidth = getTotalScrollWidth()
+    if (totalScrollWidth <= 0) return
+
+    // pinSpacer top relative to document
+    const spacerTop = pinSpacer.getBoundingClientRect().top + window.scrollY
+
+    // The sticky section starts being "active" once the spacer top hits the viewport top
+    // and ends when the spacer bottom minus 100vh hits the viewport top
+    const scrollStart = spacerTop
+    const scrollEnd = spacerTop + totalScrollWidth
+
+    const currentScroll = window.scrollY
+
+    let progress = 0
+    if (currentScroll <= scrollStart) {
+      progress = 0
+    } else if (currentScroll >= scrollEnd) {
+      progress = 1
+    } else {
+      progress = (currentScroll - scrollStart) / totalScrollWidth
+    }
+
+    const maxScrollLeft = content.scrollWidth - content.clientWidth
+    const targetScrollLeft = Math.min(progress * totalScrollWidth, maxScrollLeft)
+    
+    // Use smooth scrolling for better UX
+    content.scrollTo({
+      left: targetScrollLeft,
+      behavior: 'smooth'
+    })
+
+    logMarker(
+      `scroll: ${currentScroll.toFixed(0)} | start: ${scrollStart.toFixed(0)} | end: ${scrollEnd.toFixed(0)} | progress: ${(progress * 100).toFixed(1)}% | scrollLeft: ${targetScrollLeft.toFixed(0)}`,
+      'cyan'
+    )
+  }, [getTotalScrollWidth, disabled, logMarker])
+
+  // Build the pin spacer wrapper and make the trigger sticky
+  const setupPinSpacer = useCallback(() => {
+    const trigger = triggerRef.current
+    const content = contentRef.current
+    if (!trigger || !content || disabled) return
+
+    // Force a reflow so scrollWidth/clientWidth reflect actual rendered layout
+    void content.getBoundingClientRect()
+
+    const totalScrollWidth = getTotalScrollWidth()
+    if (totalScrollWidth <= 0) return
+
+    // Reuse existing spacer if already created
+    let pinSpacer = pinSpacerRef.current
+
+    if (!pinSpacer) {
+      pinSpacer = document.createElement('div')
+      pinSpacer.className = 'horizontal-pin-spacer'
+      const parent = trigger.parentElement
+      if (!parent) return
+      parent.insertBefore(pinSpacer, trigger)
+      pinSpacer.appendChild(trigger)
+      pinSpacerRef.current = pinSpacer
+    }
+
+    // Height = section viewport height + extra vertical scroll needed to traverse all cards
+    // The sticky element is 100vh tall; the spacer must be 100vh + totalScrollWidth
+    // so the section "holds" for exactly totalScrollWidth px of vertical scroll.
+    pinSpacer.style.height = `calc(100vh + ${totalScrollWidth}px)`
+    pinSpacer.style.position = 'relative'
+
+    // Make the trigger sticky inside the spacer
+    trigger.style.position = 'sticky'
+    trigger.style.top = '0'
+    trigger.style.height = '100vh'
+    trigger.style.overflow = 'hidden'
+    trigger.style.width = '100%'
+
+    logMarker(`Pin spacer height: calc(100vh + ${totalScrollWidth}px)`, 'green')
+  }, [getTotalScrollWidth, disabled, logMarker])
+
+  // Hide native scrollbar on the horizontal container
+  const setupHorizontalContainer = useCallback(() => {
+    const content = contentRef.current
+    if (!content || disabled) return
+
+    content.style.overflowX = 'scroll'
+    content.style.overflowY = 'hidden'
+    content.style.scrollbarWidth = 'none'
+    ;(content.style as any).msOverflowStyle = 'none'
+    content.classList.add('horizontal-scroll-container')
+
+    logMarker('Horizontal container ready', 'blue')
+  }, [disabled, logMarker])
+
+  // Tear everything down cleanly
+  const resetStyles = useCallback(() => {
+    const trigger = triggerRef.current
+    const pinSpacer = pinSpacerRef.current
+
+    if (pinSpacer && trigger) {
+      const parent = pinSpacer.parentElement
+      if (parent) {
+        parent.insertBefore(trigger, pinSpacer)
+        pinSpacer.remove()
+      }
+      pinSpacerRef.current = null
+    }
+
+    if (trigger) {
+      trigger.style.position = ''
+      trigger.style.top = ''
+      trigger.style.height = ''
+      trigger.style.overflow = ''
+      trigger.style.width = ''
+    }
+
+    const content = contentRef.current
+    if (content) {
+      content.style.overflowX = ''
+      content.style.overflowY = ''
+      content.style.scrollbarWidth = ''
+      ;(content.style as any).msOverflowStyle = ''
+      content.classList.remove('horizontal-scroll-container')
+    }
   }, [])
 
-  useGSAP(
-    () => {
-      if (!isReady) return
+  // Scroll handler with requestAnimationFrame for performance
+  const handleScroll = useCallback(() => {
+    if (!disabled) {
+      requestAnimationFrame(() => updateHorizontalScroll())
+    }
+  }, [updateHorizontalScroll, disabled])
 
-      const content = contentRef.current
+  // Resize handler — full recalculation
+  const handleResize = useCallback(() => {
+    if (disabled) return
+    setTimeout(() => {
+      // Destroy and rebuild so measurements are fresh
       const trigger = triggerRef.current
+      const pinSpacer = pinSpacerRef.current
 
-      if (!content || !trigger || window.innerWidth < 768) return
-
-      // Check if we're on mobile
-      const isMobile = window.innerWidth < 768
-      if (isMobile) {
-        gsap.set(content, { x: 0, clearProps: 'transform' })
-        return
+      if (pinSpacer) {
+        pinSpacer.style.height = ''
       }
 
-      // Function to calculate scroll amount
-      const getScrollAmount = () => {
-        const contentWidth = content.scrollWidth
-        return -(contentWidth - window.innerWidth + offset + extraScroll)
-      }
-      
-      ensureContentReady()
-
-      const animation = gsap.to(content, {
-        x: getScrollAmount(),
-        duration,
-        ease,
-        overwrite: true,
-      })
-
-      const scrollTriggerConfig: ScrollTrigger.Vars = {
-        trigger,
-        start,
-        end: () => `+=${Math.abs(getScrollAmount()) + window.innerWidth * 0.1}`,
-        pin: true,
-        animation,
-        scrub,
-        invalidateOnRefresh: true,
-        markers,
-        anticipatePin: 1, // Helps with pinning performance
-        onRefresh: () => {
-          animation.vars.x = getScrollAmount()
-        },
+      if (trigger) {
+        trigger.style.position = ''
+        trigger.style.top = ''
+        trigger.style.height = ''
+        trigger.style.overflow = ''
+        trigger.style.width = ''
       }
 
-      if (onAnimationCreated) {
-        onAnimationCreated(animation, scrollTrigger)
-      }
+      // Re-setup with fresh measurements
+      setupHorizontalContainer()
+      setupPinSpacer()
+      updateHorizontalScroll()
 
-      const handleResize = () => {
-        ScrollTrigger.refresh()
-      }
+      logMarker('Resized — recalculated', 'orange')
+    }, 150)
+  }, [setupHorizontalContainer, setupPinSpacer, updateHorizontalScroll, disabled, logMarker])
 
-      window.addEventListener('resize', handleResize)
-      window.addEventListener('load', handleFontsAndImages)
-      
-      // Initial refresh after all content is rendered
-      setTimeout(() => {
-        ScrollTrigger.refresh()
-      }, 200)
+  useEffect(() => {
+    setIsClient(true)
 
-      return () => {
-        clearTimeout(resizeTimeout)
-        animation.kill()
-        scrollTrigger.kill()
-        window.removeEventListener('resize', handleResize)
-        window.removeEventListener('load', handleFontsAndImages)
-      }
-    },
-    {
-      dependencies: [offset, duration, ease, start, markers, scrub, extraScroll, onAnimationCreated],
-      scope: triggerRef,
-      revertOnUpdate: true,
-    },
-  )
+    if (disabled || !triggerRef.current || !contentRef.current) return
 
-  return {
-    contentRef,
-    triggerRef,
-  }
+    // Inject webkit scrollbar hide once
+    if (!document.getElementById('hscroll-style')) {
+      const style = document.createElement('style')
+      style.id = 'hscroll-style'
+      style.textContent = `
+        .horizontal-scroll-container::-webkit-scrollbar { 
+          display: none; 
+        }
+        .horizontal-scroll-container {
+          scroll-behavior: smooth;
+        }
+      `
+      document.head.appendChild(style)
+    }
+
+    const init = setTimeout(() => {
+      setupHorizontalContainer()
+      setupPinSpacer()
+      updateHorizontalScroll()
+    }, 100)
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      clearTimeout(init)
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+      resetStyles()
+    }
+  }, [
+    handleScroll,
+    handleResize,
+    setupHorizontalContainer,
+    setupPinSpacer,
+    updateHorizontalScroll,
+    resetStyles,
+    disabled,
+  ])
+
+  return { contentRef, triggerRef, isClient }
 }
 
 export default useHorizontalScroll
