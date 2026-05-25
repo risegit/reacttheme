@@ -41,7 +41,7 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
   // Core scroll handler — maps vertical scroll progress → horizontal scrollLeft
   const updateHorizontalScroll = useCallback(() => {
     const content = contentRef.current
-    const pinSpacer = pinSpacerRef.current
+    const pinSpacer = pinSpacerRef.current  
     if (!content || !pinSpacer || disabled) return
 
     const totalScrollWidth = getTotalScrollWidth()
