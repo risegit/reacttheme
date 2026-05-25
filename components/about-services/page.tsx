@@ -71,8 +71,11 @@ const data = [
 
 const SolutionV3 = () => {
   const { contentRef, triggerRef } = useHorizontalScroll({
+    markers: process.env.NODE_ENV === 'development', // Enable markers only in development
     extraScroll: 0,
+    offset: 60,
   })
+  
   return (
     <section
       ref={triggerRef}
