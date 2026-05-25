@@ -3,8 +3,6 @@ import useHorizontalScroll from '@/hooks/useHorizontalScroll'
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
 import TextAppearAnimation from '../animation/TextAppearAnimation'
-import gradientBg from '../../public/images/gradient-bg.png'
-import Image from 'next/image'
 
 const data = [
   {
@@ -71,9 +69,9 @@ const data = [
 
 const SolutionV3 = () => {
   const { contentRef, triggerRef } = useHorizontalScroll({
-    markers: process.env.NODE_ENV === 'development', // Enable markers only in development
-    extraScroll: 0,
-    offset: 60,
+    markers: true, // Enable to see debug logs
+    extraScroll: 200,
+    offset: 50,
   })
   
   return (
@@ -111,17 +109,23 @@ const SolutionV3 = () => {
         </div>
       </div>
 
+      {/* Horizontal scroll container - ensure it has enough width */}
       <div
         ref={contentRef}
-        className="service-wrapper mt-16 flex flex-col gap-6 overflow-x-hidden max-md:px-5 md:w-fit md:flex-row md:flex-nowrap md:pl-[20%] md:pr-10"
+        className="service-wrapper mt-16 flex flex-nowrap gap-6 overflow-x-auto max-md:px-5 md:pl-[20%] md:pr-10"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
         aria-label="Our service offerings">
         {data.map((item) => (
           <Link 
             key={item.id}
             href={`/services/${item.slug}`}
-            className="group block w-full flex-1 transition-transform duration-300 hover:-translate-y-1"
+            className="group block flex-shrink-0 transition-transform duration-300 hover:-translate-y-1"
+            style={{ width: '370px' }}
           >
-            <div className="flex w-full flex-1 flex-col gap-4 rounded-none border-t border-t-secondary bg-backgroundBody px-5 py-14 dark:border-t-primary dark:bg-black md:w-[370px] md:flex-row md:gap-[22px] md:px-[25px] md:py-[70px] transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-900">
+            <div className="flex h-full w-full flex-col gap-4 rounded-none border-t border-t-secondary bg-backgroundBody px-5 py-14 dark:border-t-primary dark:bg-black md:flex-row md:gap-[22px] md:px-[25px] md:py-[70px] transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-900">
               <div aria-hidden="true">
                 <p className="font-instrument text-5xl font-normal leading-[64px] text-black dark:text-white max-md:text-3xl transition-colors duration-300 group-hover:text-primary dark:group-hover:text-primary">
                   0{item.id}
