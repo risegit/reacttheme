@@ -135,7 +135,7 @@ const ServicesV10 = () => {
             >
               <figure className="hero-video-container overflow-hidden">
                 <Link
-                  target="_blank"
+                 
                   href={`/services${item.href}`}
                   className="hero-video block group"
                 >
@@ -146,9 +146,14 @@ const ServicesV10 = () => {
                   />
                 </Link>
               </figure>
+              <Link
+               href={`/services${item.href}`}
+                  className="hero-video block group"
+                  >
               <h3 className="mb-2.5 mt-[30px] text-2xl leading-[1.1] tracking-normal md:text-[32px]">
                 {item.title}
               </h3>
+              </Link>
               <p className="max-w-[95%] text-base leading-[1.6] tracking-[0.32px]">
                 {item.description}
               </p>

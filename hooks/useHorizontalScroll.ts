@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -14,10 +14,9 @@ interface HorizontalScrollOptions {
   duration?: number
   ease?: string
   start?: string
-  end?: string
   markers?: boolean
   scrub?: number | boolean
-  pinSpacing?: boolean
+  onAnimationCreated?: (animation: gsap.core.Tween, scrollTrigger: ScrollTrigger) => void
   extraScroll?: number
 }
 
@@ -32,7 +31,7 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     start = 'top top',
     markers = false,
     scrub = 1,
-    pinSpacing = true,
+    onAnimationCreated,
     extraScroll = 370,
   } = options
 
@@ -41,21 +40,11 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
       const content = contentRef.current
       const trigger = triggerRef.current
 
-      if (!content || !trigger) return
-
-      // Kill any existing ScrollTriggers to prevent conflicts
-      ScrollTrigger.getAll().forEach(st => {
-        if (st.vars.trigger === trigger) st.kill()
-      })
+      if (!content || !trigger || window.innerWidth < 768) return
 
       const getScrollAmount = () => {
         const contentWidth = content.scrollWidth
-        const viewportWidth = window.innerWidth
-        
-        if (viewportWidth >= 768) {
-          return -(contentWidth - viewportWidth + offset + extraScroll)
-        }
-        return 0
+        return -(contentWidth - window.innerWidth + offset + extraScroll)
       }
 
       const animation = gsap.to(content, {
@@ -67,45 +56,24 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
       const scrollTrigger = ScrollTrigger.create({
         trigger,
         start,
-        end: () => {
-          const scrollAmount = Math.abs(getScrollAmount())
-          return `+=${scrollAmount + window.innerHeight * 0.5}`
-        },
+        end: () => `+=${Math.abs(getScrollAmount()) + window.innerWidth * 0.1}`,
         pin: true,
-        pinSpacing,
         animation,
         scrub,
         invalidateOnRefresh: true,
         markers,
         onRefresh: () => {
           animation.vars.x = getScrollAmount()
-          animation.invalidate()
-        },
-        onUpdate: (self) => {
-          // Ensure smooth scrolling
-          if (content && self.progress === 1) {
-            const finalX = getScrollAmount()
-            if (content.style.transform !== `translateX(${finalX}px)`) {
-              gsap.set(content, { x: finalX })
-            }
-          }
         },
       })
 
-      const handleResize = () => {
-        if (window.innerWidth < 768) {
-          // Reset position on mobile
-          gsap.set(content, { x: 0, clearProps: 'transform' })
-          scrollTrigger.disable()
-        } else {
-          scrollTrigger.enable()
-          animation.vars.x = getScrollAmount()
-          ScrollTrigger.refresh()
-        }
+      if (onAnimationCreated) {
+        onAnimationCreated(animation, scrollTrigger)
       }
 
-      // Initial check for mobile
-      handleResize()
+      const handleResize = () => {
+        ScrollTrigger.refresh()
+      }
 
       window.addEventListener('resize', handleResize)
 
@@ -116,7 +84,7 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
       }
     },
     {
-      dependencies: [offset, duration, ease, start, markers, scrub, extraScroll, pinSpacing],
+      dependencies: [offset, duration, ease, start, markers, scrub, extraScroll, onAnimationCreated],
       scope: triggerRef,
     },
   )
