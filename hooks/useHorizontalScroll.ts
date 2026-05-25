@@ -1,4 +1,3 @@
-// hooks/useHorizontalScroll.ts
 'use client'
 
 import { useEffect, useRef, useCallback, useState } from 'react'
@@ -20,7 +19,7 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     offset = 0,
     markers = false,
     disabled = false,
-    extraScroll = 0,
+    extraScroll = 100,
   } = options
 
   const logMarker = useCallback((message: string, color: string = 'blue') => {
@@ -33,7 +32,9 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
   const getTotalScrollWidth = useCallback(() => {
     const content = contentRef.current
     if (!content) return 0
+    // Get the actual scrollable width minus visible width
     const maxScrollLeft = content.scrollWidth - content.clientWidth
+    console.log('scrollWidth:', content.scrollWidth, 'clientWidth:', content.clientWidth, 'maxScrollLeft:', maxScrollLeft)
     return Math.max(0, maxScrollLeft + offset + extraScroll)
   }, [offset, extraScroll])
 
@@ -44,15 +45,19 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     if (!content || !pinSpacer || disabled) return
 
     const totalScrollWidth = getTotalScrollWidth()
-    if (totalScrollWidth <= 0) return
+    if (totalScrollWidth <= 0) {
+      console.log('No scroll width available')
+      return
+    }
 
     // pinSpacer top relative to document
-    const spacerTop = pinSpacer.getBoundingClientRect().top + window.scrollY
+    const spacerRect = pinSpacer.getBoundingClientRect()
+    const spacerTop = spacerRect.top + window.scrollY
+    const spacerHeight = spacerRect.height
 
-    // The sticky section starts being "active" once the spacer top hits the viewport top
-    // and ends when the spacer bottom minus 100vh hits the viewport top
+    // Calculate scroll progress
     const scrollStart = spacerTop
-    const scrollEnd = spacerTop + totalScrollWidth
+    const scrollEnd = spacerTop + spacerHeight - window.innerHeight
 
     const currentScroll = window.scrollY
 
@@ -62,20 +67,19 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     } else if (currentScroll >= scrollEnd) {
       progress = 1
     } else {
-      progress = (currentScroll - scrollStart) / totalScrollWidth
+      progress = (currentScroll - scrollStart) / (scrollEnd - scrollStart)
     }
 
     const maxScrollLeft = content.scrollWidth - content.clientWidth
-    const targetScrollLeft = Math.min(progress * totalScrollWidth, maxScrollLeft)
-    
-    // Use smooth scrolling for better UX
-    content.scrollTo({
-      left: targetScrollLeft,
-      behavior: 'smooth'
-    })
+    const targetScrollLeft = progress * maxScrollLeft
+
+    // Apply scroll without smooth for better performance during wheel scroll
+    if (content.scrollLeft !== targetScrollLeft) {
+      content.scrollLeft = targetScrollLeft
+    }
 
     logMarker(
-      `scroll: ${currentScroll.toFixed(0)} | start: ${scrollStart.toFixed(0)} | end: ${scrollEnd.toFixed(0)} | progress: ${(progress * 100).toFixed(1)}% | scrollLeft: ${targetScrollLeft.toFixed(0)}`,
+      `scroll: ${currentScroll.toFixed(0)} | start: ${scrollStart.toFixed(0)} | end: ${scrollEnd.toFixed(0)} | progress: ${(progress * 100).toFixed(1)}% | scrollLeft: ${targetScrollLeft.toFixed(0)} | maxLeft: ${maxScrollLeft}`,
       'cyan'
     )
   }, [getTotalScrollWidth, disabled, logMarker])
@@ -105,10 +109,9 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
       pinSpacerRef.current = pinSpacer
     }
 
-    // Height = section viewport height + extra vertical scroll needed to traverse all cards
-    // The sticky element is 100vh tall; the spacer must be 100vh + totalScrollWidth
-    // so the section "holds" for exactly totalScrollWidth px of vertical scroll.
-    pinSpacer.style.height = `calc(100vh + ${totalScrollWidth}px)`
+    // The spacer height should be the scrollable width plus viewport height
+    const spacerHeight = window.innerHeight + totalScrollWidth
+    pinSpacer.style.height = `${spacerHeight}px`
     pinSpacer.style.position = 'relative'
 
     // Make the trigger sticky inside the spacer
@@ -118,19 +121,23 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     trigger.style.overflow = 'hidden'
     trigger.style.width = '100%'
 
-    logMarker(`Pin spacer height: calc(100vh + ${totalScrollWidth}px)`, 'green')
+    logMarker(`Pin spacer height: ${spacerHeight}px (100vh + ${totalScrollWidth}px)`, 'green')
   }, [getTotalScrollWidth, disabled, logMarker])
 
-  // Hide native scrollbar on the horizontal container
+  // Setup horizontal container - ensure it can scroll horizontally
   const setupHorizontalContainer = useCallback(() => {
     const content = contentRef.current
     if (!content || disabled) return
 
-    content.style.overflowX = 'scroll'
+    // Ensure horizontal scrolling is enabled
+    content.style.overflowX = 'auto'
     content.style.overflowY = 'hidden'
     content.style.scrollbarWidth = 'none'
     ;(content.style as any).msOverflowStyle = 'none'
     content.classList.add('horizontal-scroll-container')
+    
+    // Log the scrollable width
+    console.log('Container setup - scrollWidth:', content.scrollWidth, 'clientWidth:', content.clientWidth)
 
     logMarker('Horizontal container ready', 'blue')
   }, [disabled, logMarker])
@@ -167,48 +174,34 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     }
   }, [])
 
-  // Scroll handler with requestAnimationFrame for performance
+  // Scroll handler
   const handleScroll = useCallback(() => {
     if (!disabled) {
-      requestAnimationFrame(() => updateHorizontalScroll())
+      updateHorizontalScroll()
     }
   }, [updateHorizontalScroll, disabled])
 
-  // Resize handler — full recalculation
+  // Resize handler
   const handleResize = useCallback(() => {
     if (disabled) return
     setTimeout(() => {
-      // Destroy and rebuild so measurements are fresh
-      const trigger = triggerRef.current
-      const pinSpacer = pinSpacerRef.current
-
-      if (pinSpacer) {
-        pinSpacer.style.height = ''
-      }
-
-      if (trigger) {
-        trigger.style.position = ''
-        trigger.style.top = ''
-        trigger.style.height = ''
-        trigger.style.overflow = ''
-        trigger.style.width = ''
-      }
-
-      // Re-setup with fresh measurements
-      setupHorizontalContainer()
-      setupPinSpacer()
-      updateHorizontalScroll()
-
-      logMarker('Resized — recalculated', 'orange')
+      // Destroy and rebuild with fresh measurements
+      resetStyles()
+      setTimeout(() => {
+        setupHorizontalContainer()
+        setupPinSpacer()
+        updateHorizontalScroll()
+        logMarker('Resized — recalculated', 'orange')
+      }, 50)
     }, 150)
-  }, [setupHorizontalContainer, setupPinSpacer, updateHorizontalScroll, disabled, logMarker])
+  }, [setupHorizontalContainer, setupPinSpacer, updateHorizontalScroll, resetStyles, disabled, logMarker])
 
   useEffect(() => {
     setIsClient(true)
 
     if (disabled || !triggerRef.current || !contentRef.current) return
 
-    // Inject webkit scrollbar hide once
+    // Inject styles for scrollbar hiding and horizontal scrolling
     if (!document.getElementById('hscroll-style')) {
       const style = document.createElement('style')
       style.id = 'hscroll-style'
@@ -217,12 +210,14 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
           display: none; 
         }
         .horizontal-scroll-container {
-          scroll-behavior: smooth;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `
       document.head.appendChild(style)
     }
 
+    // Initial setup
     const init = setTimeout(() => {
       setupHorizontalContainer()
       setupPinSpacer()
