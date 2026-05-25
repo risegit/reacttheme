@@ -18,64 +18,42 @@ interface HorizontalScrollOptions {
   scrub?: number | boolean
   onAnimationCreated?: (animation: gsap.core.Tween, scrollTrigger: ScrollTrigger) => void
   extraScroll?: number
-  disabled?: boolean
 }
 
 const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
   const contentRef = useRef<HTMLDivElement>(null)
   const triggerRef = useRef<HTMLDivElement>(null)
-  const [isReady, setIsReady] = useState(false)
 
   const {
     offset = 60,
     duration = 2,
     ease = 'none',
-    start = 'top 100px',
+    start = 'top top',
     markers = false,
     scrub = 1,
     onAnimationCreated,
     extraScroll = 370,
   } = options
 
-  // Wait for component to mount and styles to load
-  useEffect(() => {
-    // Small delay to ensure CSS is fully loaded
-    const timer = setTimeout(() => setIsReady(true), 100)
-    return () => clearTimeout(timer)
-  }, [])
-
   useGSAP(
     () => {
-      if (!isReady) return
-
       const content = contentRef.current
       const trigger = triggerRef.current
 
       if (!content || !trigger || window.innerWidth < 768) return
 
-      // Check if we're on mobile
-      const isMobile = window.innerWidth < 768
-      if (isMobile) {
-        gsap.set(content, { x: 0, clearProps: 'transform' })
-        return
-      }
-
-      // Function to calculate scroll amount
       const getScrollAmount = () => {
         const contentWidth = content.scrollWidth
         return -(contentWidth - window.innerWidth + offset + extraScroll)
       }
-      
-      ensureContentReady()
 
       const animation = gsap.to(content, {
         x: getScrollAmount(),
         duration,
         ease,
-        overwrite: true,
       })
 
-      const scrollTriggerConfig: ScrollTrigger.Vars = {
+      const scrollTrigger = ScrollTrigger.create({
         trigger,
         start,
         end: () => `+=${Math.abs(getScrollAmount()) + window.innerWidth * 0.1}`,
@@ -84,11 +62,10 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
         scrub,
         invalidateOnRefresh: true,
         markers,
-        anticipatePin: 1, // Helps with pinning performance
         onRefresh: () => {
           animation.vars.x = getScrollAmount()
         },
-      }
+      })
 
       if (onAnimationCreated) {
         onAnimationCreated(animation, scrollTrigger)
@@ -99,25 +76,16 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
       }
 
       window.addEventListener('resize', handleResize)
-      window.addEventListener('load', handleFontsAndImages)
-      
-      // Initial refresh after all content is rendered
-      setTimeout(() => {
-        ScrollTrigger.refresh()
-      }, 200)
 
       return () => {
-        clearTimeout(resizeTimeout)
         animation.kill()
         scrollTrigger.kill()
         window.removeEventListener('resize', handleResize)
-        window.removeEventListener('load', handleFontsAndImages)
       }
     },
     {
       dependencies: [offset, duration, ease, start, markers, scrub, extraScroll, onAnimationCreated],
       scope: triggerRef,
-      revertOnUpdate: true,
     },
   )
 
