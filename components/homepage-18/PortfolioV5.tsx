@@ -8,7 +8,7 @@ import AnimatedHeading from './AnimatedHeading';
 const caseStudiesData = [
   {
     id: '1',
-    slug: 'b2b-custom-branding-company',
+    slug: 'google-ads',
     title: 'Google Ads ',
     image: '/images/home-5/case-study-3.png',
     thumbnail: '/images/home-5/case-study-3.png',
@@ -25,7 +25,7 @@ const caseStudiesData = [
   },
   {
     id: '2',
-    slug: 'b2b-customer',
+    slug: 'meta',
     title: 'Meta Ads',
     image: '/images/home-5/case-study-4.png',
     thumbnail: '/images/home-5/case-study-4.png',

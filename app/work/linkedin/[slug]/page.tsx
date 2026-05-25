@@ -61,7 +61,7 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
       <ProjectDetailsHero
         badgeTitle={postprojects.badgeTitle}
         title={postprojects.title}
-        description="A B2B custom branding company specialising in high-quality promotional products."
+        description={postprojects.description}
         scale
       />
 

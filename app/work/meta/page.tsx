@@ -71,8 +71,8 @@ Well-optimised content allows websites to attract qualified organic traffic whil
       <div className="container">
         <div className="mb-10 flex flex-col items-start justify-center gap-x-10 gap-y-4 md:mb-20 md:flex-row md:items-end lg:justify-between">
           <SectionHeader
-            italicTitle="Selectedd"
-            headingTitle="Growth Stories Studies"
+            italicTitle="Meta Ads"
+            headingTitle="Case Studies"
             description="Below are examples of how businesses have used digital marketing systems to improve visibility, generate leads, and strengthen their digital presence."
           />
         </div>
