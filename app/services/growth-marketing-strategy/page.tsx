@@ -23,7 +23,7 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const projects = {
       'project-1': {
         category: 'Services',
-        title:'Growth Marketing Strategy',
+        title: 'Growth Marketing Strategy',
         description: 'Businesses rarely struggle because they lack marketing channels. They struggle because their marketing efforts across SEO, advertising, content marketing, and social media operate independently without a clear strategy.Growth marketing strategy connects these channels into a structured framework designed to improve visibility, generate demand, and strengthen customer acquisition.At Rise IT, we help businesses develop growth marketing strategies that align digital marketing channels with measurable business outcomes. Our strategic approach focuses on identifying the most effective growth opportunities, prioritising marketing investments, and building scalable systems that support sustainable growth.Whether a business is launching a new product, expanding into new markets, or strengthening its digital presence, a structured growth strategy helps convert marketing activity into predictable business growth.',
         thumbnail: '/images/home-5/case-study-3.png',
 
@@ -180,21 +180,22 @@ By aligning marketing channels with business objectives, we help organisations b
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <GrowthMarketingStrategy project={project} />
-      
+
       <CTA>
-        Let's chat!
-        <CtaImageSlider
+        Build a marketing strategy designed <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
             { id: '2', img: '/images/agent/07.png' },
             { id: '3', img: '/images/agent/08.png' },
           ]}
-        />
-        with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+        /> for growth.
+       
+
+        <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
+        </h5>
       </CTA>
     </LayoutOne>
   )

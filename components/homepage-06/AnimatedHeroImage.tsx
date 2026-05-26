@@ -36,7 +36,7 @@ const AnimatedHeroImage = () => {
 >
   <video
     className="mx-auto w-[97%] sm:w-full"
-    src="https://rivor-next.vercel.app/video/promo.mp4"
+    src="/images/video/riseit_video.mp4"
     autoPlay
     loop
     muted

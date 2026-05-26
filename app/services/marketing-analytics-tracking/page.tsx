@@ -25,7 +25,7 @@ const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string
         category: 'Services',
         title: 'Marketing Analytics & Tracking',
         description: 'Effective digital marketing depends on accurate data and clear performance insights.Marketing analytics and tracking systems help businesses understand how users interact with their website, campaigns, and digital platforms. By tracking conversions, analysing performance, and visualising marketing data, businesses gain the clarity needed to improve marketing decisions.At Rise IT, we help organisations build structured analytics systems that track marketing activity, measure campaign performance, and provide reliable insights for business growth.From conversion tracking to marketing dashboards, our analytics frameworks help businesses turn marketing data into actionable insights.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        thumbnail: '/services_images/Marketing Analytics & Tracking.jpg',
 
         content: `### Conversion Tracking
 

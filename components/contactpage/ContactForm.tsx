@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import RevealWrapper from '../animation/RevealWrapper'
 
 const ContactForm = () => {
@@ -13,6 +13,7 @@ const ContactForm = () => {
   })
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   const serviceOptions = [
     "Seo Services",
@@ -45,43 +46,57 @@ const ContactForm = () => {
     })
   }
 
-const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  try {
-    const res = await fetch("/api/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-
-    const data = await res.json();
-
-    if (res.ok) {
-      alert("Message sent successfully ✅");
-
-      // Reset form
-      setFormData({
-        name: "",
-        company: "",
-        email: "",
-        phone: "",
-        services: [],
-        message: "",
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-    } else {
-      alert("Failed to send message ❌");
-      console.error(data);
-    }
+      const data = await res.json();
 
-  } catch (error) {
-    console.error("Error:", error);
-    alert("Something went wrong ❌");
-  }
-};
+      if (res.ok) {
+        alert("Message sent successfully ✅");
+
+        // Reset form
+        setFormData({
+          name: "",
+          company: "",
+          email: "",
+          phone: "",
+          services: [],
+          message: "",
+        });
+
+      } else {
+        alert("Failed to send message ❌");
+        console.error(data);
+      }
+
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Something went wrong ❌");
+    }
+  };
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px]">
@@ -148,7 +163,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           </div>
 
           {/* Service Type - Custom Dropdown with Checkboxes - Full Width */}
-          <div>
+          <div className="relative" ref={dropdownRef}>
             <label
               htmlFor="service"
               className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
@@ -158,7 +173,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
             {/* Custom Dropdown Trigger */}
             <div
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="mt-3 w-full cursor-pointer border bg-backgroundBody py-4 px-5 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark flex justify-between items-center"
+              className="mt-3 w-full scroll-m-2 cursor-pointer border bg-backgroundBody py-4 px-5 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark flex justify-between items-center"
             >
               <span className={formData.services.length === 0 ? "text-gray-400" : ""}>
                 {formData.services.length === 0
@@ -183,9 +198,10 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               </svg>
             </div>
 
-            {/* Custom Dropdown Menu */}
+            {/* Custom Dropdown Menu - with mouse wheel scrolling */}
             {isDropdownOpen && (
-              <div className="absolute left-0 right-0 z-50 mt-1 max-h-80 overflow-auto border bg-backgroundBody dark:border-dark dark:bg-dark shadow-lg">
+              <div className="absolute left-0 right-0 z-50 mt-1 max-h-80 overflow-auto border bg-backgroundBody dark:border-dark dark:bg-dark shadow-lg"
+                   style={{ overflowY: 'auto' }}>
                 <div className="py-2">
                   {serviceOptions.map((service) => (
                     <label
@@ -234,7 +250,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
           {/* Number */}
           <div>
             <label
-              htmlFor="email"
+              htmlFor="phone"
               className="text-2xl leading-[1.2] tracking-[-0.48px] text-[#000000b3] dark:text-dark-100">
               Phone No
             </label>
@@ -242,7 +258,7 @@ const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
               type="tel"
               pattern="[0-9]{10}"
               maxLength={10}
-              id="number"
+              id="phone"
               name="phone"
               value={formData.phone}
               onChange={handleInputChange}

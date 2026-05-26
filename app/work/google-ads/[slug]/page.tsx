@@ -100,7 +100,7 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
             <article className="project-details-body overflow-hidden [&>*]:scroll-mt-20">
               <RevealWrapper as="figure" className="max-w-[870px] md:h-[480px] mb-10">
                 <img
-                  src="/images/home-5/case-study-3.png"
+                  src={postprojects.thumbnail}
                   alt="Case Study"
                   className="h-full w-full object-cover"
                 />

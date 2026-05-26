@@ -50,7 +50,7 @@ const AboutV8 = () => {
                 <CounterAnimation number={achievement.value} />
                 {achievement.suffix}
               </h2>
-              <h6 className="text-base md:text-lg max-w-[200px] mx-auto">{achievement.label}</h6>
+              <h6 className="text-base md:text-lg max-w-[400px] mx-auto">{achievement.label}</h6>
             </RevealWrapper>
           ))}
         </div>

@@ -117,11 +117,11 @@ const useHorizontalScroll = (options: HorizontalScrollOptions = {}) => {
     // Make the trigger sticky inside the spacer
     trigger.style.position = 'sticky'
     trigger.style.top = '0'
-    trigger.style.height = '100vh'
+    trigger.style.height = '90vh'
     trigger.style.overflow = 'hidden'
     trigger.style.width = '100%'
 
-    logMarker(`Pin spacer height: ${spacerHeight}px (100vh + ${totalScrollWidth}px)`, 'green')
+    logMarker(`Pin spacer height: ${spacerHeight}px (75vh + ${totalScrollWidth}px)`, 'green')
   }, [getTotalScrollWidth, disabled, logMarker])
 
   // Setup horizontal container - ensure it can scroll horizontally

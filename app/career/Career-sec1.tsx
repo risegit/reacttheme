@@ -76,7 +76,7 @@ const Carrer1 = () => {
             </p>
           </RevealWrapper>
 
-          <RevealWrapper>
+          {/* <RevealWrapper>
             <ul className="mt-8 flex list-none justify-start md:mt-14">
               <li className="block w-full text-center md:inline-block md:w-auto">
                 <Link href="/contact" className="rv-button rv-button-sm rv-button-primary block md:inline-block">
@@ -89,7 +89,7 @@ const Carrer1 = () => {
                 </Link>
               </li>
             </ul>
-          </RevealWrapper>
+          </RevealWrapper> */}
 
           {/* ===== NEW SECTIONS ===== */}
 
@@ -129,8 +129,8 @@ const Carrer1 = () => {
             <p className="mt-5 md:max-w-[800px]">
               We are always interested in meeting people who enjoy thoughtful work and are curious about how marketing and businesses evolve.
             </p>
-            <p className="mt-4 font-semibold">
-              If that sounds like you, feel free to reach out.
+          <p className="md:max-w-[670px] mt-10">
+                <strong>If that sounds like you, feel free to reach out.</strong>
             </p>
           </RevealWrapper>
 
