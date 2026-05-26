@@ -45,11 +45,11 @@ const Video = () => {
   }, [])
 
   return (
-    <section className="video-section">
+    <section className="video-section"> 
       <div ref={videoRef} className="h-fit w-full origin-top scale-50">
         <video className="h-full w-full" autoPlay muted loop playsInline>
-          <source src="images/video/riseit_video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          <source src="/images/video/riseit_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag. 
         </video>
       </div>
     </section>
