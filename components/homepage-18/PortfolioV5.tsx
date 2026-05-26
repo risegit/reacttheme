@@ -10,8 +10,8 @@ const caseStudiesData = [
     id: '1',
     slug: 'google-ads',
     title: 'Google Ads ',
-    image: '/images/home-5/case-study-3.png',
-    thumbnail: '/images/home-5/case-study-3.png',
+    image: '/images/home-3/google-ads-1.png',
+    thumbnail: '/images/home-3/google-ads-1.png',
     alt: 'e-commerce-brand-3x-sales-growth',
     category: 'Movie Theiter',
     challenges: [
@@ -27,8 +27,8 @@ const caseStudiesData = [
     id: '2',
     slug: 'meta',
     title: 'Meta Ads',
-    image: '/images/home-5/case-study-4.png',
-    thumbnail: '/images/home-5/case-study-4.png',
+    image:'/images/home-3/meta-1.png',
+    thumbnail: '/images/home-3/meta-1.png',
     alt: 'saas-company-boost-in-conversions',
     category: 'Movie Theiter',
     challenges: [

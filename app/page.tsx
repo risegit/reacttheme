@@ -49,7 +49,7 @@ const home = () => {
       {/* <BlogPostsV5 /> */}
      {/* <DiffRise /> */}
       <FaqV2 />
-       <TestimonialV7 />
+       {/* <TestimonialV7 /> */}
     
      
 
@@ -57,9 +57,9 @@ const home = () => {
         Let's chat!
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/01.jpg' },
-            { id: '2', img: '/images/agent/02.jpg' },
-            { id: '3', img: '/images/agent/03.jpg' },
+            { id: '1', img: '/images/agent/cta1.jpg' },
+            { id: '2', img: '/images/agent/cta4.jpg' },
+            { id: '3', img: '/images/agent/cta5.jpg' },
           ]}
         />
         with us.

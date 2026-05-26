@@ -24,7 +24,7 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         category: 'Services',
         title: 'Conversion Rate Optimisation (CRO)',
         description: 'Driving traffic to a website is only part of the growth equation. Businesses generate real results when website visitors convert into enquiries, leads, or customers.Conversion rate optimisation focuses on improving how effectively a website or marketing funnel turns traffic into measurable outcomes.At Rise IT, our CRO services help businesses increase conversions by improving landing pages, analysing user behaviour, and optimising customer journeys across digital touchpoints.By identifying friction points and improving key interactions, we help businesses maximise the value of their existing traffic and marketing investments',
-        thumbnail: '/images/home-5/case-study-3.png',
+        thumbnail: '/services_images/Conversion Rate Optimisation (CRO).jpg',
 
         content: `### Conversion Rate Optimisation
 Conversion rate optimisation focuses on improving how effectively a website converts visitors into leads, enquiries, or customers.

@@ -26,7 +26,7 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 category: 'Services',
                 title: 'Content Writing',
                 description: 'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
-                thumbnail: '/images/home-5/case-study-3.png',
+                thumbnail: '/services_images/Content Writing.jpg',
 
                 content: `### SEO Content Writing
 

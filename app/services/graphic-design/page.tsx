@@ -25,7 +25,7 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         category: 'Services',
         title:'Graphic Design & Marketing Collaterals',
         description: 'Businesses rarely struggle because they lack marketing channels. They struggle because their marketing efforts across SEO, advertising, content marketing, and social media operate independently without a clear strategy.Growth marketing strategy connects these channels into a structured framework designed to improve visibility, generate demand, and strengthen customer acquisition.At Rise IT, we help businesses develop growth marketing strategies that align digital marketing channels with measurable business outcomes. Our strategic approach focuses on identifying the most effective growth opportunities, prioritising marketing investments, and building scalable systems that support sustainable growth.Whether a business is launching a new product, expanding into new markets, or strengthening its digital presence, a structured growth strategy helps convert marketing activity into predictable business growth.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        thumbnail: '/services_images/Graphic Design & Marketing Collaterals.jpg',
 
         content: `### Social Media Creatives
 

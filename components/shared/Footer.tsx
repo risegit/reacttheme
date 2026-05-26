@@ -1,6 +1,6 @@
 import footerData from '@/data/footer.json'
 import arrowIcon from '@/public/images/icons/arrow-Icon.svg'
-import logo from '@/public/images/logo.png'
+import logo from '@/public/images/logobww.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import FooterProvider from './FooterProvider'
@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="flex flex-col gap-6">
             <Link href="/" className="inline-block w-fit">
               <Image
-                className="h-auto w-[120px] object-contain"
+                className="h-auto w-[160px] object-contain"
                 src={logo}
                 alt="logo"
                 width={120}

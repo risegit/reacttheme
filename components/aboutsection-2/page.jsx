@@ -1,4 +1,4 @@
-import aboutImg from '@/public/images/portfolio/about-banner.png'
+import aboutImg from '@/public/images/portfolio/about_rise.jpg'
 import Image from 'next/image'
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
@@ -66,7 +66,7 @@ const Aboutsection2 = () => {
 
               {/* CTA */}
               <div className="mt-8">
-                  <Link href="/about" className="rv-button rv-button-sm rv-button-primary">
+                  <Link href="/contact" className="rv-button rv-button-sm rv-button-primary">
               <div className="rv-button-top">
                 <span className='text-white'>Let’s Talk</span>
               </div>

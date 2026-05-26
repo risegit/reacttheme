@@ -1,7 +1,13 @@
 import getMarkDownData from '@/utils/GetMarkDownData'
 import Link from 'next/link'
 import RevealWrapper from '../animation/RevealWrapper'
-import TextAppearAnimation from '../animation/TextAppearAnimation'
+import dynamic from 'next/dynamic'
+
+
+const TextAppearAnimation = dynamic(() => import('../animation/TextAppearAnimation'), {
+  ssr: false,
+})
+
 
 interface ProjectType {
   slug: string

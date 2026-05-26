@@ -25,7 +25,7 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
                 category: 'Services',
                 title: 'Digital PR & Authority Building',
                 description: 'Strong brands are not discovered only through search engines. They are discovered through credibility, media visibility, and consistent brand presence across trusted platforms.Digital PR helps businesses strengthen brand authority, build trust with audiences, and improve online visibility through strategic media placements, brand mentions, and reputation management.At Rise IT, our digital PR services focus on helping businesses increase brand visibility across relevant publications, strengthen online reputation, and build authority within their industry.By combining digital PR campaigns, media outreach, and authority-building strategies, we help organisations strengthen their digital presence and improve how their brand is perceived online',
-                thumbnail: '/images/home-5/case-study-3.png',
+                thumbnail: '/services_images/Digital PR & Authority Building.jpg',
 
                 content: `### Digital PR Campaigns
 Digital PR campaigns help businesses increase brand visibility by securing coverage across relevant media platforms, publications, and digital channels.

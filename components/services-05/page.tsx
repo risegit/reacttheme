@@ -17,7 +17,7 @@ const Services05 = () => {
     //   ],
     // },
     {
-      slug: 'seo',
+      slug: 'content-writing',
       title: 'Content Production',
       description:
         'Because your business needs to appear where people are actively searching.',
