@@ -1,14 +1,14 @@
 // app/case-study/page.tsx
 
 // import { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
-import rehypeSlug from 'rehype-slug';
-import LayoutOne from '@/components/shared/LayoutOne';
-import ProjectDetailsHero from '@/components/projectpage/ProjectDetailsHero';
-import CTA from '@/components/shared/CTA';
-import CtaImageSlider from '@/components/shared/CtaImageSlider';
-import RevealWrapper from '@/components/animation/RevealWrapper';
-import { slugify } from '@/utils/slugify';
+import ReactMarkdown from 'react-markdown'
+import rehypeSlug from 'rehype-slug'
+import LayoutOne from '@/components/shared/LayoutOne'
+import ProjectDetailsHero from '@/components/projectpage/ProjectDetailsHero'
+import CTA from '@/components/shared/CTA'
+import CtaImageSlider from '@/components/shared/CtaImageSlider'
+import RevealWrapper from '@/components/animation/RevealWrapper'
+import { slugify } from '@/utils/slugify'
 import getMarkDownContent from '@/utils/GetMarkDownContent'
 import rehypeRaw from 'rehype-raw'
 
@@ -18,42 +18,41 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
   const postprojects = project.data
 
   // Extract headings for table of contents
-  const headings = project.content.match(/### .+/g) ?? [];
-  const tableOfContents = headings.map((heading: string) => heading.replace('### ', ''));
-  const activeSection = '';
+  const headings = project.content.match(/### .+/g) ?? []
+  const tableOfContents = headings.map((heading: string) => heading.replace('### ', ''))
+  const activeSection = ''
 
   const formattedContent = project.content.replace(
-   /^\$\$\$\s(.+)$/gm,
-    '<p class="custom-highlight"><strong>$1</strong></p>'
+    /^\$\$\$\s(.+)$/gm,
+    '<p class="custom-highlight"><strong>$1</strong></p>',
   )
 
   // Intersection Observer for active section highlighting
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       (entries) => {
-//         entries.forEach((entry) => {
-//           if (entry.isIntersecting) {
-//             setActiveSection(entry.target.id);
-//           }
-//         });
-//       },
-//       {
-//         rootMargin: '-20% 0px -80% 0px',
-//       },
-//     );
+  //   useEffect(() => {
+  //     const observer = new IntersectionObserver(
+  //       (entries) => {
+  //         entries.forEach((entry) => {
+  //           if (entry.isIntersecting) {
+  //             setActiveSection(entry.target.id);
+  //           }
+  //         });
+  //       },
+  //       {
+  //         rootMargin: '-20% 0px -80% 0px',
+  //       },
+  //     );
 
-//     tableOfContents.forEach((content) => {
-//       const element = document.getElementById(slugify(content));
-//       if (element) {
-//         observer.observe(element);
-//       }
-//     });
+  //     tableOfContents.forEach((content) => {
+  //       const element = document.getElementById(slugify(content));
+  //       if (element) {
+  //         observer.observe(element);
+  //       }
+  //     });
 
-//     return () => {
-//       observer.disconnect();
-//     };
-//   }, [tableOfContents]);
-  
+  //     return () => {
+  //       observer.disconnect();
+  //     };
+  //   }, [tableOfContents]);
 
   return (
     <LayoutOne>
@@ -74,7 +73,7 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
                   <h3 className="text-3xl md:text-4xl">Table of contents</h3>
                   <ul className="mt-3.5 md:mt-5 lg:mt-10 [&>*:not(:last-child)]:mb-2 md:[&>*:not(:last-child)]:mb-5">
                     {tableOfContents.map((content) => {
-                      const slug = slugify(content);
+                      const slug = slugify(content)
                       return (
                         <li key={content}>
                           <a
@@ -83,12 +82,11 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
                               activeSection === slug
                                 ? 'text-secondary dark:text-backgroundBody'
                                 : 'text-[#000000b3] dark:text-dark-100'
-                            }`}
-                          >
+                            }`}>
                             {content}
                           </a>
                         </li>
-                      );
+                      )
                     })}
                   </ul>
                 </div>
@@ -97,19 +95,11 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
 
             {/* Main Content Area */}
             <article className="project-details-body overflow-hidden [&>*]:scroll-mt-20">
-              <RevealWrapper as="figure" className="max-w-[870px] md:h-[480px] mb-10">
-                <img
-                  src="/images/home-5/case-study-3.png"
-                  alt="Case Study"
-                  className="h-full w-full object-cover"
-                />
+              <RevealWrapper as="figure" className="mb-10 max-w-[870px] md:h-[480px]">
+                <img src="/images/home-5/case-study-3.png" alt="Case Study" className="h-full w-full object-cover" />
               </RevealWrapper>
 
-      
-
-              <ReactMarkdown rehypePlugins={[rehypeSlug, rehypeRaw]}>
-                {formattedContent}
-              </ReactMarkdown>
+              <ReactMarkdown rehypePlugins={[rehypeSlug, rehypeRaw]}>{formattedContent}</ReactMarkdown>
             </article>
           </div>
         </div>
@@ -125,11 +115,12 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
           ]}
         /> */}
         <h5 className="">
-          Let Rise IT help you scale your advertising efforts while maximizing ROI. Contact us today for a free consultation.
+          Let Rise IT help you scale your advertising efforts while maximizing ROI. Contact us today for a free
+          consultation.
         </h5>
       </CTA>
     </LayoutOne>
-  );
+  )
 }
 
 export default AgencyProjectDetails

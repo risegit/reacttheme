@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import SeoPageClient from './SeoPageClient'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -24,8 +20,9 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       'project-1': {
         category: 'Brand Strategy',
         title: 'SEO Service',
-        description: 'Search engines are often the first place customers go when researching products, services, and solutions online. If your business is not visible in search results, potential customers may never discover your brand.Rise IT provides structured SEO services designed to improve search rankings, increase organic traffic, and strengthen long-term digital visibility. Our search engine optimisation strategies combine technical optimisation, content development, and search performance analysis to help businesses rank for high-value keywords.',
-        thumbnail: '/services_images/Seo.jpg',
+        description:
+          'Search engines are often the first place customers go when researching products, services, and solutions online. If your business is not visible in search results, potential customers may never discover your brand.Rise IT provides structured SEO services designed to improve search rankings, increase organic traffic, and strengthen long-term digital visibility. Our search engine optimisation strategies combine technical optimisation, content development, and search performance analysis to help businesses rank for high-value keywords.',
+        thumbnail: '/images/services_images/seo.jpg',
         content: `### SEO Strategy
 A successful SEO campaign begins with a clear strategy built around how people search online. Understanding search behaviour, competitor activity, and keyword demand allows businesses to identify the opportunities that will drive meaningful organic traffic.
 Our SEO strategy services focus on building a roadmap that improves visibility across search engines while aligning with broader digital marketing objectives.
@@ -99,7 +96,7 @@ Our monitoring and audit services help ensure that SEO strategies remain effecti
 - **Competitor SEO Benchmarking**
 `,
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -126,23 +123,25 @@ Our monitoring and audit services help ensure that SEO strategies remain effecti
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <SeoPageClient project={project} />
-      
-         <CTA>
-               Strengthen your brand authority  <CtaImageSlider
-                    slides={[
-                        { id: '1', img: '/images/agent/06.png' },
-                        { id: '2', img: '/images/agent/07.png' },
-                        { id: '3', img: '/images/agent/08.png' },
-                    ]}
-                />online.
-               
-           
-                   <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5>
-            </CTA>
+
+      <CTA>
+        Strengthen your brand authority{' '}
+        <CtaImageSlider
+          slides={[
+            { id: '1', img: '/images/agent/06.png' },
+            { id: '2', img: '/images/agent/07.png' },
+            { id: '3', img: '/images/agent/08.png' },
+          ]}
+        />
+        online.
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+          media presence, Rise IT can help.
+        </h5>
+      </CTA>
     </LayoutOne>
   )
 }

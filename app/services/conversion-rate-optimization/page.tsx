@@ -7,11 +7,7 @@ import LayoutTwo from '@/components/shared/LayoutTwo'
 import LayoutOne from '@/components/shared/LayoutOne'
 import ConversionRate from './ConversionRate'
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -23,8 +19,9 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       'project-1': {
         category: 'Services',
         title: 'Conversion Rate Optimisation (CRO)',
-        description: 'Driving traffic to a website is only part of the growth equation. Businesses generate real results when website visitors convert into enquiries, leads, or customers.Conversion rate optimisation focuses on improving how effectively a website or marketing funnel turns traffic into measurable outcomes.At Rise IT, our CRO services help businesses increase conversions by improving landing pages, analysing user behaviour, and optimising customer journeys across digital touchpoints.By identifying friction points and improving key interactions, we help businesses maximise the value of their existing traffic and marketing investments',
-        thumbnail: '/services_images/Conversion Rate Optimisation (CRO).jpg',
+        description:
+          'Driving traffic to a website is only part of the growth equation. Businesses generate real results when website visitors convert into enquiries, leads, or customers.Conversion rate optimisation focuses on improving how effectively a website or marketing funnel turns traffic into measurable outcomes.At Rise IT, our CRO services help businesses increase conversions by improving landing pages, analysing user behaviour, and optimising customer journeys across digital touchpoints.By identifying friction points and improving key interactions, we help businesses maximise the value of their existing traffic and marketing investments',
+        thumbnail: '/images/services_images/conversion-rate-optimisation.jpg',
 
         content: `### Conversion Rate Optimisation
 Conversion rate optimisation focuses on improving how effectively a website converts visitors into leads, enquiries, or customers.
@@ -128,7 +125,7 @@ By strengthening key conversion points across websites, landing pages, and marke
 - **Growth Marketing Strategy**
 `,
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -160,7 +157,7 @@ By strengthening key conversion points across websites, landing pages, and marke
       <ConversionRate project={project} />
 
       <CTA>
-       Turn website traffic into measurable growth.
+        Turn website traffic into measurable growth.
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
@@ -168,9 +165,10 @@ By strengthening key conversion points across websites, landing pages, and marke
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-     
-      <h5  className="mb-2.5 mt-5">If your business wants to increase conversions, improve lead generation, and maximise the value of existing traffic, Rise IT can help.
-</h5>
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to increase conversions, improve lead generation, and maximise the value of existing
+          traffic, Rise IT can help.
+        </h5>
       </CTA>
     </LayoutOne>
   )

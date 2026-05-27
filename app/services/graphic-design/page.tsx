@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import GraphicDesign from './GraphicDesign'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -23,9 +19,10 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
     const projects = {
       'project-1': {
         category: 'Services',
-        title:'Graphic Design & Marketing Collaterals',
-        description: 'Businesses rarely struggle because they lack marketing channels. They struggle because their marketing efforts across SEO, advertising, content marketing, and social media operate independently without a clear strategy.Growth marketing strategy connects these channels into a structured framework designed to improve visibility, generate demand, and strengthen customer acquisition.At Rise IT, we help businesses develop growth marketing strategies that align digital marketing channels with measurable business outcomes. Our strategic approach focuses on identifying the most effective growth opportunities, prioritising marketing investments, and building scalable systems that support sustainable growth.Whether a business is launching a new product, expanding into new markets, or strengthening its digital presence, a structured growth strategy helps convert marketing activity into predictable business growth.',
-        thumbnail: '/services_images/Graphic Design & Marketing Collaterals.jpg',
+        title: 'Graphic Design & Marketing Collaterals',
+        description:
+          'Businesses rarely struggle because they lack marketing channels. They struggle because their marketing efforts across SEO, advertising, content marketing, and social media operate independently without a clear strategy.Growth marketing strategy connects these channels into a structured framework designed to improve visibility, generate demand, and strengthen customer acquisition.At Rise IT, we help businesses develop growth marketing strategies that align digital marketing channels with measurable business outcomes. Our strategic approach focuses on identifying the most effective growth opportunities, prioritising marketing investments, and building scalable systems that support sustainable growth.Whether a business is launching a new product, expanding into new markets, or strengthening its digital presence, a structured growth strategy helps convert marketing activity into predictable business growth.',
+        thumbnail: '/images/services_images/graphic-design&marketing-collaterals.jpg',
 
         content: `### Social Media Creatives
 
@@ -140,7 +137,7 @@ By aligning marketing channels with business objectives, we help organisations b
 `,
 
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -167,12 +164,12 @@ By aligning marketing channels with business objectives, we help organisations b
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <GraphicDesign project={project} />
-      
+
       <CTA>
-     <span>Strengthen your brand communication through design.</span> 
+        <span>Strengthen your brand communication through design.</span>
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
@@ -180,9 +177,10 @@ By aligning marketing channels with business objectives, we help organisations b
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-       <h5 className="mb-2.5 mt-5">If your business wants clearer insights into marketing performance and customer behaviour, Rise IT can help build the analytics systems needed to support smarter growth decisions.
-
-</h5>
+        <h5 className="mb-2.5 mt-5">
+          If your business wants clearer insights into marketing performance and customer behaviour, Rise IT can help
+          build the analytics systems needed to support smarter growth decisions.
+        </h5>
       </CTA>
     </LayoutOne>
   )

@@ -12,13 +12,7 @@ interface PropsType {
   headingDescription?: string
 }
 
-const ProjectDetailsHero = ({
-  badgeTitle,
-  title,
-  description,
-  italicTitle,
-  scale,
-}: PropsType) => {
+const ProjectDetailsHero = ({ badgeTitle, title, description, italicTitle, scale }: PropsType) => {
   return (
     <section className="relative overflow-hidden pt-28 max-md:pb-20 sm:pb-28 md:py-[155px] lg:py-[177px]">
       <HeroGradientAnimation scale={scale} />
@@ -33,18 +27,11 @@ const ProjectDetailsHero = ({
 
           {title && (
             <h1 className="mb-4 mt-3.5">
-              {title}{' '}
-              {italicTitle && (
-                <i className="font-instrument italic">{italicTitle}</i>
-              )}
+              {title} {italicTitle && <i className="font-instrument italic">{italicTitle}</i>}
             </h1>
           )}
 
-          {description && (
-            <p className="text-appear mx-auto max-w-[980px] text-center">
-              {description}
-            </p>
-          )}
+          {description && <p className="text-appear mx-auto max-w-[980px] text-center">{description}</p>}
         </RevealWrapper>
       </div>
     </section>

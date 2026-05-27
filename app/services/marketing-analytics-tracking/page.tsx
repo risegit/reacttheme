@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import MarketAnalytics from './MarketAnalytics'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -24,8 +20,9 @@ const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string
       'project-1': {
         category: 'Services',
         title: 'Marketing Analytics & Tracking',
-        description: 'Effective digital marketing depends on accurate data and clear performance insights.Marketing analytics and tracking systems help businesses understand how users interact with their website, campaigns, and digital platforms. By tracking conversions, analysing performance, and visualising marketing data, businesses gain the clarity needed to improve marketing decisions.At Rise IT, we help organisations build structured analytics systems that track marketing activity, measure campaign performance, and provide reliable insights for business growth.From conversion tracking to marketing dashboards, our analytics frameworks help businesses turn marketing data into actionable insights.',
-        thumbnail: '/services_images/Marketing Analytics & Tracking.jpg',
+        description:
+          'Effective digital marketing depends on accurate data and clear performance insights.Marketing analytics and tracking systems help businesses understand how users interact with their website, campaigns, and digital platforms. By tracking conversions, analysing performance, and visualising marketing data, businesses gain the clarity needed to improve marketing decisions.At Rise IT, we help organisations build structured analytics systems that track marketing activity, measure campaign performance, and provide reliable insights for business growth.From conversion tracking to marketing dashboards, our analytics frameworks help businesses turn marketing data into actionable insights.',
+        thumbnail: '/images/services_images/marketing-analytics&tracking.jpg',
 
         content: `### Conversion Tracking
 
@@ -135,7 +132,7 @@ By combining analytics infrastructure with clear reporting and analysis, we help
 
 `,
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -162,12 +159,12 @@ By combining analytics infrastructure with clear reporting and analysis, we help
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <MarketAnalytics project={project} />
-      
+
       <CTA>
-     <span>Make marketing decisions backed by data.</span> 
+        <span>Make marketing decisions backed by data.</span>
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
@@ -175,9 +172,10 @@ By combining analytics infrastructure with clear reporting and analysis, we help
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-       <h5 className="mb-2.5 mt-5">If your business wants clearer insights into marketing performance and customer behaviour, Rise IT can help build the analytics systems needed to support smarter growth decisions.
-
-</h5>
+        <h5 className="mb-2.5 mt-5">
+          If your business wants clearer insights into marketing performance and customer behaviour, Rise IT can help
+          build the analytics systems needed to support smarter growth decisions.
+        </h5>
       </CTA>
     </LayoutOne>
   )

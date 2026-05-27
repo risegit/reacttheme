@@ -9,26 +9,23 @@ import EmailMarketing from './EmailMarketing'
 import RevealWrapper from '@/components/animation/RevealWrapper'
 
 export async function generateStaticParams() {
-    return [
-        { slug: 'project-1' },
-        { slug: 'project-2' },
-        { slug: 'project-3' },
-    ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
-    const slug = (await params).slug
+  const slug = (await params).slug
 
-    // Manual project data based on slug
-    const getProjectData = (slug: string) => {
-        const projects = {
-            'project-1': {
-                category: 'Services',
-                title: 'Email Marketing',
-                description: 'Email remains one of the most effective channels for maintaining direct communication with customers and prospects.Email marketing helps businesses nurture leads, strengthen customer relationships, and promote products or services through targeted communication.At Rise IT, our email marketing services focus on building structured communication systems that support lead nurturing, customer engagement, and marketing campaign performance.Through strategic planning, campaign management, and automation systems, we help businesses maintain consistent communication with their audience while supporting customer acquisition and retention.',
-                thumbnail: '/images/home-5/case-study-3.png',
+  // Manual project data based on slug
+  const getProjectData = (slug: string) => {
+    const projects = {
+      'project-1': {
+        category: 'Services',
+        title: 'Email Marketing',
+        description:
+          'Email remains one of the most effective channels for maintaining direct communication with customers and prospects.Email marketing helps businesses nurture leads, strengthen customer relationships, and promote products or services through targeted communication.At Rise IT, our email marketing services focus on building structured communication systems that support lead nurturing, customer engagement, and marketing campaign performance.Through strategic planning, campaign management, and automation systems, we help businesses maintain consistent communication with their audience while supporting customer acquisition and retention.',
+        thumbnail: '/images/services_images/email-marketing.jpg',
 
-                content: `### Email Marketing Strategy
+        content: `### Email Marketing Strategy
 
 A structured email marketing strategy helps businesses maintain consistent communication with prospects and customers.
 Strategic planning ensures email campaigns align with marketing objectives such as lead nurturing, product promotion, and customer engagement.
@@ -112,55 +109,55 @@ By combining strategic planning with automation and analytics, we help businesse
 
 `,
 
-                images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-            }
-        }
-        return projects[slug as keyof typeof projects] || projects['project-1']
+        images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
+      },
     }
+    return projects[slug as keyof typeof projects] || projects['project-1']
+  }
 
-    const postprojects = getProjectData(slug)
+  const postprojects = getProjectData(slug)
 
-    // Structure project object with content as string (markdown)
-    const project = {
-        data: {
-            title: postprojects.title,
-            category: postprojects.category,
-            description: postprojects.description,
-            images: postprojects.images,
-            thumbnail: postprojects.thumbnail,
-        },
-        content: postprojects.content,
-    }
+  // Structure project object with content as string (markdown)
+  const project = {
+    data: {
+      title: postprojects.title,
+      category: postprojects.category,
+      description: postprojects.description,
+      images: postprojects.images,
+      thumbnail: postprojects.thumbnail,
+    },
+    content: postprojects.content,
+  }
 
-    return (
-        <LayoutOne>
-            <ProjectDetailsHero
-                badgeTitle={postprojects?.category}
-                title={postprojects?.title}
-                description={postprojects?.description}
-                scale
-            />
+  return (
+    <LayoutOne>
+      <ProjectDetailsHero
+        badgeTitle={postprojects?.category}
+        title={postprojects?.title}
+        description={postprojects?.description}
+        scale
+      />
 
-            {/* Pass data to client component for interactive features */}
-            <EmailMarketing project={project} />
-<RevealWrapper>
-            <CTA>
-              Strengthen customer engagement through email.
-               
-           
-                   <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5> <CtaImageSlider
-                    slides={[
-                        { id: '1', img: '/images/agent/06.png' },
-                        { id: '2', img: '/images/agent/07.png' },
-                        { id: '3', img: '/images/agent/08.png' },
-                    ]}
-                />
-            </CTA>
-            
-            </RevealWrapper>
-        </LayoutOne>
-    )
+      {/* Pass data to client component for interactive features */}
+      <EmailMarketing project={project} />
+      <RevealWrapper>
+        <CTA>
+          Strengthen customer engagement through email.
+          <h5 className="mb-2.5 mt-5">
+            If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+            media presence, Rise IT can help.
+          </h5>{' '}
+          <CtaImageSlider
+            slides={[
+              { id: '1', img: '/images/agent/06.png' },
+              { id: '2', img: '/images/agent/07.png' },
+              { id: '3', img: '/images/agent/08.png' },
+            ]}
+          />
+        </CTA>
+      </RevealWrapper>
+    </LayoutOne>
+  )
 }
 
 export default Seopage

@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import Websdevelopment from './WebDevelopment'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -24,8 +20,9 @@ const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string
       'project-1': {
         category: 'Services',
         title: 'Website Design & Development',
-        description: 'A website is often the central platform through which customers discover, evaluate, and engage with a business.Modern websites must do more than present information. They need to communicate brand value clearly, support search visibility, and guide visitors toward meaningful actions such as enquiries, sign-ups, or purchases.At Rise IT, our website design and development services focus on building high-performance websites that support marketing initiatives, improve user experience, and strengthen digital visibility.From conversion-focused design to integrated marketing technology systems, we help businesses develop websites that support long-term digital growth.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        description:
+          'A website is often the central platform through which customers discover, evaluate, and engage with a business.Modern websites must do more than present information. They need to communicate brand value clearly, support search visibility, and guide visitors toward meaningful actions such as enquiries, sign-ups, or purchases.At Rise IT, our website design and development services focus on building high-performance websites that support marketing initiatives, improve user experience, and strengthen digital visibility.From conversion-focused design to integrated marketing technology systems, we help businesses develop websites that support long-term digital growth.',
+        thumbnail: '/images/services_images/website-design&development.jpg',
 
         content: `### Website Design
 
@@ -185,7 +182,7 @@ By combining design expertise with technical development and marketing integrati
 
 `,
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -212,12 +209,12 @@ By combining design expertise with technical development and marketing integrati
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <Websdevelopment project={project} />
-      
+
       <CTA>
-     <span>Build a stronger social media presence</span> .
+        <span>Build a stronger social media presence</span> .
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
@@ -225,8 +222,10 @@ By combining design expertise with technical development and marketing integrati
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-       <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5>
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+          media presence, Rise IT can help.
+        </h5>
       </CTA>
     </LayoutOne>
   )

@@ -1,7 +1,7 @@
 ---
 title: 'Social media marketing'
 description: 'Expand your digital footprint by building a strong brand presence across social platforms and connecting authentically with your audience.'
-coverImage: '/images/services/services-details2-img.png'
+coverImage: '/images/services/social-media-marketing.jpg'
 logo: '/images/icons/services-icon/service-icon-3.svg'
 logoDark: '/images/icons/services-icon/service-icon-dark-3.svg'
 badgeTitle: 'Social Media'

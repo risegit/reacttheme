@@ -9,26 +9,23 @@ import ContentWriting from './ContentWriting'
 import RevealWrapper from '@/components/animation/RevealWrapper'
 
 export async function generateStaticParams() {
-    return [
-        { slug: 'project-1' },
-        { slug: 'project-2' },
-        { slug: 'project-3' },
-    ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
-    const slug = (await params).slug
+  const slug = (await params).slug
 
-    // Manual project data based on slug
-    const getProjectData = (slug: string) => {
-        const projects = {
-            'project-1': {
-                category: 'Services',
-                title: 'Content Writing',
-                description: 'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
-                thumbnail: '/services_images/Content Writing.jpg',
+  // Manual project data based on slug
+  const getProjectData = (slug: string) => {
+    const projects = {
+      'project-1': {
+        category: 'Services',
+        title: 'Content Writing',
+        description:
+          'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
+        thumbnail: '/images/services_images/content-writing.jpg',
 
-                content: `### SEO Content Writing
+        content: `### SEO Content Writing
 
 
 SEO content writing helps businesses improve search visibility by creating content aligned with relevant search queries.
@@ -152,55 +149,56 @@ By combining search-focused writing with strategic messaging, we help businesses
 
 `,
 
-                images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-            }
-        }
-        return projects[slug as keyof typeof projects] || projects['project-1']
+        images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
+      },
     }
+    return projects[slug as keyof typeof projects] || projects['project-1']
+  }
 
-    const postprojects = getProjectData(slug)
+  const postprojects = getProjectData(slug)
 
-    // Structure project object with content as string (markdown)
-    const project = {
-        data: {
-            title: postprojects.title,
-            category: postprojects.category,
-            description: postprojects.description,
-            images: postprojects.images,
-            thumbnail: postprojects.thumbnail,
-        },
-        content: postprojects.content,
-    }
+  // Structure project object with content as string (markdown)
+  const project = {
+    data: {
+      title: postprojects.title,
+      category: postprojects.category,
+      description: postprojects.description,
+      images: postprojects.images,
+      thumbnail: postprojects.thumbnail,
+    },
+    content: postprojects.content,
+  }
 
-    return (
-        <LayoutOne>
-            <ProjectDetailsHero
-                badgeTitle={postprojects?.category}
-                title={postprojects?.title}
-                description={postprojects?.description}
-                scale
-            />
+  return (
+    <LayoutOne>
+      <ProjectDetailsHero
+        badgeTitle={postprojects?.category}
+        title={postprojects?.title}
+        description={postprojects?.description}
+        scale
+      />
 
-            {/* Pass data to client component for interactive features */}
-            <ContentWriting project={project} />
-            <RevealWrapper>
-                <CTA>
-                    Build stronger     <CtaImageSlider
-                        slides={[
-                            { id: '1', img: '/images/agent/06.png' },
-                            { id: '2', img: '/images/agent/07.png' },
-                            { id: '3', img: '/images/agent/08.png' },
-                        ]}
-                    />communication through content.
-
-                
-
-                    <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-                    </h5>
-                </CTA>
-            </RevealWrapper>
-        </LayoutOne>
-    )
+      {/* Pass data to client component for interactive features */}
+      <ContentWriting project={project} />
+      <RevealWrapper>
+        <CTA>
+          Build stronger{' '}
+          <CtaImageSlider
+            slides={[
+              { id: '1', img: '/images/agent/06.png' },
+              { id: '2', img: '/images/agent/07.png' },
+              { id: '3', img: '/images/agent/08.png' },
+            ]}
+          />
+          communication through content.
+          <h5 className="mb-2.5 mt-5">
+            If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+            media presence, Rise IT can help.
+          </h5>
+        </CTA>
+      </RevealWrapper>
+    </LayoutOne>
+  )
 }
 
 export default Seopage
