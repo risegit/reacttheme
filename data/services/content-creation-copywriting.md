@@ -1,7 +1,7 @@
 ---
 title: 'Content Creation & Copywriting'
 description: 'Delivering high-quality content that resonates with your audience. Our team creates blogs, articles, and marketing copy to amplify your message.'
-coverImage: '/images/services/services-details2-img.png'
+coverImage: '/images/services/content-writing.jpg'
 badge: 'Services details'
 logo: '/images/services/icon/pencil-minus.svg'
 logoDark: '/images/services/icon/pencil-minus-dark.svg'

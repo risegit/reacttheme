@@ -1,7 +1,7 @@
 ---
 title: 'SEO'
 description: 'Boost your online visibility with tailored SEO strategies that drive traffic, improve rankings, and turn visitors into loyal customers.'
-coverImage: '/images/services/services-details2-img.png'
+coverImage: '/images/services/seo.jpg'
 logo: '/images/icons/services-icon/service-icon-1.svg'
 logoDark: '/images/icons/services-icon/service-icon-dark-1.svg'
 badgeTitle: 'SEO Services'

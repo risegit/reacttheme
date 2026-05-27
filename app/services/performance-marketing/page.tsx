@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import PerformanceMarketing from './PerformanceMarketing'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -24,8 +20,9 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       'project-1': {
         category: 'Services',
         title: 'Performance Marketing',
-        description: 'Performance marketing focuses on driving measurable results through targeted digital advertising campaigns. Businesses today compete for attention across multiple digital platforms, and paid advertising helps brands reach the right audience at the right time.Rise IT provides performance marketing services designed to generate qualified traffic, increase conversions, and maximise return on advertising spend. Our strategies combine audience targeting, data-driven campaign optimisation, and continuous performance monitoring to ensure every advertising campaign delivers measurable business outcomes.Through a combination of Google Ads, Meta Ads, LinkedIn advertising, and paid social media campaigns, we help businesses scale demand generation and acquire customers through performance-focused marketing systems.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        description:
+          'Performance marketing focuses on driving measurable results through targeted digital advertising campaigns. Businesses today compete for attention across multiple digital platforms, and paid advertising helps brands reach the right audience at the right time.Rise IT provides performance marketing services designed to generate qualified traffic, increase conversions, and maximise return on advertising spend. Our strategies combine audience targeting, data-driven campaign optimisation, and continuous performance monitoring to ensure every advertising campaign delivers measurable business outcomes.Through a combination of Google Ads, Meta Ads, LinkedIn advertising, and paid social media campaigns, we help businesses scale demand generation and acquire customers through performance-focused marketing systems.',
+        thumbnail: '/images/services_images/performance-marketing.jpg',
         content: `### Performance Marketing Strategy
 A successful performance marketing campaign begins with a structured strategy focused on audience targeting, campaign objectives, and measurable outcomes.
 Understanding where your audience spends time online allows businesses to run targeted advertising campaigns that generate meaningful engagement and conversions.
@@ -115,7 +112,7 @@ By analysing user behaviour, refining audience targeting, and optimising campaig
 `,
 
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -155,8 +152,9 @@ By analysing user behaviour, refining audience targeting, and optimising campaig
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-
-        <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+          media presence, Rise IT can help.
         </h5>
       </CTA>
     </LayoutOne>

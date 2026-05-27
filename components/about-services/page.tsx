@@ -9,61 +9,61 @@ const data = [
     id: 1,
     title: 'Growth marketing strategy',
     description: 'Protect your company with comprehensive coverage against unforeseen risks.',
-    slug: 'growth-marketing-strategy'
+    slug: 'growth-marketing-strategy',
   },
   {
     id: 2,
     title: 'Search engine optimisation (SEO)',
     description: 'Because your business needs to appear when people are actively searching.',
-    slug: 'seo'
+    slug: 'seo',
   },
   {
     id: 3,
     title: 'Performance marketing',
     description: 'Secure your vehicles with the right protection for your business or personal use.',
-    slug: 'performance-marketing'
+    slug: 'performance-marketing',
   },
   {
     id: 4,
     title: 'Social media marketing',
     description: 'Collaborate with top influencers for brand awareness.',
-    slug: 'social-media-marketing'
+    slug: 'social-media-marketing',
   },
   {
     id: 5,
     title: 'Digital PR',
     description: 'Detailed insights to measure campaign success.',
-    slug: 'digital-pr'
+    slug: 'digital-pr',
   },
   {
     id: 6,
     title: 'Lead generation systems',
     description: "Tailored strategies for your brand's growth.",
-    slug: 'lead-generation-systems'
+    slug: 'lead-generation-systems',
   },
   {
     id: 7,
     title: 'Conversion rate optimisation',
     description: 'Protect your brand during challenging times.',
-    slug: 'conversion-rate-optimization'
+    slug: 'conversion-rate-optimization',
   },
   {
     id: 8,
     title: 'Website design and development',
     description: 'Empower your team with social media skills.',
-    slug: 'web-development'
+    slug: 'web-development',
   },
   {
     id: 9,
     title: 'Marketing analytics and tracking',
     description: 'Empower your team with social media skills.',
-    slug: 'marketing-analytics-tracking'
+    slug: 'marketing-analytics-tracking',
   },
   {
     id: 10,
     title: 'Content and creative production',
     description: 'Empower your team with social media skills.',
-    slug: 'content-writing'
+    slug: 'content-writing',
   },
 ]
 
@@ -73,18 +73,18 @@ const SolutionV3 = () => {
     extraScroll: 200,
     offset: 50,
   })
-  
+
   return (
     <section
       ref={triggerRef}
       className="service-section overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[80px] lg:pt-[88px] xl:pb-[90px] xl:pt-[70px]"
-      aria-labelledby="solutions-heading" >
+      aria-labelledby="solutions-heading">
       <div className="container">
         <div className="grid grid-cols-12 items-start gap-y-3 md:gap-x-10">
           <div className="col-span-12 lg:col-span-7">
             <TextAppearAnimation>
               <h2 className="text-appear text-left text-secondary dark:text-secondary max-md:text-3xl max-sm:text-3xl">
-              What We Do{' '}
+                What We Do{' '}
                 <span className="font-instrument italic text-secondary dark:text-secondary">Our work includes:</span>
               </h2>
             </TextAppearAnimation>
@@ -96,14 +96,14 @@ const SolutionV3 = () => {
               </p>
             </TextAppearAnimation>
             <RevealWrapper className="reveal-me mt-7 md:mt-14">
-             <Link href="/services" className="rv-button rv-button-primary block md:inline-block">
-              <div className="rv-button-top">
-                <span className='text-white'>Explore All Services</span>
-              </div>
-              <div className="rv-button-bottom">
-                <span className="text-nowrap">Explore All Services</span>
-              </div>
-            </Link>
+              <Link href="/services" className="rv-button rv-button-primary block md:inline-block">
+                <div className="rv-button-top">
+                  <span className="text-white">Explore All Services</span>
+                </div>
+                <div className="rv-button-bottom">
+                  <span className="text-nowrap">Explore All Services</span>
+                </div>
+              </Link>
             </RevealWrapper>
           </div>
         </div>
@@ -119,20 +119,19 @@ const SolutionV3 = () => {
         }}
         aria-label="Our service offerings">
         {data.map((item) => (
-          <Link 
+          <Link
             key={item.id}
             href={`/services/${item.slug}`}
             className="group block flex-shrink-0 transition-transform duration-300 hover:-translate-y-1"
-            style={{ width: '370px' }}
-          >
-            <div className="flex h-full w-full flex-col gap-4 rounded-none border-t border-t-secondary bg-backgroundBody px-5 py-14 dark:border-t-primary dark:bg-black md:flex-row md:gap-[22px] md:px-[25px] md:py-[70px] transition-all duration-300 hover:bg-gray-50 dark:hover:bg-gray-900">
+            style={{ width: '370px' }}>
+            <div className="flex h-full w-full flex-col gap-4 rounded-none border-t border-t-secondary bg-backgroundBody px-5 py-14 transition-all duration-300 hover:bg-gray-50 dark:border-t-primary dark:bg-black dark:hover:bg-gray-900 md:flex-row md:gap-[22px] md:px-[25px] md:py-[70px]">
               <div aria-hidden="true">
-                <p className="font-instrument text-5xl font-normal leading-[64px] text-black dark:text-white max-md:text-3xl transition-colors duration-300 group-hover:text-primary dark:group-hover:text-primary">
-                  0{item.id}
+                <p className="font-instrument text-5xl font-normal leading-[64px] text-black transition-colors duration-300 group-hover:text-primary dark:text-white dark:group-hover:text-primary max-md:text-3xl">
+                  {item.id?.toString().padStart(2, '0')}
                 </p>
               </div>
               <div className="space-y-4 md:space-y-8">
-                <h3 className="font-normal leading-[110%] tracking-[-1.08px] text-black dark:text-white max-md:text-2xl md:max-w-[200px] md:text-4xl transition-colors duration-300 group-hover:text-primary dark:group-hover:text-primary">
+                <h3 className="font-normal leading-[110%] tracking-[-1.08px] text-black transition-colors duration-300 group-hover:text-primary dark:text-white dark:group-hover:text-primary max-md:text-2xl md:max-w-[200px] md:text-4xl">
                   {item.title}
                 </h3>
                 <p className="text-base font-normal leading-6 tracking-[0.32px] text-colorText dark:text-backgroundBody/70">

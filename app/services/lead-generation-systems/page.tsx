@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import LeadGenSystem from './LeadGenSystem'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -24,8 +20,9 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
       'project-1': {
         category: 'Services',
         title: 'Lead Generation Systems',
-        description: 'Generating consistent leads requires more than running isolated marketing campaigns. Businesses need structured systems that attract the right audience, nurture prospects, and convert interest into qualified sales opportunities.Lead generation systems combine audience targeting, marketing funnels, outreach campaigns, and automation tools to create predictable pipelines for business growth.At Rise IT, we help businesses build lead generation systems designed to attract qualified prospects, improve lead quality, and support long-term customer acquisition.Our approach focuses on building scalable marketing systems that connect marketing channels with sales outcomes.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        description:
+          'Generating consistent leads requires more than running isolated marketing campaigns. Businesses need structured systems that attract the right audience, nurture prospects, and convert interest into qualified sales opportunities.Lead generation systems combine audience targeting, marketing funnels, outreach campaigns, and automation tools to create predictable pipelines for business growth.At Rise IT, we help businesses build lead generation systems designed to attract qualified prospects, improve lead quality, and support long-term customer acquisition.Our approach focuses on building scalable marketing systems that connect marketing channels with sales outcomes.',
+        thumbnail: '/images/services_images/lead-generation-systems.jpg',
         content: `### B2B Lead Generation
 
 B2B lead generation focuses on identifying and attracting decision-makers who are actively looking for solutions relevant to your business.
@@ -129,7 +126,7 @@ By integrating lead generation with marketing automation, analytics, and custome
 
 `,
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -156,10 +153,10 @@ By integrating lead generation with marketing automation, analytics, and custome
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <LeadGenSystem project={project} />
-      
+
       <CTA>
         Build Something stronger
         <CtaImageSlider
@@ -169,9 +166,10 @@ By integrating lead generation with marketing automation, analytics, and custome
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-        
-        <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5>
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+          media presence, Rise IT can help.
+        </h5>
       </CTA>
     </LayoutOne>
   )

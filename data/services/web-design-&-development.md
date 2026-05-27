@@ -1,7 +1,7 @@
 ---
 title: 'Web Design & Development'
 description: 'Crafting visually engaging and high-performance websites tailored to client needs. Our responsive designs ensure seamless user experiences across all devices.'
-coverImage: '/images/services/services-details2-img.png'
+coverImage: '/images/services/website-design&development.png'
 badge: 'Services details'
 logo: '/images/services/icon/design-development.svg'
 logoDark: '/images/services/icon/design-development-dark.svg'

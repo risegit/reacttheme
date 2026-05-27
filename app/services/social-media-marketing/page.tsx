@@ -8,11 +8,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import SocialMediaClient from './SocialMediaClient'
 
 export async function generateStaticParams() {
-  return [
-    { slug: 'project-1' },
-    { slug: 'project-2' },
-    { slug: 'project-3' },
-  ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -24,8 +20,9 @@ const SocialMediaMarketing = async ({ params }: { params: Promise<{ slug: string
       'project-1': {
         category: 'Brand Strategy',
         title: 'Social Media Marketing',
-        description: 'Social media platforms play a central role in how businesses communicate with audiences, build brand awareness, and maintain an active digital presence.Social media marketing helps businesses stay visible across platforms such as Instagram, Facebook, LinkedIn, and other digital channels where customers discover and interact with brands.At Rise IT, our social media marketing services focus on building consistent brand presence, strengthening audience engagement, and supporting broader digital marketing initiatives.Through strategic planning, content development, and ongoing management, we help businesses maintain an active and relevant presence across social media platforms.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        description:
+          'Social media platforms play a central role in how businesses communicate with audiences, build brand awareness, and maintain an active digital presence.Social media marketing helps businesses stay visible across platforms such as Instagram, Facebook, LinkedIn, and other digital channels where customers discover and interact with brands.At Rise IT, our social media marketing services focus on building consistent brand presence, strengthening audience engagement, and supporting broader digital marketing initiatives.Through strategic planning, content development, and ongoing management, we help businesses maintain an active and relevant presence across social media platforms.',
+        thumbnail: '/images/services_images/social-media-marketing.jpg',
         content: `### Social Media Strategy
 A strong social media strategy helps businesses align their social presence with brand positioning, audience behaviour, and marketing objectives.
 Strategic planning ensures social media platforms support brand visibility, engagement, and long-term audience growth.
@@ -134,7 +131,7 @@ By combining strategic planning with consistent content and engagement, we help 
 
 `,
         images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-      }
+      },
     }
     return projects[slug as keyof typeof projects] || projects['project-1']
   }
@@ -161,12 +158,12 @@ By combining strategic planning with consistent content and engagement, we help 
         description={postprojects?.description}
         scale
       />
-      
+
       {/* Pass data to client component for interactive features */}
       <SocialMediaClient project={project} />
-      
+
       <CTA>
-     <span>Build a stronger social media presence</span> .
+        <span>Build a stronger social media presence</span> .
         <CtaImageSlider
           slides={[
             { id: '1', img: '/images/agent/06.png' },
@@ -174,8 +171,10 @@ By combining strategic planning with consistent content and engagement, we help 
             { id: '3', img: '/images/agent/08.png' },
           ]}
         />
-       <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5>
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+          media presence, Rise IT can help.
+        </h5>
       </CTA>
     </LayoutOne>
   )

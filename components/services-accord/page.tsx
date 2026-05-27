@@ -63,32 +63,28 @@ const servicesData = [
       'Campaign Management',
     ],
   },
-    {
+  {
     id: 5,
     title: 'Email Marketing',
     subtitle: 'Because consistent communication helps nurture prospects and maintain engagement with customers.',
     slug: 'email-marketing',
-    items: [
-    'Email Campaign Strategy',
-    'Newsletter Campaigns',
-    'Promotional Campaigns',
-    'Automated Email Workflows',
-    ],
+    items: ['Email Campaign Strategy', 'Newsletter Campaigns', 'Promotional Campaigns', 'Automated Email Workflows'],
   },
 ]
 
 const Servicesaccor = () => {
-
-  DelayScroll();
+  DelayScroll()
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const toggleAccordion = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index)
   }
   return (
-    <section className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]" id="demand-generation">
+    <section
+      className="relative overflow-hidden pb-14 pt-14 md:pb-16 md:pt-16 lg:pb-[88px] lg:pt-[88px] xl:pb-[100px] xl:pt-[100px]"
+      id="demand-generation">
       <div className="absolute left-1/2 top-[47%] -z-40 -translate-x-1/2 -translate-y-[45%] scale-x-[2.7] scale-y-[3.8] sm:scale-y-[3.3] md:scale-y-[3.2] lg:scale-y-[2.4] xl:scale-x-[2.4] xl:scale-y-[1.2]">
-        <Image src={gradientBg}  className="gradient-bg" alt="gradient-bg" />
+        <Image src={gradientBg} className="gradient-bg" alt="gradient-bg" />
       </div>
       <div className="container">
         <div className="mb-8 text-center md:mb-10">
@@ -96,15 +92,17 @@ const Servicesaccor = () => {
             <span className="rv-badge-text">Demand Generation</span>
           </RevealWrapper>
           <TextAppearAnimation>
-            <h2 className="text-appear mx-auto max-w-[770px]">Our website isn’t<span className="font-instrument italic"> &nbsp; generating</span> enough leads.</h2>
+            <h2 className="text-appear mx-auto max-w-[770px]">
+              Our website isn’t<span className="font-instrument italic"> &nbsp; generating</span> enough leads.
+            </h2>
           </TextAppearAnimation>
         </div>
         <RevealWrapper className="mx-auto w-full max-w-[1150px] [&>*:not(:last-child)]:mb-6">
-             <p className="mx-auto mt-3 max-w-3xl text-center">
-       Generating consistent leads requires visibility across multiple platforms combined with targeted audience acquisition strategies.
-       Demand generation connects paid advertising, social media marketing, and lead generation systems to attract qualified prospects and convert them into enquiries.
-
-        </p>
+          <p className="mx-auto mt-3 max-w-3xl text-center">
+            Generating consistent leads requires visibility across multiple platforms combined with targeted audience
+            acquisition strategies. Demand generation connects paid advertising, social media marketing, and lead
+            generation systems to attract qualified prospects and convert them into enquiries.
+          </p>
           {servicesData.map((service, index) => (
             <div
               key={service.id}
@@ -124,12 +122,12 @@ const Servicesaccor = () => {
                   href={`/services/${service.slug}`}
                   className="flex flex-col items-center gap-x-10 gap-y-3 text-[25px] font-normal leading-[25.2px] text-secondary dark:text-white md:flex-row md:text-4xl md:leading-[1.2]">
                   <h3 className="flex flex-col items-center gap-x-10 gap-y-3 text-[25px] font-normal leading-[25.2px] text-secondary dark:text-white md:flex-row md:text-4xl md:leading-[1.2]">
-                    <span className="text-inherit max-w-[250px]">{service.title}</span>
-                    <span className="pr-[2px] max-w-[450px] text-base text-secondary/70 dark:text-white/70 md:text-xl md:leading-[1.4] md:tracking-[0.4px]">
+                    <span className="max-w-[250px] text-inherit">{service.title}</span>
+                    <span className="max-w-[450px] pr-[2px] text-base text-secondary/70 dark:text-white/70 md:text-xl md:leading-[1.4] md:tracking-[0.4px]">
                       {service.subtitle}
                     </span>
                   </h3>
-                  </Link>
+                </Link>
                 <div className="accordion-header-iconV5">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

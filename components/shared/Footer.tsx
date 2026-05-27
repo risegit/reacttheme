@@ -7,17 +7,16 @@ import FooterProvider from './FooterProvider'
 
 const Footer = () => {
   const addressLines = [
-    "Vastu Prestige, 203-B & C, 2nd Floor,",
-    "New Link Road, Above Tanishq Showroom,",
-    "Andheri (W), Mumbai,",
-    "Maharashtra 400053"
+    'Vastu Prestige, 203-B & C, 2nd Floor,',
+    'New Link Road, Above Tanishq Showroom,',
+    'Andheri (W), Mumbai,',
+    'Maharashtra 400053',
   ]
 
   return (
     <FooterProvider>
-      <div className="container pt-26 pb-8 lg:pt-0 lg:pb-0">
+      <div className="pt-26 container pb-8 lg:pb-0 lg:pt-0">
         <div className="relative z-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
-
           {/* Logo + tagline column */}
           <div className="flex flex-col gap-6">
             <Link href="/" className="inline-block w-fit">
@@ -37,8 +36,7 @@ const Footer = () => {
             {/* CTA card */}
             <Link
               href="/contact"
-              className="group flex w-fit items-center gap-3 border border-white/10 bg-white/5 px-4 py-3 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10"
-            >
+              className="group flex w-fit items-center gap-3 border border-white/10 bg-white/5 px-4 py-3 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-white">Free Strategy Call</p>
                 <p className="text-xs text-white/40">1 spot left this month</p>
@@ -69,8 +67,7 @@ const Footer = () => {
                   <li key={href}>
                     <Link
                       href={href}
-                      className="group flex items-center gap-2 text-xl text-white/70 transition-all duration-200 hover:text-primary"
-                    >
+                      className="group flex items-center gap-2 text-xl text-white/70 transition-all duration-200 hover:text-primary">
                       <span className="inline-block h-px w-0 bg-primary transition-all duration-300 group-hover:w-3" />
                       {label}
                     </Link>
@@ -96,8 +93,7 @@ const Footer = () => {
               href="https://maps.google.com/?q=Vastu+Prestige+Andheri+Mumbai"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-xs text-primary/70 transition-colors hover:text-primary"
-            >
+              className="mt-4 inline-flex items-center gap-2 text-xs text-primary/70 transition-colors hover:text-primary">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
@@ -109,13 +105,15 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="mt-14 gap-4 border-t border-white/10 pt-6 sm:flex-row sm:items-center">
-          <div className="flex flex-col items-center justify-between gap-4 sm:flex-row pt-2">
-            <p className="text-xs text-white/30">
-              © {new Date().getFullYear()} All rights reserved.
-            </p>
+          <div className="flex flex-col items-center justify-between gap-4 pt-2 sm:flex-row">
+            <p className="text-xs text-white/30">© {new Date().getFullYear()} All rights reserved.</p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="text-xs text-white/30 transition-colors hover:text-white/60">Privacy Policy</Link>
-              <Link href="/terms" className="text-xs text-white/30 transition-colors hover:text-white/60">Terms of Use</Link>
+              <Link href="/privacy" className="text-xs text-white/30 transition-colors hover:text-white/60">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-xs text-white/30 transition-colors hover:text-white/60">
+                Terms of Use
+              </Link>
             </div>
           </div>
         </div>

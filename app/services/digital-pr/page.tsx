@@ -8,26 +8,23 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import DigitalMarketing from './DigitalMarketing'
 
 export async function generateStaticParams() {
-    return [
-        { slug: 'project-1' },
-        { slug: 'project-2' },
-        { slug: 'project-3' },
-    ]
+  return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
-    const slug = (await params).slug
+  const slug = (await params).slug
 
-    // Manual project data based on slug
-    const getProjectData = (slug: string) => {
-        const projects = {
-            'project-1': {
-                category: 'Services',
-                title: 'Digital PR & Authority Building',
-                description: 'Strong brands are not discovered only through search engines. They are discovered through credibility, media visibility, and consistent brand presence across trusted platforms.Digital PR helps businesses strengthen brand authority, build trust with audiences, and improve online visibility through strategic media placements, brand mentions, and reputation management.At Rise IT, our digital PR services focus on helping businesses increase brand visibility across relevant publications, strengthen online reputation, and build authority within their industry.By combining digital PR campaigns, media outreach, and authority-building strategies, we help organisations strengthen their digital presence and improve how their brand is perceived online',
-                thumbnail: '/services_images/Digital PR & Authority Building.jpg',
+  // Manual project data based on slug
+  const getProjectData = (slug: string) => {
+    const projects = {
+      'project-1': {
+        category: 'Services',
+        title: 'Digital PR & Authority Building',
+        description:
+          'Strong brands are not discovered only through search engines. They are discovered through credibility, media visibility, and consistent brand presence across trusted platforms.Digital PR helps businesses strengthen brand authority, build trust with audiences, and improve online visibility through strategic media placements, brand mentions, and reputation management. At Rise IT, our digital PR services focus on helping businesses increase brand visibility across relevant publications, strengthen online reputation, and build authority within their industry. By combining digital PR campaigns, media outreach, and authority-building strategies, we help organisations strengthen their digital presence and improve how their brand is perceived online',
+        thumbnail: '/images/services_images/digital-PR-&-authority-building.jpg',
 
-                content: `### Digital PR Campaigns
+        content: `### Digital PR Campaigns
 Digital PR campaigns help businesses increase brand visibility by securing coverage across relevant media platforms, publications, and digital channels.
 Strategic campaigns allow businesses to strengthen industry authority, reach wider audiences, and improve brand credibility.
 
@@ -120,53 +117,54 @@ By increasing brand visibility across trusted platforms, we help businesses stre
 
 `,
 
-                images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
-            }
-        }
-        return projects[slug as keyof typeof projects] || projects['project-1']
+        images: ['/images/home-5/case-study-3.png', '/images/home-5/case-study-3.png'],
+      },
     }
+    return projects[slug as keyof typeof projects] || projects['project-1']
+  }
 
-    const postprojects = getProjectData(slug)
+  const postprojects = getProjectData(slug)
 
-    // Structure project object with content as string (markdown)
-    const project = {
-        data: {
-            title: postprojects.title,
-            category: postprojects.category,
-            description: postprojects.description,
-            images: postprojects.images,
-            thumbnail: postprojects.thumbnail,
-        },
-        content: postprojects.content,
-    }
+  // Structure project object with content as string (markdown)
+  const project = {
+    data: {
+      title: postprojects.title,
+      category: postprojects.category,
+      description: postprojects.description,
+      images: postprojects.images,
+      thumbnail: postprojects.thumbnail,
+    },
+    content: postprojects.content,
+  }
 
-    return (
-        <LayoutOne>
-            <ProjectDetailsHero
-                badgeTitle={postprojects?.category}
-                title={postprojects?.title}
-                description={postprojects?.description}
-                scale
-            />
+  return (
+    <LayoutOne>
+      <ProjectDetailsHero
+        badgeTitle={postprojects?.category}
+        title={postprojects?.title}
+        description={postprojects?.description}
+        scale
+      />
 
-            {/* Pass data to client component for interactive features */}
-            <DigitalMarketing project={project} />
+      {/* Pass data to client component for interactive features */}
+      <DigitalMarketing project={project} />
 
-            <CTA>
-               Strengthen your brand authority online.
-                <CtaImageSlider
-                    slides={[
-                        { id: '1', img: '/images/agent/06.png' },
-                        { id: '2', img: '/images/agent/07.png' },
-                        { id: '3', img: '/images/agent/08.png' },
-                    ]}
-                />
-           
-                   <h5 className="mb-2.5 mt-5">If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social media presence, Rise IT can help.
-</h5>
-            </CTA>
-        </LayoutOne>
-    )
+      <CTA>
+        Strengthen your brand authority online.
+        <CtaImageSlider
+          slides={[
+            { id: '1', img: '/images/agent/06.png' },
+            { id: '2', img: '/images/agent/07.png' },
+            { id: '3', img: '/images/agent/08.png' },
+          ]}
+        />
+        <h5 className="mb-2.5 mt-5">
+          If your business wants to strengthen brand visibility, engage audiences, and maintain a consistent social
+          media presence, Rise IT can help.
+        </h5>
+      </CTA>
+    </LayoutOne>
+  )
 }
 
 export default Seopage

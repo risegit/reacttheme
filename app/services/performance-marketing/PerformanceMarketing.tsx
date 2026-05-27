@@ -69,8 +69,7 @@ export default function PerformanceMarketing({ project }: PerformanceMarketingPr
                             activeSection === slug
                               ? 'text-secondary dark:text-backgroundBody'
                               : 'text-[#000000b3] dark:text-dark-100'
-                          }`}
-                        >
+                          }`}>
                           {content}
                         </a>
                       </li>

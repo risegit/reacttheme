@@ -1,7 +1,7 @@
 ---
 title: 'Email marketing'
 description: 'Drive engagement and revenue with automated, personalized email campaigns crafted to resonate with your audience.'
-coverImage: '/images/services/services-details2-img.png'
+coverImage: '/images/services_images/email-marketing.jpg'
 logo: '/images/icons/services-icon/service-icon-2.svg'
 logoDark: '/images/icons/services-icon/service-icon-dark-2.svg'
 badgeTitle: 'Email Marketing'
