@@ -20,7 +20,7 @@ export async function POST(request) {
 
     await resend.emails.send({
       from: "RiseIT <developer@send.riseit.com>",
-      to: ["developer@riseit.com"],
+      to: ["sunil.prajapati@riseit.com","elton.rodrigues@riseit.com",],
       reply_to: email,
       subject: `Contact form Enquiry from <${email}>`,
       html: `
