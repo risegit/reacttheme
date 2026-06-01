@@ -135,9 +135,9 @@ Our monitoring and audit services help ensure that SEO strategies remain effecti
         Strengthen your brand authority{' '}
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/06.png' },
-            { id: '2', img: '/images/agent/07.png' },
-            { id: '3', img: '/images/agent/08.png' },
+            { id: '1', img: '/images/agent/cta1.jpg' },
+            { id: '2', img: '/images/agent/cta4.jpg' },
+            { id: '3', img: '/images/agent/cta2.jpg' },
           ]}
         />
         online.
