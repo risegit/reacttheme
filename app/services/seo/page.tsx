@@ -11,6 +11,10 @@ export async function generateStaticParams() {
   return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
+export const metadata = {
+  title: 'Search Engine Optimization (SEO) Services | Rise IT Digital Marketing ',
+}
+
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const slug = (await params).slug
 

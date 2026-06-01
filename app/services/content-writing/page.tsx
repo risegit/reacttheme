@@ -11,6 +11,9 @@ import RevealWrapper from '@/components/animation/RevealWrapper'
 export async function generateStaticParams() {
   return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
+export const metadata = {
+  title: 'Content Writing Services | Rise IT Digital Marketing',
+}
 
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const slug = (await params).slug

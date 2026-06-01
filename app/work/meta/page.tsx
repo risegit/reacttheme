@@ -5,7 +5,7 @@ import SectionHeader from '@/components/shared/SectionHeader'
 import RevealWrapper from '@/components/animation/RevealWrapper'
 
 export const metadata = {
-  title: 'Management Consulting Agency - Rivor',
+  title: 'Meta case studies | Rise IT Digital Marketing',
 }
 
 const homepage23 = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -28,38 +28,38 @@ Well-optimised content allows websites to attract qualified organic traffic whil
 
         images: ['/images/services/services-details-img.png', '/images/services/services-details-img.png'],
       },
-      {
-        category: 'Meta 2',
-        title: 'Meta 2',
-        slug: '2',
-        description:
-          'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
-        thumbnail: '/images/work/meta/meta-2.jpg',
+//       {
+//         category: 'Meta 2',
+//         title: 'Meta 2',
+//         slug: '2',
+//         description:
+//           'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
+//         thumbnail: '/images/work/meta/meta-2.jpg',
 
-        content: `### SEO Content Writing
+//         content: `### SEO Content Writing
 
-SEO content writing helps businesses improve search visibility by creating content aligned with relevant search queries.
-Well-optimised content allows websites to attract qualified organic traffic while building authority across key topics related to their industry.
-`,
+// SEO content writing helps businesses improve search visibility by creating content aligned with relevant search queries.
+// Well-optimised content allows websites to attract qualified organic traffic while building authority across key topics related to their industry.
+// `,
 
-        images: ['/images/services/services-details-img.png', '/images/services/services-details-img.png'],
-      },
-      {
-        category: 'Meta 3',
-        title: 'Meta 3',
-        slug: '3',
-        description:
-          'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
-        thumbnail: '/images/work/meta/meta-3.jpg',
+//         images: ['/images/services/services-details-img.png', '/images/services/services-details-img.png'],
+//       },
+//       {
+//         category: 'Meta 3',
+//         title: 'Meta 3',
+//         slug: '3',
+//         description:
+//           'Content plays a central role in how businesses communicate value, improve search visibility, and engage potential customers online.High-quality written content helps businesses attract organic traffic, explain products or services clearly, and support marketing campaigns across digital channels.At Rise IT, our content writing services focus on creating structured content that strengthens search engine visibility, improves audience engagement, and supports lead generation initiatives.From SEO-focused content to website messaging and marketing campaigns, we help businesses develop content that communicates effectively and supports measurable marketing outcomes.',
+//         thumbnail: '/images/work/meta/meta-3.jpg',
 
-        content: `### SEO Content Writing
+//         content: `### SEO Content Writing
 
-SEO content writing helps businesses improve search visibility by creating content aligned with relevant search queries.
-Well-optimised content allows websites to attract qualified organic traffic while building authority across key topics related to their industry.
-`,
+// SEO content writing helps businesses improve search visibility by creating content aligned with relevant search queries.
+// Well-optimised content allows websites to attract qualified organic traffic while building authority across key topics related to their industry.
+// `,
 
-        images: ['/images/services/services-details-img.png', '/images/services/services-details-img.png'],
-      },
+//         images: ['/images/services/services-details-img.png', '/images/services/services-details-img.png'],
+//       },
     ]
     return projects
   }
@@ -100,18 +100,7 @@ Well-optimised content allows websites to attract qualified organic traffic whil
             ))}
           </div>
 
-          <RevealWrapper as="ul" className="mt-[60px] flex justify-center">
-            <li className="mx-auto block w-full md:inline-block md:w-auto">
-              <Link href="/portfolio-agency/case-study" className="rv-button rv-button-white block md:inline-block">
-                <div className="rv-button-top !text-center">
-                  <span>See all projects</span>
-                </div>
-                <div className="rv-button-bottom !text-center">
-                  <span>See all projects</span>
-                </div>
-              </Link>
-            </li>
-          </RevealWrapper>
+   
         </div>
       </section>
     </LayoutOne>

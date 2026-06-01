@@ -5,7 +5,7 @@ import SectionHeader from '@/components/shared/SectionHeader'
 import RevealWrapper from '@/components/animation/RevealWrapper'
 
 export const metadata = {
-  title: 'Management Consulting Agency - Rivor',
+  title: 'Linkedin case studies | Rise IT Digital Marketingq',
 }
 
 const homepage23 = async ({ params }: { params: Promise<{ slug: string }> }) => {
@@ -99,18 +99,7 @@ Well-optimised content allows websites to attract qualified organic traffic whil
             ))}
           </div>
 
-          <RevealWrapper as="ul" className="mt-[60px] flex justify-center">
-            <li className="mx-auto block w-full md:inline-block md:w-auto">
-              <Link href="/portfolio-agency/case-study" className="rv-button rv-button-white block md:inline-block">
-                <div className="rv-button-top !text-center">
-                  <span>See all projects</span>
-                </div>
-                <div className="rv-button-bottom !text-center">
-                  <span>See all projects</span>
-                </div>
-              </Link>
-            </li>
-          </RevealWrapper>
+        
         </div>
       </section>
     </LayoutOne>

@@ -15,7 +15,7 @@ import ProcessV4 from '@/components/homepage-07/ProcessV4'
 import Clients from '@/components/clients/page'
 
 export const metadata = {
-  title: 'About',
+  title: 'About Rise IT Digital Marketing Agency in Andheri West , Mumbai',
 }
 
 const AboutPage = () => {

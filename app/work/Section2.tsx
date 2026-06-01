@@ -39,14 +39,14 @@ const Section2 = () => {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   ✓
                 </span>
-                <strong>Understanding the business model and audience</strong>
+                <span className="text-lg font-medium leading-snug">Understanding the business model and audience</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   ✓
                 </span>
-                <strong>Reviewing existing marketing channels and performance</strong>
+                <span className="text-lg font-medium leading-snug">Reviewing existing marketing channels and performance</span>
               </li>
             </ul>
 
@@ -56,14 +56,14 @@ const Section2 = () => {
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   ✓
                 </span>
-                <strong>Identifying growth opportunities across search, advertising, and content</strong>
+                <span className="text-lg font-medium leading-snug">Identifying growth opportunities across search, advertising, and content</span>
               </li>
 
               <li className="flex items-start gap-3">
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary text-sm font-semibold">
                   ✓
                 </span>
-                <strong>Building a marketing roadmap that aligns with business goals</strong>
+                <span className="text-lg font-medium leading-snug">Building a marketing roadmap that aligns with business goals</span>
               </li>
             </ul>
 

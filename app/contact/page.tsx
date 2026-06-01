@@ -5,7 +5,7 @@ import LayoutOne from '@/components/shared/LayoutOne'
 import PageHero from '@/components/shared/PageHero'
 
 export const metadata = {
-  title: 'Contact',
+  title: 'Contact us today | Rise IT Digital Marketing ',
 }
 
 const ContactPage = () => {
@@ -23,13 +23,13 @@ const ContactPage = () => {
         Let's chat!
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/01.jpg' },
-            { id: '2', img: '/images/agent/02.jpg' },
-            { id: '3', img: '/images/agent/03.jpg' },
+            { id: '1', img: '/images/agent/cta1.jpg' },
+            { id: '2', img: '/images/agent/cta5.jpg' },
+            { id: '3', img: '/images/agent/cta4.jpg' },
           ]}
         />
         with us.
-        <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">A virtual coffee?</i>
+       
       </CTA>
     </LayoutOne>
   )
