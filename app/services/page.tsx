@@ -34,9 +34,9 @@ const ServicesPage = () => {
         Let’s build a digital marketing
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/11.png' },
-            { id: '2', img: '/images/agent/16.png' },
-            { id: '3', img: '/images/agent/17.png' },
+            { id: '1', img: '/images/agent/cta2.jpg' },
+            { id: '2', img: '/images/agent/cta4.jpg' },
+            { id: '3', img: '/images/agent/cta5.jpg' },
           ]}
         />
         system that 

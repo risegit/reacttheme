@@ -44,9 +44,9 @@ We focus on improving visibility, generating demand, and turning digital attenti
         Let's Build 
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/11.png' },
-            { id: '2', img: '/images/agent/12.png' },
-            { id: '3', img: '/images/agent/13.png' },
+            { id: '1', img: '/images/agent/cta1.jpg' },
+            { id: '2', img: '/images/agent/cta2.jpg' },
+            { id: '3', img: '/images/agent/cta4.jpg' },
           ]}
         />
         <i className="block font-instrument italic max-md:inline-block max-sm:pl-2 sm:mt-10">Something Meaningful!</i>
