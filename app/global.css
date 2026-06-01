@@ -72,3 +72,33 @@ p.custom-highlight {
 }
 
 
+/* Custom toast styles */
+.Toastify__toast {
+  border-radius: 12px !important;
+  font-family: inherit !important;
+}
+
+.Toastify__toast--success {
+  background: #7bc0a9 !important;
+  color: white !important;
+}
+
+.Toastify__toast--error {
+  background: #ef4444 !important;
+  color: white !important;
+}
+
+.Toastify__toast--loading {
+  background: #3b82f6 !important;
+  color: white !important;
+}
+
+.Toastify__progress-bar--success {
+  background: #ffffff !important;
+}
+
+.Toastify__close-button {
+  color: white !important;
+}
+
+
