@@ -7,7 +7,7 @@ import Carrer1 from './Career-sec1'
 import CareerSection from '@/components/career-section/pages'
 
 export const metadata = {
-  title: 'Contact',
+  title: 'Career - Rise IT',
 }
 
 const ContactPage = () => {
