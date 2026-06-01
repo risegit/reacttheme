@@ -18,8 +18,8 @@ const HeroV11 = () => {
   useEffect(() => {
     const imagePaths: string[] = [
       '/images/home-4/Banner-01.jpg',
-      '/images/home-4/Banner-03.jpg',
-      '/images/home-4/Banner-03.jpg',
+      '/images/home-4/banner-07.jpg',
+      '/images/home-4/banner-07.jpg',
       '/images/home-4/Banner-02.jpg',
       '/images/home-4/Banner-05.jpg',
       '/images/home-4/Banner-06.jpg',
@@ -172,20 +172,24 @@ const HeroV11 = () => {
   return (
     <RevealWrapper
       as="section"
-      className="mb-5 relative overflow-hidden pb-10 pt-[130px] md:pb-24 md:pt-[160px] lg:pb-32 xl:pb-[180px] xl:pt-[200px]">
+      className="relative mb-5 overflow-hidden pb-10 pt-[130px] md:pb-24 md:pt-[160px] lg:pb-32 xl:pb-[180px] xl:pt-[200px]">
       <HeroGradientAnimation />
       <div className="container">
         <div className="flex items-center justify-center">
-          <div className="rv-badge mb-2">
-            {/* <span className="rv-badge-text">Digital Marketing Agency</span> */}
-          </div>
+          <div className="rv-badge mb-2">{/* <span className="rv-badge-text">Digital Marketing Agency</span> */}</div>
         </div>
-        <h2 className="text-center md:mt-20 sm:mt-5">
-          Building <i className="font-instrument"> visibility</i>, generating <i className="font-instrument"> demand</i>, and scaling<i className="font-instrument">  growth</i> through<br />
-         digital marketing systems
+        <h2 className="text-center sm:mt-5 md:mt-20">
+          Building <i className="font-instrument"> visibility</i>, generating <i className="font-instrument"> demand</i>
+          , and scaling<i className="font-instrument"> growth</i> through
+          <br />
+          digital marketing systems
         </h2>
         <p className="mx-auto mt-3 max-w-3xl text-center">
-           We are growth marketing partner helping businesses strengthen their digital presence through<strong> Search Engine Optimization, Generative AI Optimization, Performance Marketing, Social Media Marketing, Public Relations, and Integrated Digital Marketing Strategy.
+          We are growth marketing partner helping businesses strengthen their digital presence through
+          <strong>
+            {' '}
+            Search Engine Optimization, Generative AI Optimization, Performance Marketing, Social Media Marketing,
+            Public Relations, and Integrated Digital Marketing Strategy.
           </strong>
         </p>
 
@@ -193,13 +197,13 @@ const HeroV11 = () => {
           <li className="inline cursor-pointer text-center" ref={heroButtonRef}>
             <Link href="/contact" className="rv-button rv-button-primary block md:inline-block">
               <div className="rv-button-top">
-                <span className='text-white'>Start a Conversation</span>
+                <span className="text-white">Start a Conversation</span>
               </div>
               <div className="rv-button-bottom">
                 <span className="text-nowrap">Start a Conversation</span>
               </div>
             </Link>
-            <p className="mx-auto max-w-3xl text-center mt-5">
+            <p className="mx-auto mt-5 max-w-3xl text-center">
               14+ years helping businesses grow through digital marketing.
             </p>
           </li>
@@ -212,7 +216,7 @@ const HeroV11 = () => {
         <img src="/images/home-4/Banner-02.jpg" alt="" className="decorative-image" ref={setImageRef(1)} />
       </figure>
       <figure className="absolute left-[2%] top-[42%] hidden lg:block">
-        <img src="/images/home-4/Banner-03.jpg" alt="" className="decorative-image" ref={setImageRef(2)} />
+        <img src="/images/home-4/banner-07.jpg" alt="" className="decorative-image" ref={setImageRef(2)} />
       </figure>
       <figure className="absolute right-[2%] top-[32%] hidden lg:block">
         <img src="/images/home-4/Banner-04.jpg" alt="" className="decorative-image" ref={setImageRef(3)} />
