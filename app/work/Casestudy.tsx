@@ -28,7 +28,7 @@ const Case = () => {
         <div className="grid grid-cols-1 gap-x-6 gap-y-9 md:grid-cols-2">
           {caseStudies?.map((project) => (
             <RevealWrapper key={project.slug} className="single-project-item underline-hover-effect">
-              <Link href={`/work/${project.slug}`} className="w-full">
+              <Link href={project.slug !== 'instagram' ? `/work/${project?.slug}` : ``} className="w-full">
                 <figure className="overflow-hidden">
                   <Image
                     src={project?.thumbnail}
@@ -47,18 +47,7 @@ const Case = () => {
           ))}
         </div>
 
-        <RevealWrapper as="ul" className="mt-[60px] flex justify-center">
-          <li className="mx-auto block w-full md:inline-block md:w-auto">
-            <Link href="/portfolio-agency/case-study" className="rv-button rv-button-white block md:inline-block">
-              <div className="rv-button-top !text-center">
-                <span>See all projects</span>
-              </div>
-              <div className="rv-button-bottom !text-center">
-                <span>See all projects</span>
-              </div>
-            </Link>
-          </li>
-        </RevealWrapper>
+      
       </div>
     </section>
   )

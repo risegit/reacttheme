@@ -31,7 +31,7 @@ const Sectionwork1 = () => {
 
             {/* Intro */}
             <RevealWrapper className="mt-6 max-w-xl text-base leading-relaxed">
-              <strong>Most marketing challenges come down to three things.</strong>
+              <span className="text-lg font-medium leading-snug">Most marketing challenges come down to three things.</span>
             </RevealWrapper>
 
             {/* 3 POINTS */}
@@ -61,7 +61,7 @@ const Sectionwork1 = () => {
           <div className="flex w-full flex-1 flex-col gap-5 md:flex-row">
             <figure>
               <img
-                src="/images/hero-img/business-hero-1.png"
+                src="/images/hero-img/work-1.jpg"
                 alt="Business professionals in a consultation meeting"
                 className="h-auto w-full object-cover md:h-[540px] md:w-[410px]"
                 width={410}
@@ -71,7 +71,7 @@ const Sectionwork1 = () => {
 
             <figure>
               <img
-                src="/images/hero-img/business-hero-2.png"
+                src="/images/hero-img/work-2.jpg"
                 alt="Business growth and strategy visualization"
                 className="h-auto w-full object-cover md:h-[540px] md:w-[410px]"
                 width={410}

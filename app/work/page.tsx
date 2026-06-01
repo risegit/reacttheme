@@ -31,9 +31,9 @@ const homepage23 = () => {
         <CTA buttonText="Get Started Today">
           Let’s explore how your business  <CtaImageSlider
             slides={[
-              { id: '1', img: '/images/agent/19.png' },
-              { id: '2', img: '/images/agent/02.jpg' },
-              { id: '3', img: '/images/agent/03.jpg' },
+              { id: '1', img: '/images/agent/cta1.jpg' },
+              { id: '2', img: '/images/agent/cta2.jpg' },
+              { id: '3', img: '/images/agent/cta5.jpg' },
             ]}
           />can grow.
           <h5 className="cta-span mb-3 mt-10">If you're looking to improve visibility, generate leads, or strengthen your digital presence, we would be happy to start a conversation.</h5>

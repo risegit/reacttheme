@@ -15,6 +15,10 @@ export async function generateStaticParams() {
   ]
 }
 
+export const metadata = {
+  title: 'Growth Marketing Strategy Services | Rise IT Digital Marketing',
+}
+
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const slug = (await params).slug
 

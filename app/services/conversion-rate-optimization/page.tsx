@@ -10,6 +10,12 @@ export async function generateStaticParams() {
   return [{ slug: 'project-1' }, { slug: 'project-2' }, { slug: 'project-3' }]
 }
 
+
+export const metadata = {
+  title: 'Analysis of Conversion Rate Optimisation (CRO) Services | Rise IT',
+}
+
+
 const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const slug = (await params).slug
 

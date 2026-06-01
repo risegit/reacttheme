@@ -15,7 +15,7 @@ import RevealWrapper from '@/components/animation/RevealWrapper'
 
 
 export const metadata = {
-  title: 'Services ',
+  title: 'Services Rise IT Digital Marketing Agency in Andheri West , Mumbai',
 }
 
 const ServicesPage = () => {

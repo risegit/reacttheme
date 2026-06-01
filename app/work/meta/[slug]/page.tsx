@@ -96,7 +96,7 @@ const AgencyProjectDetails = async ({ params }: { params: Promise<{ slug: string
             {/* Main Content Area */}
             <article className="project-details-body overflow-hidden [&>*]:scroll-mt-20">
               <RevealWrapper as="figure" className="mb-10 max-w-[870px] md:h-[480px]">
-                <img src="/images/home-5/case-study-3.png" alt="Case Study" className="h-full w-full object-cover" />
+                   <img src={postprojects.thumbnail} alt="Case Study" className="h-full w-full object-cover" />
               </RevealWrapper>
 
               <ReactMarkdown rehypePlugins={[rehypeSlug, rehypeRaw]}>{formattedContent}</ReactMarkdown>
