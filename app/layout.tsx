@@ -9,7 +9,10 @@ import '../scss/main.scss'
 import './global.css'
 
 export const metadata: Metadata = {
-  title: 'Rivor Template',
+  title: 'Rise IT - Digital Marketing Agency',
+  icons: {
+    icon: "/images/favicon.png",
+  },
 }
 
 export default function RootLayout({
