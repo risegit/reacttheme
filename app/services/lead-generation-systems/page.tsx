@@ -163,9 +163,9 @@ By integrating lead generation with marketing automation, analytics, and custome
         Build Something stronger
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/06.png' },
-            { id: '2', img: '/images/agent/07.png' },
-            { id: '3', img: '/images/agent/08.png' },
+            { id: '1', img: '/images/agent/cta4.jpg' },
+            { id: '2', img: '/images/agent/cta1.jpg' },
+            { id: '3', img: '/images/agent/cta5.jpg' },
           ]}
         />
         <h5 className="mb-2.5 mt-5">

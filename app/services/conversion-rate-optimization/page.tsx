@@ -166,9 +166,9 @@ By strengthening key conversion points across websites, landing pages, and marke
         Turn website traffic into measurable growth.
         <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/06.png' },
-            { id: '2', img: '/images/agent/07.png' },
-            { id: '3', img: '/images/agent/08.png' },
+            { id: '1', img: '/images/agent/cta1.jpg' },
+            { id: '2', img: '/images/agent/cta3.jpg' },
+            { id: '3', img: '/images/agent/cta2.jpg' },
           ]}
         />
         <h5 className="mb-2.5 mt-5">

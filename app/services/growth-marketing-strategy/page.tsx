@@ -29,7 +29,7 @@ const Seopage = async ({ params }: { params: Promise<{ slug: string }> }) => {
         category: 'Services',
         title: 'Growth Marketing Strategy',
         description: 'Businesses rarely struggle because they lack marketing channels. They struggle because their marketing efforts across SEO, advertising, content marketing, and social media operate independently without a clear strategy.Growth marketing strategy connects these channels into a structured framework designed to improve visibility, generate demand, and strengthen customer acquisition.At Rise IT, we help businesses develop growth marketing strategies that align digital marketing channels with measurable business outcomes. Our strategic approach focuses on identifying the most effective growth opportunities, prioritising marketing investments, and building scalable systems that support sustainable growth.Whether a business is launching a new product, expanding into new markets, or strengthening its digital presence, a structured growth strategy helps convert marketing activity into predictable business growth.',
-        thumbnail: '/images/home-5/case-study-3.png',
+        thumbnail: '/images/services_images/growth-marketing.jpg',
 
         content: `### Growth Marketing Strategy
 Growth marketing strategy focuses on building structured marketing systems that support long-term customer acquisition and business growth.
@@ -191,9 +191,9 @@ By aligning marketing channels with business objectives, we help organisations b
       <CTA>
         Build a marketing strategy designed <CtaImageSlider
           slides={[
-            { id: '1', img: '/images/agent/06.png' },
-            { id: '2', img: '/images/agent/07.png' },
-            { id: '3', img: '/images/agent/08.png' },
+            { id: '1', img: '/images/agent/cta4.jpg' },
+            { id: '2', img: '/images/agent/cta3.jpg' },
+            { id: '3', img: '/images/agent/cta5.jpg' },
           ]}
         /> for growth.
        
