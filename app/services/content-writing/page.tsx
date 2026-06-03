@@ -188,9 +188,9 @@ By combining search-focused writing with strategic messaging, we help businesses
           Build stronger{' '}
           <CtaImageSlider
             slides={[
-              { id: '1', img: '/images/agent/06.png' },
-              { id: '2', img: '/images/agent/07.png' },
-              { id: '3', img: '/images/agent/08.png' },
+              { id: '1', img: '/images/agent/cta1.jpg' },
+              { id: '2', img: '/images/agent/cta3.jpg' },
+              { id: '3', img: '/images/agent/cta5.jpg' },
             ]}
           />
           communication through content.
