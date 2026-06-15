@@ -39,7 +39,7 @@ const Footer = () => {
               className="group flex w-fit items-center gap-3 border border-white/10 bg-white/5 px-4 py-3 transition-all duration-300 hover:border-primary/40 hover:bg-primary/10">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-white">Free Strategy Call</p>
-                <p className="text-xs text-white/40">1 spot left this month</p>
+                {/* <p className="text-xs text-white/40">1 spot left this month</p> */}
               </div>
               <figure className="relative ml-2 flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden bg-primary">
                 <Image
@@ -90,7 +90,7 @@ const Footer = () => {
               ))}
             </address>
             <a
-              href="https://maps.google.com/?q=Vastu+Prestige+Andheri+Mumbai"
+              href="https://www.google.com/maps?cid=17316876607661131533&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex items-center gap-2 text-xs text-primary/70 transition-colors hover:text-primary">
@@ -108,7 +108,7 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-between gap-4 pt-2 sm:flex-row">
             <p className="text-xs text-white/30">© {new Date().getFullYear()} All rights reserved.</p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="text-xs text-white/30 transition-colors hover:text-white/60">
+              <Link href="/" className="text-xs text-white/30 transition-colors hover:text-white/60">
                 Privacy Policy
               </Link>
               <Link href="/terms" className="text-xs text-white/30 transition-colors hover:text-white/60">
