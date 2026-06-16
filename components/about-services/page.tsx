@@ -63,7 +63,7 @@ const data = [
     id: 10,
     title: 'Content and creative production',
     description: 'Empower your team with social media skills.',
-    slug: 'content-writing',
+    slug: 'content-production',
   },
 ]
 
