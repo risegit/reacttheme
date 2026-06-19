@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="pt-26 container pb-8 lg:pb-0 lg:pt-0">
         <div className="relative z-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Logo + tagline column */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 pt-8 lg:pt-0">
             <Link href="/" className="inline-block w-fit">
               <Image
                 className="h-auto w-[160px] object-contain"
@@ -54,11 +54,28 @@ const Footer = () => {
                 />
               </figure>
             </Link>
+
+            {/* Google Premier Badge */}
+            <div className="mt-6">
+              <a
+                href="https://www.google.com/partners/agency?id=5956988490"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <img
+                  src="https://www.gstatic.com/partners/badge/images/2026/PremierBadgeClickable.svg"
+                  alt="Google Premier Partner"
+              
+                  className="h-[120px] w-[130px] transition-opacity duration-300 hover:opacity-80"
+                />
+              </a>
+            </div>
           </div>
 
           {/* Dynamic nav sections */}
           {footerData.map((section, index) => (
-            <div key={`Id_${index}`}>
+            <div key={`Id_${index}`} className="pt-8 lg:pt-0">
               <h5 className="mb-6 font-satoshi text-[11px] font-bold uppercase tracking-[3px] text-white/40">
                 {section.title}
               </h5>
@@ -78,7 +95,7 @@ const Footer = () => {
           ))}
 
           {/* Address column */}
-          <div>
+          <div className="pt-8 lg:pt-0">
             <h5 className="mb-6 font-satoshi text-[11px] font-bold uppercase tracking-[3px] text-white/40">
               Our Address
             </h5>
