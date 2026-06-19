@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         destination: "/services/growth-marketing-strategy",
         permanent: true,
       },
+     {
+        source: "/about",
+        destination: "/about",
+        permanent: true,
+      },
       {
         source: "/clients",
         destination: "/work",
