@@ -7,6 +7,10 @@
         "label": "SEO"
       },
       {
+        "href": "services/web-development",
+        "label": "Website Development"
+      },
+      {
         "href": "/services/digital-pr",
         "label": "Digital PR & Authority Building"
       },
