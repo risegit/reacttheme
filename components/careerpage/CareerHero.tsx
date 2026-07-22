@@ -33,7 +33,6 @@ const CareerHero = () => {
           </Link>
         </div>
       </RevealWrapper>
-      
     </section>
   )
 }
