@@ -20,7 +20,7 @@ const FAQPage = () => {
   return (
     <LayoutOne>
       <PageHero title="Privacy & " italicTitle="Policy" badgeTitle="Policy" scale />
-      <TermsPolicyBody termsData={termsData} heading={true} />
+      {/* <TermsPolicyBody termsData={termsData} heading={true} /> */}
       <CTA>
         Let's chat!
         <CtaImageSlider
