@@ -61,12 +61,10 @@ const Footer = () => {
                 href="https://www.google.com/partners/agency?id=5956988490"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block"
-              >
+                className="inline-block">
                 <img
                   src="https://www.gstatic.com/partners/badge/images/2026/PremierBadgeClickable.svg"
                   alt="Google Premier Partner"
-              
                   className="h-[120px] w-[130px] transition-opacity duration-300 hover:opacity-80"
                 />
               </a>
@@ -125,7 +123,7 @@ const Footer = () => {
           <div className="flex flex-col items-center justify-between gap-4 pt-2 sm:flex-row">
             <p className="text-xs text-white/30">© {new Date().getFullYear()} All rights reserved.</p>
             <div className="flex gap-6">
-              <Link href="/" className="text-xs text-white/30 transition-colors hover:text-white/60">
+              <Link href="/privacy-policy" className="text-xs text-white/30 transition-colors hover:text-white/60">
                 Privacy Policy
               </Link>
               <Link href="/terms" className="text-xs text-white/30 transition-colors hover:text-white/60">
