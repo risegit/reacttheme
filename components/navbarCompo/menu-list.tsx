@@ -73,10 +73,12 @@ const menuItems: MenuItemProps[] = [
   //     { title: 'Blog Details', url: '/seo-blog/the-evolution-of-minimalist-design' },
   //   ],
   // },
-  {
-    title: 'Careers',
-    url: '/career',
-  },
+
+  // {
+  //   title: 'Careers',
+  //   url: '/career',
+  // },
+  
   // {
   //   title: 'Projects',
   //   url: '#',
