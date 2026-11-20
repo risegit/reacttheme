@@ -19,18 +19,20 @@ const ContactForm = () => {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const serviceOptions = [
-    "Seo Services",
-    "Digital PR & Authority Building",
-    "Content Writing",
-    "Performance Marketing",
-    "Social Media Marketing",
-    "Lead Generation Systems",
-    "Conversion Rate Optimisation (CRO)",
-    "Digital Marketing Strategy & Audits",
-    "Email Marketing",
-    "Website Design & Development",
-    "Marketing Analytics & Tracking",
-    "Graphic Design & Marketing Collaterals"
+    'Seo Services',
+    'Digital PR & Authority Building',
+    'Content Writing',
+    'Performance Marketing',
+    'Social Media Marketing',
+    'Lead Generation Systems',
+    'Conversion Rate Optimisation (CRO)',
+    'Digital Marketing Strategy & Audits',
+    'Email Marketing',
+    'Digital Marketing Strategy & Audits',
+    'Digital Marketing Strategy & Audits',
+    'Website Design & Development',
+    'Marketing Analytics & Tracking',
+    'Graphic Design & Marketing Collaterals',
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -42,7 +44,7 @@ const ContactForm = () => {
     setFormData((prev) => {
       const isSelected = prev.services.includes(service)
       if (isSelected) {
-        return { ...prev, services: prev.services.filter(s => s !== service) }
+        return { ...prev, services: prev.services.filter((s) => s !== service) }
       } else {
         return { ...prev, services: [...prev.services, service] }
       }
@@ -50,93 +52,91 @@ const ContactForm = () => {
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+    e.preventDefault()
+    setIsSubmitting(true)
 
     // Show loading toast
     const loadingToastId = toast.loading('Sending your message...', {
-      position: "top-center",
+      position: 'top-center',
       closeOnClick: false,
       draggable: false,
-    });
+    })
 
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
+      const res = await fetch('/api/contact', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
-      });
+      })
 
-      const data = await res.json();
+      const data = await res.json()
 
       if (res.ok) {
         // Update loading toast to success
         toast.update(loadingToastId, {
-          render: "Message sent successfully! 🎉",
-          type: "success",
+          render: 'Message sent successfully! 🎉',
+          type: 'success',
           isLoading: false,
-          position: "top-center",
+          position: 'top-center',
           autoClose: 4000,
           closeOnClick: true,
           draggable: true,
-        });
+        })
 
         // Reset form
         setFormData({
-          name: "",
-          company: "",
-          email: "",
-          phone: "",
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
           services: [],
-          message: "",
-        });
-
+          message: '',
+        })
       } else {
         // Update loading toast to error
         toast.update(loadingToastId, {
-          render: "Failed to send message. Please try again! ❌",
-          type: "error",
+          render: 'Failed to send message. Please try again! ❌',
+          type: 'error',
           isLoading: false,
-          position: "top-center",
+          position: 'top-center',
           autoClose: 4000,
           closeOnClick: true,
           draggable: true,
-        });
-        console.error(data);
+        })
+        console.error(data)
       }
-
     } catch (error) {
-      console.error("Error:", error);
+      console.error('Error:', error)
       // Update loading toast to error
       toast.update(loadingToastId, {
-        render: "Something went wrong! Please check your connection and try again. ❌",
-        type: "error",
+        render: 'Something went wrong! Please check your connection and try again. ❌',
+        type: 'error',
         isLoading: false,
-        position: "top-center",
+        position: 'top-center',
         autoClose: 4000,
         closeOnClick: true,
         draggable: true,
-      });
+      })
     } finally {
-      setIsSubmitting(false);
+      setIsSubmitting(false)
     }
-  };
+  }
 
   // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsDropdownOpen(false);
+        setIsDropdownOpen(false)
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
 
   return (
     <>
@@ -152,7 +152,6 @@ const ContactForm = () => {
         pauseOnHover
         theme="light"
         toastClassName="rounded-xl shadow-lg"
-        
       />
       <section className="pb-14 md:pb-16 lg:pb-[88px] xl:pb-[100px]">
         <div className="container">
@@ -160,7 +159,6 @@ const ContactForm = () => {
             as="form"
             onSubmit={handleSubmit}
             className="reveal-me mx-auto grid max-w-[800px] grid-cols-1 gap-[30px] md:grid-cols-2">
-
             {/* Full Name - Full Width */}
             <div className="md:col-span-full">
               <label
@@ -231,11 +229,10 @@ const ContactForm = () => {
               {/* Custom Dropdown Trigger */}
               <div
                 onClick={() => !isSubmitting && setIsDropdownOpen(!isDropdownOpen)}
-                className={`mt-3 w-full scroll-m-2 cursor-pointer border bg-backgroundBody py-4 px-5 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark flex justify-between items-center ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
-              >
-                <span className={formData.services.length === 0 ? "text-gray-400" : ""}>
+                className={`mt-3 flex w-full cursor-pointer scroll-m-2 items-center justify-between border bg-backgroundBody px-5 py-4 text-xl leading-[1.4] tracking-[0.4px] text-colorText focus:border-primary focus:outline-none dark:border-dark dark:bg-dark ${isSubmitting ? 'cursor-not-allowed opacity-50' : ''}`}>
+                <span className={formData.services.length === 0 ? 'text-gray-400' : ''}>
                   {formData.services.length === 0
-                    ? "Select services"
+                    ? 'Select services'
                     : `${formData.services.length} service${formData.services.length > 1 ? 's' : ''} selected`}
                 </span>
                 <svg
@@ -244,8 +241,7 @@ const ContactForm = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                >
+                  className={`transition-transform duration-200 ${isDropdownOpen ? 'rotate-180' : ''}`}>
                   <path
                     d="M6 9L12 15L18 9"
                     stroke="currentColor"
@@ -258,14 +254,14 @@ const ContactForm = () => {
 
               {/* Custom Dropdown Menu - with mouse wheel scrolling */}
               {isDropdownOpen && !isSubmitting && (
-                <div className="absolute left-0 right-0 z-50 mt-1 max-h-80 overflow-auto border bg-backgroundBody dark:border-dark dark:bg-dark shadow-lg"
-                     style={{ overflowY: 'auto' }}>
+                <div
+                  className="absolute left-0 right-0 z-50 mt-1 max-h-80 overflow-auto border bg-backgroundBody shadow-lg dark:border-dark dark:bg-dark"
+                  style={{ overflowY: 'auto' }}>
                   <div className="py-2">
                     {serviceOptions.map((service) => (
                       <label
                         key={service}
-                        className="flex cursor-pointer items-center px-5 py-3 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
-                      >
+                        className="flex cursor-pointer items-center px-5 py-3 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800">
                         <input
                           type="checkbox"
                           checked={formData.services.includes(service)}
@@ -284,20 +280,27 @@ const ContactForm = () => {
 
               {/* Selected Services Tags (Optional - Shows what's selected) */}
               {formData.services.length > 0 && (
-                <div className="flex flex-wrap gap-2 mt-3">
+                <div className="mt-3 flex flex-wrap gap-2">
                   {formData.services.map((service) => (
                     <span
                       key={service}
-                      className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm text-primary dark:bg-primary/20"
-                    >
+                      className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-sm text-primary dark:bg-primary/20">
                       {service}
                       <button
                         type="button"
                         onClick={() => handleServiceToggle(service)}
-                        className="ml-1 hover:text-primary-dark"
-                        disabled={isSubmitting}
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        className="hover:text-primary-dark ml-1"
+                        disabled={isSubmitting}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round">
                           <line x1="18" y1="6" x2="6" y2="18"></line>
                           <line x1="6" y1="6" x2="18" y2="18"></line>
                         </svg>
@@ -307,7 +310,7 @@ const ContactForm = () => {
                 </div>
               )}
             </div>
-            
+
             {/* Number */}
             <div>
               <label
@@ -352,20 +355,15 @@ const ContactForm = () => {
 
             {/* Submit Button */}
             <div className="col-span-full sm:mt-14 md:mx-auto">
-              <button 
-                type="submit" 
-                className={`rv-button rv-button-primary block w-full md:inline-block md:w-auto ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
-                disabled={isSubmitting}
-              >
+              <button
+                type="submit"
+                className={`rv-button rv-button-primary block w-full md:inline-block md:w-auto ${isSubmitting ? 'cursor-not-allowed opacity-70' : ''}`}
+                disabled={isSubmitting}>
                 <div className="rv-button-top">
-                  <span className='text-white'>
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </span>
+                  <span className="text-white">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 </div>
                 <div className="rv-button-bottom">
-                  <span className="text-nowrap">
-                    {isSubmitting ? 'Sending...' : 'Send Message'}
-                  </span>
+                  <span className="text-nowrap">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                 </div>
               </button>
             </div>
