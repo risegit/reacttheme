@@ -103,6 +103,12 @@ const Footer = () => {
                   {line}
                 </p>
               ))}
+              <p className="mt-2 text-xl leading-relaxed text-white/70">
+                📞
+                <a className="mb-1.5 text-xl leading-relaxed text-white/70" href="tel:+919323013570">
+                  +91 93230 13570
+                </a>
+              </p>
             </address>
             <a
               href="https://www.google.com/maps?cid=17316876607661131533&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&source=embed"
